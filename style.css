@@ -1,13 +1,13 @@
-/* SOLO mantenemos la animación hover y la transición base para que funcione */
+
 .card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Un borde básico para que la tarjeta se distinga sin sombras iniciales */
+    /* Un borde basico para que la tarjeta se distinga sin sombras iniciales */
     border: 1px solid #ccc; 
     /* Evita que la imagen se desborde del borde */
     overflow: hidden; 
 }
 
 .card:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-5px); /*mueve la tarjeta hacia arriba al hacer hover*/
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /*agrega una sombra más pronunciada al hacer hover*/
 }
