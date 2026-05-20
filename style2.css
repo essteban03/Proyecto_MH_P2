@@ -1,0 +1,30 @@
+#hola {
+    padding: 10px 5px 10px 20px;
+    background-color: rgb(255, 255, 14);
+    margin: 50px 50px 50px 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    justify-content: center;
+}
+
+#login {
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 300px;
+    padding: 10px 10px 10px 10px;
+    background-color: azure;
+    margin: 10% 40% 10% 40%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#boton {
+    border: 2px solid blue;
+    border-radius: 10%;
+}
+
+#boton2 {
+    border: 2px solid blue;
+    border-radius: 10%;
+}

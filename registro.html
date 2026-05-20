@@ -1,0 +1,75 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Registro - Matador House</title> 
+</head>
+<body style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f5f5f7; color: #1f1f1f; margin: 0; padding: 0;">
+    
+    <header style="background-color: #ffffff; padding: 15px 40px; border-bottom: 1px solid #e0e0e0; text-align: left;">
+        <div style="display: inline-block; vertical-align: middle;">
+            <h1 style="margin: 0; color: #00439c; font-size: 26px; letter-spacing: -1px;">Matador House</h1>
+        </div>
+        <nav style="display: inline-block; vertical-align: middle; margin-left: 50px;">
+            <a href="index.html" style="text-decoration: none; color: #555; margin-right: 25px;">Inicio</a>
+            <a href="registro.html" style="text-decoration: none; color: #1f1f1f; margin-right: 25px; font-weight: bold;">Crear Cuenta</a>
+            <a href="login.html" style="text-decoration: none; color: #555; margin-right: 25px;">Iniciar Sesión</a>
+            <a href="contacto.html" style="text-decoration: none; color: #555;">Contacto</a>
+        </nav>
+    </header>
+    
+    <main style="max-width: 600px; margin: 50px auto; background-color: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+        
+        <h2 style="text-align: center; color: #00439c; margin-top: 0;">Crea tu cuenta de Jugador</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">Únete a Matador House para gestionar tus compras.</p>
+        
+        <form action="#" method="POST">
+            <fieldset style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 25px;">
+                <legend style="font-weight: bold; color: #00439c; padding: 0 10px;">Tus Datos Personales</legend>
+                
+                <label for="nombre" style="font-weight: bold; font-size: 14px;">Nombre completo:</label><br>
+                <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+                
+                <label for="email" style="font-weight: bold; font-size: 14px;">Correo electrónico:</label><br>
+                <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+
+                <label for="pass" style="font-weight: bold; font-size: 14px;">Contraseña:</label><br>
+                <input type="password" id="pass" name="pass" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+
+                <label for="fecha_nac" style="font-weight: bold; font-size: 14px;">Fecha de Nacimiento:</label><br>
+                <input type="date" id="fecha_nac" name="fecha_nac" required style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
+            
+
+            <fieldset style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 25px;">
+                <legend style="font-weight: bold; color: #00439c; padding: 0 10px;">Preferencias de Consola</legend>
+                <p style="margin-top: 0; font-size: 14px; color: #555;">¿Qué consola utilizas principalmente?</p>
+                
+                <input type="radio" id="ps4" name="consola" value="PS4">
+                <label for="ps4" style="margin-right: 20px;">PlayStation 4</label>
+                
+                <input type="radio" id="ps5" name="consola" value="PS5" checked>
+                <label for="ps5">PlayStation 5</label>
+            </fieldset>
+
+            <fieldset style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
+                <legend style="font-weight: bold; color: #00439c; padding: 0 10px;">Términos y Condiciones</legend>
+                
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="font-size: 14px;">Acepto los términos y condiciones de la tienda.</label><br><br>
+
+                <input type="checkbox" id="promo" name="promo">
+                <label for="promo" style="font-size: 14px;">Quiero recibir ofertas de PS Plus en mi correo.</label>
+            </fieldset>
+
+            <div style="text-align: center;">
+                <input type="submit" value="Completar Registro" style="background-color: #00439c; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; margin-right: 10px;">
+                <input type="reset" value="Limpiar" style="background-color: #e0e0e0; color: #333; padding: 15px 30px; border: none; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer;">
+            </div>
+        </form>
+    </main>
+
+    <footer style="background-color: #00439c; color: white; text-align: center; padding: 30px 20px; font-size: 14px;">
+        <p style="margin: 0;">© 2026 Matador House. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
