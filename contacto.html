@@ -18,11 +18,11 @@
         </nav>
     </header>
     
-    <main style="max-width: 800px; margin: 50px auto; background-color: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <main style="max-width: 800px;  background-color: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
         
         <h2 style="color: #00439c; margin-top: 0;">Buzón de Sugerencias y Contacto</h2>
         <p style="color: #666; margin-bottom: 30px;">¿Tienes alguna duda o problema? Estamos aquí para ayudarte.</p>
-        
+        <hr>
         <form action="#" method="POST">
             <label for="asunto" style="font-weight: bold; font-size: 14px;">Motivo del contacto:</label><br>
             <select id="asunto" name="asunto" style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; background-color: white;">
@@ -36,14 +36,45 @@
 
             <label for="cita" style="font-weight: bold; font-size: 14px;">¿A qué fecha y hora te gustaría que te llamemos?</label><br>
             <input type="datetime-local" id="cita" name="cita" style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 30px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+            <br><br>
+            <details>
+                <summary style="font-weight: bold; font-size: 14px; cursor: pointer; color: #00439c;">¿Qué tipo de consultas podemos resolver por teléfono?</summary>
+                <ul style="margin-top: 10px; color: #000000;">
+                    <li>Problemas técnicos con juegos o la plataforma.</li>
+                    <li>Dudas sobre suscripciones PS Plus y sus beneficios.</li>
+                    <li>Asesoramiento para elegir el juego perfecto para ti.</li>
+                    <li>Recomendaciones personalizadas según tus gustos.</li>
+                    <li>Resolución de problemas con tu cuenta o compras.</li>
+                </ul>
+            </details>
 
+            <details>
+                <summary style="font-weight: bold; font-size: 14px; cursor: pointer; color: #00439c;">¿Qué tipo de sugerencias puedes enviarnos?</summary>
+                <ul style="margin-top: 10px; color: #000000;">
+                    <li>Recomendaciones de juegos que te gustaría ver en nuestra tienda.</li>
+                    <li>Mejoras para la experiencia de compra en línea.</li>
+                    <li>Nuevas funcionalidades o servicios que te gustaría que ofrezcamos.</li>
+                    <li>Comentarios sobre nuestro servicio al cliente.</li>
+                    <li>Ideas para promociones o eventos especiales.</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary style = "font-weight: bold; font-size: 14px; cursor: pointer; color: #00439c;">¿De que trata este proyecto?</summary>
+                <p style="margin-top: 10px; color: #000000;">
+                    Este proyecto tiene como objetivo crear una tienda en línea para la venta de juegos y accesorios para PlayStation en Ecuador, ofreciendo una experiencia de compra única y una atención al cliente excepcional.
+                </p>
+            </details>
+            <br><br>
+             <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="font-size: 14px;">Acepto que me contacten para resolver mi consulta.</label><br><br>
             <input type="submit" value="Enviar Mensaje" style="background-color: #00439c; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer;">
         </form>
 
         <div style="margin-top: 50px; border-top: 1px solid #e0e0e0; padding-top: 30px;">
-            <h2 style="color: #00439c;">Nuestras Oficinas</h2>
+            <a href ="https://www.google.com/maps/@-0.2526795,-79.1940741,17.46z?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" style="color: #00439c;">Nuestras Oficinas</a>
             <p style="color: #666; margin-bottom: 20px;">¡Visítanos! Estamos ubicados en el centro tecnológico de Santo Domingo.</p>
-            <iframe src="https://maps.google.com/maps?q=santo%20domingo%20ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border: none; border-radius: 12px;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://maps.google.com/maps?q=santo%20domingo%20ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="350" style="border: none; border-radius: 12px;" ></iframe>
         </div>
     </main>
 
