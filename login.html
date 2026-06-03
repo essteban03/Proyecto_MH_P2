@@ -3,39 +3,46 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Iniciar Sesión - Matador House</title> 
+    <link rel="stylesheet" href="css/general.css">
 </head>
-<body style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f5f5f7; color: #1f1f1f; margin: 0; padding: 0;">
+<body>
     
-    <header style="background-color: #ffffff; padding: 15px 40px; border-bottom: 1px solid #e0e0e0; text-align: left;">
-        <div style="display: inline-block; vertical-align: middle;">
-            <h1 style="margin: 0; color: #00439c; font-size: 26px; letter-spacing: -1px;">Matador House</h1>
+    <header>
+        <div>
+            <h1>Matador House</h1>
         </div>
-        <nav style="display: inline-block; vertical-align: middle; margin-left: 50px;">
-            <a href="index.html" style="text-decoration: none; color: #555; margin-right: 25px;">Inicio</a>
-            <a href="registro.html" style="text-decoration: none; color: #555; margin-right: 25px;">Crear Cuenta</a>
-            <a href="login.html" style="text-decoration: none; color: #1f1f1f; margin-right: 25px; font-weight: bold;">Iniciar Sesión</a>
-            <a href="contacto.html" style="text-decoration: none; color: #555;">Contacto</a>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="registro.html">Crear Cuenta</a>
+            <a href="login.html">Iniciar Sesión</a>
+            <a href="contacto.html">Contacto</a>
         </nav>
     </header>
     
-    <main style="max-width: 450px; margin: 80px auto; background-color: #ffffff; padding: 50px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-align: center;">
+    <main>
+        <h2>Iniciar Sesión</h2>
+        <p>Ingresa para ver tu biblioteca de juegos y compras.</p>
         
-        <h2 style="color: #00439c; margin-top: 0;">Iniciar Sesión</h2>
-        <p style="color: #666; margin-bottom: 30px;">Ingresa para ver tu biblioteca de juegos y compras.</p>
-        
-        <form action="index.html" method="POST" style="text-align: left;">
-            <label for="email" style="font-weight: bold; font-size: 14px;">Correo electrónico:</label><br>
-            <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+        <form action="index.html" method="POST">
+            <label>Correo electrónico:
+                <input type="email" name="email" required>
+            </label>
 
-            <label for="password" style="font-weight: bold; font-size: 14px;">Contraseña:</label><br>
-            <input type="password" id="password" name="password" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 30px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+            <label>Contraseña:
+                <input type="password" name="password" required>
+            </label>
 
-            <input type="submit" value="Entrar a mi cuenta" style="width: 100%; background-color: #d53900; color: white; padding: 15px; border: none; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer;">
+            <input type="submit" value="Entrar a mi cuenta">
         </form>
         
-        <div style="margin-top: 30px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
-            <p style="font-size: 14px; color: #555;">¿No tienes cuenta? <a href="registro.html" style="color: #00439c; font-weight: bold; text-decoration: none;">Regístrate aquí</a></p>
-        </div>
+        <section>
+            <p>¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        </section>
     </main>
+
+    <footer>
+        <p>Matador House</p>
+        <p>© 2026 Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

@@ -3,79 +3,79 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Mi Carrito - Matador House</title> 
+    <link rel="stylesheet" href="css/general.css">
 </head>
-<body style="font-family: 'Segoe UI', Arial, sans-serif; background-color: #f5f5f7; color: #1f1f1f; margin: 0; padding: 0;">
+<body>
     
-    <header style="background-color: #ffffff; padding: 15px 40px; border-bottom: 1px solid #e0e0e0; text-align: left;">
-        <div style="display: inline-block; vertical-align: middle;">
-            <h1 style="margin: 0; color: #00439c; font-size: 26px; letter-spacing: -1px;">Matador House</h1>
+    <header>
+        <div>
+            <h1>Matador House</h1>
         </div>
-        <nav style="display: inline-block; vertical-align: middle; margin-left: 50px;">
-            <a href="index.html" style="text-decoration: none; color: #00439c; font-weight: bold;">&larr; Volver a la Tienda</a>
+        <nav>
+            <a href="index.html">&larr; Volver a la Tienda</a>
         </nav>
     </header>
     
-    <main style="max-width: 800px; margin: 50px auto; background-color: #ffffff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+    <main>
+        <h2>Tu Carrito de Compras</h2>
         
-        <h2 style="color: #00439c; margin-top: 0; margin-bottom: 20px;">Tu Carrito de Compras</h2>
-        
-        <table style="width: 100%; text-align: left; border-collapse: collapse; margin-bottom: 40px;">
-            <thead style="background-color: #00439c; color: white;">
+        <table>
+            <thead>
                 <tr>
-                    <th style="padding: 15px; border-top-left-radius: 8px;">Juego</th>
-                    <th style="padding: 15px;">Plataforma</th>
-                    <th style="padding: 15px; border-top-right-radius: 8px; text-align: right;">Precio</th>
+                    <th>Juego</th>
+                    <th>Plataforma</th>
+                    <th>Precio</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="border-bottom: 1px solid #e0e0e0;">
-                    <td style="padding: 15px; font-weight: bold;">Marvel's Spider-Man 2</td>
-                    <td style="padding: 15px; color: #666;">PS5</td>
-                    <td style="padding: 15px; text-align: right; font-weight: bold;">$59.99</td>
+                <tr>
+                    <td>Marvel's Spider-Man 2</td>
+                    <td>PS5</td>
+                    <td>$59.99</td>
                 </tr>
-                <tr style="border-bottom: 1px solid #e0e0e0;">
-                    <td style="padding: 15px; font-weight: bold;">Ghost of Tsushima</td>
-                    <td style="padding: 15px; color: #666;">PS5</td>
-                    <td style="padding: 15px; text-align: right; font-weight: bold;">$69.99</td>
+                <tr>
+                    <td>Ghost of Tsushima</td>
+                    <td>PS5</td>
+                    <td>$69.99</td>
                 </tr>
-                <tr style="background-color: #f5f5f7;">
-                    <td colspan="2" style="padding: 15px; text-align: right; font-weight: bold; color: #333;">TOTAL A PAGAR:</td>
-                    <td style="padding: 15px; text-align: right; font-weight: bold; color: #d53900; font-size: 18px;">$129.98</td>
+                <tr>
+                    <td colspan="2">TOTAL A PAGAR:</td>
+                    <td>$129.98</td>
                 </tr>
             </tbody>
         </table>
 
-        <h2 style="color: #00439c;">Detalles de Pago</h2>
+        <h2>Detalles de Pago</h2>
         <form action="exito.html" method="GET">
-            <fieldset style="border: 1px solid #e0e0e0; border-radius: 12px; padding: 25px; margin-bottom: 30px;">
-                <legend style="font-weight: bold; color: #00439c; padding: 0 10px;">Tarjeta de Crédito / Débito</legend>
+            <fieldset>
+                <legend>Tarjeta de Crédito / Débito</legend>
                 
-                <label for="titular" style="font-weight: bold; font-size: 14px;">Nombre en la tarjeta:</label><br>
-                <input type="text" id="titular" name="titular" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+                <label>Nombre en la tarjeta:
+                    <input type="text" name="titular" required>
+                </label>
 
-                <label for="tarjeta" style="font-weight: bold; font-size: 14px;">Número de tarjeta:</label><br>
-                <input type="number" id="tarjeta" name="tarjeta" placeholder="1234 5678 9012 3456" required style="width: 100%; padding: 12px; margin-top: 8px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;"><br>
+                <label>Número de tarjeta:
+                    <input type="number" name="tarjeta" placeholder="1234 5678 9012 3456" required>
+                </label>
 
-                <div style="display: inline-block; width: 48%;">
-                    <label for="vencimiento" style="font-weight: bold; font-size: 14px;">Mes de Vencimiento:</label><br>
-                    <input type = "date" id="vencimiento" name="vencimiento" required style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
-                    
-                </div>
+                <label>Mes de Vencimiento:
+                    <input type="date" name="vencimiento" required>
+                </label>
 
-                <div style="display: inline-block; width: 48%; margin-left: 3%;">
-                    <label for="cvv" style="font-weight: bold; font-size: 14px;">Código CVV:</label><br>
-                    <input type="password" id="cvv" name="cvv" maxlength="3" required placeholder="123" style="width: 100%; padding: 12px; margin-top: 8px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box;">
-                </div>
+                <label>Código CVV:
+                    <input type="password" name="cvv" maxlength="3" required placeholder="123">
+                </label>
             </fieldset>
 
-            <div style="text-align: right;">
-                <input type="submit" value="Confirmar Pago de $129.98" style="background-color: #d53900; color: white; padding: 15px 30px; border: none; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer;">
+            <div>
+                <input type="submit" value="Confirmar Pago de $129.98">
             </div>
         </form>
     </main>
 
-    <footer style="background-color: #00439c; color: white; text-align: center; padding: 30px 20px; font-size: 14px;">
-        <p style="margin: 0;">© 2026 Matador House. Todos los derechos reservados.</p>
+    <footer>
+        <p>Matador House</p>
+        <p>© 2026 Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>

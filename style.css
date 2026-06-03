@@ -7,7 +7,7 @@
     overflow: hidden; 
 }
 
-.card:hover {
+.card:hover { 
     transform: translateY(-5px); /*mueve la tarjeta hacia arriba al hacer hover*/
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /*agrega una sombra más pronunciada al hacer hover*/
 }
