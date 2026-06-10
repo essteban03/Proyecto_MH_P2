@@ -1,0 +1,185 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN SOBRE NOSOTROS
+   Descripción general de la empresa.
+   ============================================================ */
+ 
+#sobre-nosotros {
+    background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 100%);
+    border-left: 5px solid #00439c;
+    border-radius: 0 20px 20px 0;
+    padding: 35px 30px;
+    margin: 40px auto;
+}
+ 
+#sobre-nosotros h2 {
+    font-size: 28px;
+    color: #00439c;
+    margin-bottom: 16px;
+}
+ 
+#sobre-nosotros p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+    margin: 0;
+}
+ 
+/* ============================================================
+   BLOQUE 2: SECCIÓN EQUIPO - TARJETAS DE MIEMBRO
+   Tarjetas de perfil de cada integrante.
+   ============================================================ */
+ 
+#equipo {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+ 
+#equipo h2 {
+    margin-bottom: 28px;
+    font-size: 26px;
+    color: #00439c;
+}
+ 
+.tarjeta-miembro {
+    display: inline-block;
+    background-color: #f7f9ff;
+    width: 200px;
+    padding: 24px 18px;
+    border-radius: 18px;
+    margin: 12px;
+    text-align: center;
+    vertical-align: top;
+    border: 2px solid #e0e8ff;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.tarjeta-miembro:hover {
+    transform: translateY(-6px);
+    border-color: #00439c;
+    box-shadow: 0 12px 24px rgba(0,67,156,0.12);
+}
+ 
+.tarjeta-miembro img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid #00439c;
+    margin: 0 auto 14px auto;
+}
+ 
+.tarjeta-miembro h3 {
+    font-size: 15px;
+    color: #1f1f1f;
+    margin-bottom: 4px;
+}
+ 
+.tarjeta-miembro .rol {
+    font-size: 12px;
+    color: #00439c;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+}
+ 
+/* ============================================================
+   BLOQUE 3: TABLA DEL EQUIPO
+   Tabla de roles y progreso.
+   ============================================================ */
+ 
+#tabla-equipo {
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    margin: 30px 0;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+ 
+#tabla-equipo thead {
+    background-color: #00439c;
+    color: white;
+}
+ 
+#tabla-equipo th {
+    padding: 16px 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+ 
+#tabla-equipo td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eef0f5;
+    vertical-align: middle;
+    color: #444;
+}
+ 
+#tabla-equipo tbody tr:hover {
+    background-color: #f0f4ff;
+}
+ 
+#tabla-equipo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 2px solid #c8d8ff;
+}
+ 
+/* ============================================================
+   BLOQUE 4: BARRAS DE PROGRESO Y MEDIDOR
+   Indicadores visuales del proyecto.
+   ============================================================ */
+ 
+#progreso-proyecto {
+    background-color: #f7f9ff;
+    border-radius: 16px;
+    padding: 28px 30px;
+    margin: 30px 0 0 0;
+}
+ 
+#progreso-proyecto h3 {
+    font-size: 16px;
+    color: #00439c;
+    margin-bottom: 8px;
+}
+ 
+#progreso-proyecto progress,
+#progreso-proyecto meter {
+    width: 100%;
+    height: 14px;
+    border-radius: 8px;
+    margin-bottom: 22px;
+    accent-color: #00439c;
+}
+ 
+/* ============================================================
+   BLOQUE 5: ETIQUETA DE ROL
+   Badge reutilizable con clase .badge-rol.
+   ============================================================ */
+ 
+.badge-rol {
+    display: inline-block;
+    background-color: #00439c;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 10px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 6px;
+}

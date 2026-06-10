@@ -1,67 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Matador House</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/nosotros.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-     <header>
+
+    <header>
         <div>
             <h1>Matador House</h1>
         </div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="registro.html">Crear Cuenta</a>
-            <a href="login.html">Iniciar Sesión</a>
+            <a href="index.html">Inicio <i class="fa-solid fa-house"></i></a>
+            <a href="registro.html">Crear Cuenta <i class="fa-solid fa-user"></i></a>
+            <a href="login.html">Iniciar Sesión <i class="fa-solid fa-sign-in"></i></a>
+            <a href="nosotros.html">Conocenos</a>
             <a href="contacto.html">Contacto</a>
-            <a href="carrito.html">Mi Carrito</a>
+            <a href="carrito.html">Mi Carrito <i class="fa-solid fa-cart-shopping"></i></a>
         </nav>
     </header>
-    
+
     <main>
-        <section>
-            <div>
-                <h2>Sobre Nosotros</h2>
-            </div>
+
+        <!-- SECCIÓN SOBRE NOSOTROS -->
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
             <p>En Matador House, somos apasionados por los videojuegos y nos dedicamos a ofrecer la mejor experiencia de compra en línea para los amantes de los juegos. Fundada en 2020, nuestra misión es proporcionar una plataforma segura, fácil de usar y llena de las últimas novedades en el mundo de los videojuegos. Nos esforzamos por brindar un servicio al cliente excepcional y una amplia selección de títulos para satisfacer las necesidades de todos los jugadores, desde principiantes hasta expertos.</p>
         </section>
-        
+
         <hr>
-        
-        <section>
-            <div>
-                <h2>Conoce al equipo</h2> 
-            </div>
-            
-            <article>
+
+        <!-- SECCIÓN EQUIPO -->
+        <section id="equipo">
+            <h2>Conoce al equipo</h2>
+
+            <article class="tarjeta-miembro">
                 <figure>
                     <img src="imagenes/gordillo.jpeg" alt="Esteban Gordillo">
                 </figure>
                 <h3 title="Fundador y CEO">Esteban Gordillo</h3>
-                <p>Fundador y CEO</p>
+                <p class="rol">Fundador y CEO</p>
+                <span class="badge-rol">CEO</span>
             </article>
 
-            <article>
+            <article class="tarjeta-miembro">
                 <figure>
                     <img src="imagenes/elon.jpg" alt="Elon Musk">
                 </figure>
                 <h3 title="Director de Marketing">Elon Musk</h3>
-                <p>Director de Marketing</p>
+                <p class="rol">Director de Marketing</p>
+                <span class="badge-rol">Marketing</span>
             </article>
 
-            <article>
+            <article class="tarjeta-miembro">
                 <figure>
                     <img src="imagenes/satya.jpg" alt="Satya Nadella">
                 </figure>
                 <h3 title="Jefe de Atención al Cliente">Satya Nadella</h3>
-                <p>Jefe de Atención al Cliente</p>
+                <p class="rol">Jefe de Atención al Cliente</p>
+                <span class="badge-rol">Soporte</span>
             </article>
-            
+
             <hr>
-            
-            <table>
+
+            <!-- TABLA DEL EQUIPO -->
+            <table id="tabla-equipo">
                 <thead>
                     <tr>
                         <th>CEO DE LA EMPRESA</th>
@@ -89,19 +96,38 @@
                         <td>Director de Marketing</td>
                         <td>Jefe de Atención al Cliente</td>
                     </tr>
+                    <tr>
+                        <td>
+                            <label>Progreso del proyecto:</label>
+                            <progress title="Nivel de progreso 70%" value="8" max="11">70%</progress>
+                        </td>
+                        <td>
+                            <label>Progreso del proyecto:</label>
+                            <progress title="Nivel de progreso 60%" value="6" max="11">60%</progress>
+                        </td>
+                        <td>
+                            <label>Progreso del proyecto:</label>
+                            <progress title="Nivel de progreso 80%" value="9" max="11">80%</progress>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
-            
-            <hr>
-            
-            <h3>Progreso de nuestro proyecto</h3>
-            <progress title="Nivel de progreso 70%" value="8" max="11">70% </progress>
 
-            <h3>Nivel de nuestro proyecto</h3>
-            <meter title="Nivel de progreso 70%" value="8" max="11">70% </meter>
-        </section> 
+            <hr>
+
+            <!-- BARRAS DE PROGRESO GENERALES -->
+            <div id="progreso-proyecto">
+                <h3>Progreso general del proyecto</h3>
+                <progress title="Nivel de progreso 70%" value="8" max="11">70%</progress>
+
+                <h3>Nivel de calidad del proyecto</h3>
+                <meter title="Nivel de calidad 73%" value="8" max="11">73%</meter>
+            </div>
+
+        </section>
+
     </main>
-        
+
     <footer>
         <p>Matador House</p>
         <p>La tienda definitiva para jugadores de PS4 y PS5 en Ecuador.</p>
@@ -109,5 +135,6 @@
         <a href="nosotros.html">Conocenos</a>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

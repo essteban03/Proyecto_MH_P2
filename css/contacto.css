@@ -1,0 +1,222 @@
+
+
+/* ============================================================
+   BLOQUE 1: ENCABEZADO DE LA SECCIÓN
+   Título y descripción del buzón de contacto.
+   ============================================================ */
+
+#titulo-contacto {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+#titulo-contacto h2 {
+    font-size: 28px;
+    color: #00439c;
+}
+
+#titulo-contacto p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO DE CONTACTO
+   Estilos para el formulario principal.
+   ============================================================ */
+
+.formulario-contacto {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 36px 32px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: left;
+}
+
+.formulario-contacto label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 18px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.formulario-contacto select,
+.formulario-contacto textarea,
+.formulario-contacto input[type="datetime-local"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border: 1.5px solid #d0dcff;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: #fafbff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.formulario-contacto select:focus,
+.formulario-contacto textarea:focus,
+.formulario-contacto input[type="datetime-local"]:focus {
+    outline: none;
+    border-color: #00439c;
+    box-shadow: 0 0 0 3px rgba(0,67,156,0.08);
+}
+
+.formulario-contacto textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ============================================================
+   BLOQUE 3: PREGUNTAS DESPLEGABLES
+   Estilos para los elementos details/summary de la FAQ.
+   ============================================================ */
+
+.detalle-faq {
+    background-color: #f7f9ff;
+    border: 1px solid #d0dcff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.detalle-faq:hover {
+    background-color: #eef3ff;
+}
+
+.detalle-faq summary {
+    font-size: 14px;
+    font-weight: bold;
+    color: #00439c;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.detalle-faq summary::before {
+    content: "▶";
+    font-size: 10px;
+    color: #d53900;
+    transition: transform 0.2s ease;
+}
+
+.detalle-faq[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.detalle-faq ul,
+.detalle-faq p {
+    margin-top: 12px;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.7;
+    padding-left: 22px;
+}
+
+/* ============================================================
+   BLOQUE 4: SECCIÓN DE MAPA
+   Bloque con dirección y mapa embebido.
+   ============================================================ */
+
+#seccion-mapa {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 30px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: center;
+}
+
+#seccion-mapa h3 {
+    font-size: 20px;
+    color: #00439c;
+    margin-bottom: 8px;
+}
+
+#seccion-mapa > a {
+    display: inline-block;
+    background-color: #00439c;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#seccion-mapa > a:hover {
+    background-color: #d53900;
+    color: #ffffff;
+    border-bottom: none;
+}
+
+#seccion-mapa p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 16px;
+}
+
+#seccion-mapa iframe {
+    aspect-ratio: 16/9;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    max-width: 100%;
+    height: 350px;
+}
+
+/* ============================================================
+   BLOQUE 5: CHECKBOX DE CONSENTIMIENTO
+   Estilo para la aceptación de contacto.
+   ============================================================ */
+
+.label-terminos {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+    font-weight: normal;
+    border-bottom: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.label-terminos input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #00439c;
+    cursor: pointer;
+}
+
+/* ============================================================
+   BLOQUE 6: BOTÓN ENVIAR MENSAJE
+   Botón principal del formulario.
+   ============================================================ */
+
+.btn-enviar {
+    background-color: #00439c;
+    color: #ffffff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+}
+
+.btn-enviar:hover {
+    background-color: #d53900;
+    transform: translateY(-2px);
+}

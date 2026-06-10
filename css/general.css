@@ -106,6 +106,9 @@ footer {
     color: white;
     text-align: center;
     padding: 40px 20px;
+    padding-top: 10px;  /* Agrega un poco de espacio entre el contenido del pie de página y el borde superior */
+    padding-bottom: 10px;  /* Reduce el espacio inferior para que el pie de página no sea tan alto */
+
 }
 
 /* ============================================================
@@ -118,7 +121,7 @@ nav {
 }
 nav a {
     color: #555;
-    margin-right: 25px;
+    margin-right: 15px;
     font-weight: bold;
     padding-bottom: 5px;
     border-bottom: 2px solid transparent;
@@ -188,9 +191,16 @@ article p {
    Estilos para img, figure, figcaption, video, audio e iframe.
    ============================================================ */
 img {
-    width: 100%;
+    width: 150px;
     border-radius: 8px;
     display: block;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    margin:0 auto;
+    display: block;
+
+
 }
 figure {
     margin: 0 0 15px 0;
@@ -202,13 +212,19 @@ figcaption {
     color: #666;
     margin-top: 8px;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 iframe {
     border: none;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     margin-bottom: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
+    aspect-ratio: 3/4;
 }
 video {
     width: 100%;
@@ -223,11 +239,13 @@ audio {
    BLOQUE 7: LISTAS
    Estilos para ul, ol y li.
    ============================================================ */
-ul, ol {
+ul, ol { /* Estilos para listas no numeradas y numeradas */
     margin: 0 0 20px 0;
     padding-left: 20px;
     color: #666;
-    line-height: 1.8;
+    line-height: 1.5;
+    /*centrar los puntos de las listas*/
+    
 }
 li {
     margin-bottom: 8px;
@@ -252,11 +270,11 @@ legend {
     padding: 0 10px;
 }
 label {
+    color: #555;
+    margin-right: 15px;
     font-weight: bold;
-    font-size: 14px;
-    color: #1f1f1f;
-    display: block;
-    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
 }
 input, textarea, select {
     width: 100%;
@@ -336,10 +354,15 @@ thead th:last-child {
 }
 progress, meter {
     width: 100%;
-    height: 25px;
+    height: 15px;
+    accent-color: #ff0000;
+    background-color: #e0e0e0;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 20px; 
 }
+
+
+
 
 /* ============================================================
    BLOQUE 10: PIE DE PÁGINA
@@ -367,4 +390,46 @@ footer a {
 footer a:hover {
     color: white;
     border-bottom: 1px solid white;
+}
+
+
+/* ============================================================
+   RESPONSIVIDAD AVANZADA (Actualización para general.css)
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* 1. Menú de navegación: Convertir en una lista vertical compacta */
+    header {
+        text-align: center;
+        padding: 15px;
+    }
+
+    header nav {
+        display: flex;
+        flex-direction: column; /* Apila los botones uno debajo de otro */
+        gap: 8px; /* Espacio reducido entre botones */
+        margin-top: 15px;
+    }
+
+    header nav a {
+        font-size: 14px; /* Texto un poco más pequeño en móviles */
+        padding: 8px;
+        width: 100%;
+        display: block;
+        background: #f4f4f4; /* Fondo suave para distinguir los botones */
+        border-radius: 5px;
+    }
+
+    /* 2. Tablas: Scroll horizontal optimizado */
+    table {
+        width: 100%;
+        display: block; /* Obliga a la tabla a comportarse como bloque */
+        overflow-x: auto; /* Permite deslizar solo la tabla, no toda la web */
+        -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone/Android */
+    }
+    
+    /* Asegurar que las celdas no se encojan demasiado */
+    table th, table td {
+        min-width: 120px; 
+    }
 }

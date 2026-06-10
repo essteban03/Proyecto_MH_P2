@@ -1,0 +1,201 @@
+
+
+/* ============================================================
+   BLOQUE 1: ENCABEZADO DE REGISTRO
+   Título e introducción del formulario.
+   ============================================================ */
+
+#titulo-registro {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+#titulo-registro h2 {
+    font-size: 26px;
+    color: #00439c;
+}
+
+#titulo-registro p {
+    color: #888;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO DE REGISTRO
+   Estilos generales del formulario.
+   ============================================================ */
+
+.formulario-registro {
+    background-color: #ffffff;
+    border-radius: 22px;
+    padding: 38px 36px;
+    box-shadow: 0 6px 24px rgba(0,67,156,0.08);
+    max-width: 580px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.formulario-registro label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 16px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.formulario-registro input[type="text"],
+.formulario-registro input[type="email"],
+.formulario-registro input[type="password"],
+.formulario-registro input[type="date"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border: 1.5px solid #d0dcff;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fafbff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.formulario-registro input:focus {
+    outline: none;
+    border-color: #00439c;
+    box-shadow: 0 0 0 3px rgba(0,67,156,0.08);
+}
+
+/* ============================================================
+   BLOQUE 3: FIELDSETS POR SECCIÓN
+   Datos personales, consola y términos.
+   ============================================================ */
+
+#datos-personales {
+    border: 1.5px solid #d0dcff;
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+    background-color: #f7f9ff;
+}
+
+#preferencias-consola {
+    border: 1.5px solid #d0dcff;
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+    background-color: #f7f9ff;
+}
+
+#preferencias-consola p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+#terminos-condiciones {
+    border: 1.5px solid #d0dcff;
+    border-radius: 14px;
+    padding: 26px;
+    margin-bottom: 22px;
+    background-color: #f7f9ff;
+}
+
+.formulario-registro fieldset legend {
+    font-weight: bold;
+    color: #00439c;
+    font-size: 15px;
+    padding: 0 12px;
+}
+
+/* Opciones radio de consola */
+.label-consola {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    border-bottom: none;
+    margin-right: 24px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    color: #444;
+}
+
+.label-consola input[type="radio"] {
+    width: 17px;
+    height: 17px;
+    accent-color: #00439c;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Checkboxes de términos */
+.label-check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: normal;
+    border-bottom: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+}
+
+.label-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #00439c;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin: 2px 0 0 0;
+}
+
+/* ============================================================
+   BLOQUE 4: BOTONES DE ACCIÓN
+   Completar Registro y Limpiar.
+   ============================================================ */
+
+.div-botones-registro {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-registrar {
+    background-color: #00439c;
+    color: #ffffff;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: auto;
+}
+
+.btn-registrar:hover {
+    background-color: #d53900;
+    transform: translateY(-1px);
+}
+
+.btn-limpiar {
+    background-color: #e8edf5;
+    color: #555;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+.btn-limpiar:hover {
+    background-color: #c8d0e0;
+    color: #333;
+}

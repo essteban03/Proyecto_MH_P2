@@ -1,0 +1,336 @@
+/* ============================================================
+   BLOQUE 1: SECCIÓN HERO (PRESENTACIÓN PRINCIPAL)
+   Estilos para la sección heroína con imagen de fondo.
+   ============================================================ */
+ 
+#hero {
+    background-color: #1f1f1f;
+    background-image: url('../imagenes/spiderman-hero.png');
+    background-size: cover;
+    background-position: center top;
+    height: 520px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    max-width: 100%;
+    position: relative;
+}
+ 
+#hero .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.75) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+ 
+#hero h2 {
+    font-size: 52px;
+    color: #ffffff;
+    text-shadow: 2px 3px 8px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+ 
+#hero p {
+    font-size: 20px;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    margin-bottom: 0;
+}
+ 
+#hero .btn-hero {
+    background-color: #d53900;
+    color: #ffffff;
+    padding: 14px 42px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 17px;
+    display: inline-block;
+    margin-top: 22px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-bottom: none;
+}
+ 
+#hero .btn-hero:hover {
+    background-color: #ff6b1a;
+    color: #ffffff;
+    transform: translateY(-2px);
+    border-bottom: none;
+}
+ 
+/* ============================================================
+   BLOQUE 2: SECCIÓN DE JUEGOS DESTACADOS
+   Tarjetas de juegos con clase .tarjeta-juego.
+   ============================================================ */
+ 
+#juegos-destacados {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 40px auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    text-align: left;
+}
+ 
+#juegos-destacados h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 26px;
+    color: #00439c;
+}
+ 
+.tarjeta-juego {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 220px;
+    padding: 18px;
+    border-radius: 16px;
+    margin: 12px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #e8e8e8;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+ 
+.tarjeta-juego:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0,67,156,0.12);
+    border-color: #c8d8ff;
+}
+ 
+.tarjeta-juego a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+ 
+.tarjeta-juego h3 {
+    font-size: 15px;
+    color: #1f1f1f;
+    margin: 10px 0 6px 0;
+}
+ 
+.tarjeta-juego .precio {
+    font-size: 16px;
+    font-weight: bold;
+    color: #00439c;
+    margin: 0;
+}
+ 
+.tarjeta-juego .resenas {
+    font-size: 12px;
+    color: #888;
+    margin: 0 0 4px 0;
+}
+ 
+.tarjeta-juego img {
+    width: 100%;
+    height: 160px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+ 
+/* ============================================================
+   BLOQUE 3: SECCIÓN DE PLANES PS PLUS
+   Tarjetas de suscripción con clase .tarjeta-plan.
+   ============================================================ */
+ 
+#planes-psplus {
+    background-color: #f0f4ff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 40px auto;
+    text-align: center;
+}
+ 
+#planes-psplus h2 {
+    margin-bottom: 8px;
+    color: #00439c;
+}
+ 
+#planes-psplus > p {
+    color: #666;
+    margin-bottom: 25px;
+}
+ 
+.tarjeta-plan {
+    display: inline-block;
+    background-color: #ffffff;
+    width: 240px;
+    padding: 28px 22px;
+    border-radius: 18px;
+    margin: 12px;
+    text-align: left;
+    vertical-align: top;
+    border: 2px solid #e0e8ff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.tarjeta-plan:hover {
+    border-color: #00439c;
+    box-shadow: 0 8px 24px rgba(0,67,156,0.1);
+}
+ 
+.tarjeta-plan h3 {
+    font-size: 16px;
+    color: #00439c;
+    margin-bottom: 6px;
+}
+ 
+.tarjeta-plan .precio-plan {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d53900;
+    margin-bottom: 14px;
+}
+ 
+.tarjeta-plan ul {
+    font-size: 13px;
+    color: #555;
+    padding-left: 18px;
+    margin-bottom: 18px;
+}
+ 
+.tarjeta-plan .btn-plan {
+    display: inline-block;
+    background-color: #00439c;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+ 
+.tarjeta-plan .btn-plan:hover {
+    background-color: #d53900;
+    color: #ffffff;
+    border-bottom: none;
+}
+ 
+/* Plan destacado (Premium) */
+.tarjeta-plan.destacado {
+    border-color: #00439c;
+    background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 100%);
+    position: relative;
+}
+ 
+.tarjeta-plan.destacado::before {
+    content: "⭐ Más popular";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d53900;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 14px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+ 
+/* ============================================================
+   BLOQUE 4: SECCIÓN DE TRAILERS / MULTIMEDIA
+   Estilos para las tarjetas de video con clase .tarjeta-video.
+   ============================================================ */
+ 
+#trailers {
+    background-color: #1a1a2e;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 40px auto;
+    text-align: center;
+}
+ 
+#trailers h2 {
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+ 
+#trailers > p {
+    color: #aab4cc;
+    margin-bottom: 25px;
+}
+ 
+.tarjeta-video {
+    display: inline-block;
+    background-color: #252542;
+    width: 260px;
+    padding: 18px;
+    border-radius: 14px;
+    margin: 12px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #363660;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.tarjeta-video:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+ 
+.tarjeta-video h3 {
+    color: #e0e6ff;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+ 
+.tarjeta-video iframe {
+    border-radius: 10px;
+    aspect-ratio: 16/9;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 0;
+}
+ 
+/* ============================================================
+   BLOQUE 5: SECCIÓN VIDEO DESTACADO (PS PLUS)
+   Iframe centrado y amplio.
+   ============================================================ */
+ 
+#video-psplus {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 40px auto;
+    text-align: center;
+}
+ 
+#video-psplus h2 {
+    margin-bottom: 10px;
+    color: #00439c;
+}
+ 
+#video-psplus p {
+    color: #666;
+    margin-bottom: 20px;
+}
+ 
+#video-psplus iframe {
+    aspect-ratio: 16/9;
+    max-width: 800px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+ 
+/* ============================================================
+   BLOQUE 6: NOTA INFORMATIVA
+   Párrafo con clase .nota para aclaraciones especiales.
+   ============================================================ */
+ 
+.nota {
+    background-color: #fff8e1;
+    border-left: 4px solid #ff9800;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    color: #555;
+    margin-top: 10px;
+}

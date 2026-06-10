@@ -1,0 +1,120 @@
+
+
+/* ============================================================
+   BLOQUE 1: CONTENEDOR CENTRAL DEL FORMULARIO
+   Sección única centrada de login.
+   ============================================================ */
+
+#seccion-login {
+    max-width: 460px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 22px;
+    padding: 42px 38px;
+    box-shadow: 0 8px 32px rgba(0,67,156,0.1);
+    text-align: center;
+}
+
+#seccion-login h2 {
+    font-size: 26px;
+    color: #00439c;
+    margin-bottom: 8px;
+}
+
+#seccion-login > p {
+    color: #888;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+/* ============================================================
+   BLOQUE 2: FORMULARIO DE LOGIN
+   Campos de correo y contraseña.
+   ============================================================ */
+
+.formulario-login {
+    text-align: left;
+}
+
+.formulario-login label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 18px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.formulario-login input[type="email"],
+.formulario-login input[type="password"] {
+    width: 100%;
+    padding: 13px 14px;
+    margin-top: 6px;
+    border: 1.5px solid #d0dcff;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fafbff;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.formulario-login input:focus {
+    outline: none;
+    border-color: #00439c;
+    box-shadow: 0 0 0 3px rgba(0,67,156,0.08);
+}
+
+/* ============================================================
+   BLOQUE 3: BOTÓN ENTRAR
+   Botón de acción del formulario de login.
+   ============================================================ */
+
+.btn-login {
+    background-color: #00439c;
+    color: #ffffff;
+    padding: 14px 0;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #d53900;
+    transform: translateY(-1px);
+}
+
+/* ============================================================
+   BLOQUE 4: ENLACE A REGISTRO
+   Sección pequeña de redirección al registro.
+   ============================================================ */
+
+#enlace-registro {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #eef0f5;
+    text-align: center;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding-bottom: 0;
+}
+
+#enlace-registro p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+#enlace-registro a {
+    color: #d53900;
+    font-weight: bold;
+}
+
+#enlace-registro a:hover {
+    color: #00439c;
+}

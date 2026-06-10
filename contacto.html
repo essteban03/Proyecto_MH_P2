@@ -1,29 +1,42 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Contacto - Matador House</title> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Matador House</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    
+
     <header>
         <div>
             <h1>Matador House</h1>
         </div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="registro.html">Crear Cuenta</a>
-            <a href="login.html">Iniciar Sesión</a>
+            <a href="index.html">Inicio <i class="fa-solid fa-house"></i></a>
+            <a href="registro.html">Crear Cuenta <i class="fa-solid fa-user"></i></a>
+            <a href="login.html">Iniciar Sesión <i class="fa-solid fa-sign-in"></i></a>
+            <a href="nosotros.html">Conocenos</a>
             <a href="contacto.html">Contacto</a>
+            <a href="carrito.html">Mi Carrito <i class="fa-solid fa-cart-shopping"></i></a>
         </nav>
     </header>
-    
+
     <main>
-        <h2>Buzón de Sugerencias y Contacto</h2>
-        <p>¿Tienes alguna duda o problema? Estamos aquí para ayudarte.</p>
+
+        <!-- ENCABEZADO -->
+        <div id="titulo-contacto">
+            <h2>Buzón de Sugerencias y Contacto</h2>
+            <p>¿Tienes alguna duda o problema? Estamos aquí para ayudarte.</p>
+        </div>
+
         <hr>
-        <form action="#" method="POST">
+
+        <!-- FORMULARIO PRINCIPAL -->
+        <form class="formulario-contacto" action="#" method="POST">
+
             <label>Motivo del contacto:
                 <select name="asunto">
                     <option value="soporte">Soporte Técnico de un juego</option>
@@ -39,8 +52,9 @@
             <label>¿A qué fecha y hora te gustaría que te llamemos?
                 <input type="datetime-local" name="cita">
             </label>
-            
-            <details>
+
+            <!-- PREGUNTAS FRECUENTES -->
+            <details class="detalle-faq">
                 <summary>¿Qué tipo de consultas podemos resolver por teléfono?</summary>
                 <ul>
                     <li>Problemas técnicos con juegos o la plataforma.</li>
@@ -51,7 +65,7 @@
                 </ul>
             </details>
 
-            <details>
+            <details class="detalle-faq">
                 <summary>¿Qué tipo de sugerencias puedes enviarnos?</summary>
                 <ul>
                     <li>Recomendaciones de juegos que te gustaría ver en nuestra tienda.</li>
@@ -62,28 +76,34 @@
                 </ul>
             </details>
 
-            <details>
-                <summary>¿De que trata este proyecto?</summary>
+            <details class="detalle-faq">
+                <summary>¿De qué trata este proyecto?</summary>
                 <p>Este proyecto tiene como objetivo crear una tienda en línea para la venta de juegos y accesorios para PlayStation en Ecuador, ofreciendo una experiencia de compra única y una atención al cliente excepcional.</p>
             </details>
-            
-            <label>
-                <input type="checkbox" name="terms" required> Acepto que me contacten para resolver mi consulta.
+
+            <label class="label-terminos">
+                <input type="checkbox" name="terms" required>
+                Acepto que me contacten para resolver mi consulta.
             </label>
 
-            <input type="submit" value="Enviar Mensaje">
+            <input class="btn-enviar" type="submit" value="Enviar Mensaje">
+
         </form>
 
-        <section>
-            <a href="https://www.google.com/maps/@-0.2526795,-79.1940741,17.46z">Nuestras Oficinas</a>
+        <!-- SECCIÓN MAPA -->
+        <section id="seccion-mapa">
+            <h3>Nuestras Oficinas</h3>
+            <a href="https://www.google.com/maps/@-0.2526795,-79.1940741,17.46z" target="_blank">Ver en Google Maps</a>
             <p>¡Visítanos! Estamos ubicados en el centro tecnológico de Santo Domingo.</p>
-            <iframe src="https://maps.google.com/maps?q=santo%20domingo%20ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed" height="350"></iframe>
+            <iframe src="https://maps.google.com/maps?q=santo%20domingo%20ecuador&t=&z=13&ie=UTF8&iwloc=&output=embed" height="350" title="Mapa de Santo Domingo"></iframe>
         </section>
+
     </main>
 
     <footer>
         <p>Matador House</p>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

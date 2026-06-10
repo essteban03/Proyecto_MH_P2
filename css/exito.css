@@ -1,0 +1,70 @@
+
+
+/* ============================================================
+   BLOQUE 1: SECCIÓN DE CONFIRMACIÓN
+   Bloque central de éxito con ícono, mensaje y botón.
+   ============================================================ */
+
+#confirmacion-pago {
+    max-width: 500px;
+    margin: 60px auto;
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 50px 40px;
+    box-shadow: 0 8px 32px rgba(0,67,156,0.1);
+    text-align: center;
+}
+
+/* ============================================================
+   BLOQUE 2: ÍCONO DE ÉXITO
+   Ícono grande de confirmación.
+   ============================================================ */
+
+.icono-exito {
+    font-size: 72px;
+    line-height: 1;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* ============================================================
+   BLOQUE 3: TEXTOS DE LA CONFIRMACIÓN
+   Título y párrafo del mensaje.
+   ============================================================ */
+
+#confirmacion-pago h2 {
+    font-size: 26px;
+    color: #2e7d32;
+    margin-bottom: 14px;
+}
+
+.mensaje-exito {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+/* ============================================================
+   BLOQUE 4: BOTÓN VOLVER A LA TIENDA
+   Acción principal post-compra.
+   ============================================================ */
+
+.btn-volver {
+    display: inline-block;
+    background-color: #00439c;
+    color: #ffffff;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-bottom: none;
+}
+
+.btn-volver:hover {
+    background-color: #d53900;
+    color: #ffffff;
+    transform: translateY(-2px);
+    border-bottom: none;
+}

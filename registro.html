@@ -1,36 +1,48 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Registro - Matador House</title> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Matador House</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/registro.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    
+
     <header>
         <div>
             <h1>Matador House</h1>
         </div>
         <nav>
-            <a href="index.html">Inicio</a>
-            <a href="registro.html">Crear Cuenta</a>
-            <a href="login.html">Iniciar Sesión</a>
+            <a href="index.html">Inicio <i class="fa-solid fa-house"></i></a>
+            <a href="registro.html">Crear Cuenta <i class="fa-solid fa-user"></i></a>
+            <a href="login.html">Iniciar Sesión <i class="fa-solid fa-sign-in"></i></a>
+            <a href="nosotros.html">Conocenos</a>
             <a href="contacto.html">Contacto</a>
+            <a href="carrito.html">Mi Carrito <i class="fa-solid fa-cart-shopping"></i></a>
         </nav>
     </header>
-    
+
     <main>
-        <h2>Crea tu cuenta de Jugador</h2>
-        <p>Únete a Matador House para gestionar tus compras.</p>
-        
-        <form action="login.html" method="POST">
-            <fieldset>
+
+        <!-- ENCABEZADO -->
+        <div id="titulo-registro">
+            <h2>Crea tu cuenta de Jugador</h2>
+            <p>Únete a Matador House para gestionar tus compras.</p>
+        </div>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <form class="formulario-registro" action="login.html" method="POST">
+
+            <!-- DATOS PERSONALES -->
+            <fieldset id="datos-personales">
                 <legend>Tus Datos Personales</legend>
-                
+
                 <label>Nombre completo:
                     <input type="text" name="nombre" required>
                 </label>
-                
+
                 <label>Correo electrónico:
                     <input type="email" name="email" required>
                 </label>
@@ -44,41 +56,51 @@
                 </label>
             </fieldset>
 
-            <fieldset>
+            <!-- PREFERENCIAS DE CONSOLA -->
+            <fieldset id="preferencias-consola">
                 <legend>Preferencias de Consola</legend>
                 <p>¿Qué consola utilizas principalmente?</p>
-                
-                <label>
-                    <input type="radio" name="consola" value="PS4"> PlayStation 4
+
+                <label class="label-consola">
+                    <input type="radio" name="consola" value="PS4">
+                    PlayStation 4
                 </label>
-                
-                <label>
-                    <input type="radio" name="consola" value="PS5" checked> PlayStation 5
+
+                <label class="label-consola">
+                    <input type="radio" name="consola" value="PS5" checked>
+                    PlayStation 5
                 </label>
             </fieldset>
 
-            <fieldset>
+            <!-- TÉRMINOS Y CONDICIONES -->
+            <fieldset id="terminos-condiciones">
                 <legend>Términos y Condiciones</legend>
-                
-                <label>
-                    <input type="checkbox" name="terms" required> Acepto los términos y condiciones de la tienda.
+
+                <label class="label-check">
+                    <input type="checkbox" name="terms" required>
+                    Acepto los términos y condiciones de la tienda.
                 </label>
 
-                <label>
-                    <input type="checkbox" name="promo"> Quiero recibir ofertas de PS Plus en mi correo.
+                <label class="label-check">
+                    <input type="checkbox" name="promo">
+                    Quiero recibir ofertas de PS Plus en mi correo.
                 </label>
             </fieldset>
 
-            <div>
-                <input type="submit" value="Completar Registro">
-                <input type="reset" value="Limpiar">
+            <!-- BOTONES -->
+            <div class="div-botones-registro">
+                <input class="btn-registrar" type="submit" value="Completar Registro">
+                <input class="btn-limpiar" type="reset" value="Limpiar">
             </div>
+
         </form>
+
     </main>
 
     <footer>
         <p>Matador House</p>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

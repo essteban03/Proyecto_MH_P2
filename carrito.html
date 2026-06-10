@@ -1,12 +1,14 @@
-<!DOCTYPE html> 
-<html lang="es"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <title>Mi Carrito - Matador House</title> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito - Matador House</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 <body>
-    
+
     <header>
         <div>
             <h1>Matador House</h1>
@@ -15,11 +17,17 @@
             <a href="index.html">&larr; Volver a la Tienda</a>
         </nav>
     </header>
-    
+
     <main>
-        <h2>Tu Carrito de Compras</h2>
-        
-        <table>
+
+        <!-- ENCABEZADO DEL CARRITO -->
+        <div id="titulo-carrito">
+            <h2>Tu Carrito de Compras</h2>
+            <p>Revisa tus artículos antes de confirmar el pago.</p>
+        </div>
+
+        <!-- TABLA DE ARTÍCULOS -->
+        <table id="tabla-carrito">
             <thead>
                 <tr>
                     <th>Juego</th>
@@ -38,44 +46,51 @@
                     <td>PS5</td>
                     <td>$69.99</td>
                 </tr>
-                <tr>
+                <tr class="fila-total">
                     <td colspan="2">TOTAL A PAGAR:</td>
                     <td>$129.98</td>
                 </tr>
             </tbody>
         </table>
 
-        <h2>Detalles de Pago</h2>
-        <form action="exito.html" method="GET">
-            <fieldset>
-                <legend>Tarjeta de Crédito / Débito</legend>
-                
-                <label>Nombre en la tarjeta:
-                    <input type="text" name="titular" required>
-                </label>
+        <!-- FORMULARIO DE PAGO -->
+        <section id="seccion-pago">
+            <h2>Detalles de Pago</h2>
+            <form class="formulario-pago" action="exito.html" method="GET">
+                <fieldset>
+                    <legend>Tarjeta de Crédito / Débito</legend>
 
-                <label>Número de tarjeta:
-                    <input type="number" name="tarjeta" placeholder="1234 5678 9012 3456" required>
-                </label>
+                    <label>Nombre en la tarjeta:
+                        <input type="text" name="titular" required>
+                    </label>
 
-                <label>Mes de Vencimiento:
-                    <input type="date" name="vencimiento" required>
-                </label>
+                    <label>Número de tarjeta:
+                        <input type="number" name="tarjeta" placeholder="1234 5678 9012 3456" required>
+                    </label>
 
-                <label>Código CVV:
-                    <input type="password" name="cvv" maxlength="3" required placeholder="123">
-                </label>
-            </fieldset>
+                    <label>Mes de Vencimiento:
+                        <input type="date" name="vencimiento" required>
+                    </label>
 
-            <div>
-                <input type="submit" value="Confirmar Pago de $129.98">
-            </div>
-        </form>
+                    <label>Código CVV:
+                        <input type="password" name="cvv" maxlength="3" required placeholder="123">
+                    </label>
+                </fieldset>
+
+                <p class="nota-seguridad">Tu información está cifrada y protegida. Nunca almacenamos datos de tarjeta.</p>
+
+                <div class="div-confirmar">
+                    <input class="btn-confirmar-pago" type="submit" value="Confirmar Pago de $129.98">
+                </div>
+            </form>
+        </section>
+
     </main>
 
     <footer>
         <p>Matador House</p>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matador House - Inicio</title>
     <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/matador-icono.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -12,172 +15,186 @@
         <div>
             <h1>Matador House</h1>
         </div>
-        <nav> 
-            <a href="index.html">Inicio</a>
-            <a href="registro.html">Crear Cuenta</a>
-            <a href="login.html">Iniciar Sesión</a>
+        <nav>
+            <a href="index.html">Inicio <i class="fa-solid fa-house"></i></a>
+            <a href="registro.html">Crear Cuenta <i class="fa-solid fa-user"></i></a>
+            <a href="login.html">Iniciar Sesión <i class="fa-solid fa-sign-in"></i></a>
             <a href="nosotros.html">Conocenos</a>
             <a href="contacto.html">Contacto</a>
-            <a href="carrito.html">Mi Carrito</a>
+            <a href="carrito.html">Mi Carrito <i class="fa-solid fa-cart-shopping"></i></a>
         </nav>
     </header>
 
-    <section>
-        <div>
+    <!-- SECCIÓN HERO -->
+    <section id="hero">
+        <div class="hero-overlay">
             <h2>Marvel's Spider-Man 2</h2>
             <p>¡Ya disponible para PS5!</p>
-            <a href="carrito.html">Agregar al carrito</a>
+            <a class="btn-hero" href="carrito.html">Agregar al carrito</a>
         </div>
     </section>
 
     <main>
-        <section>
+
+        <!-- SECCIÓN JUEGOS DESTACADOS -->
+        <section id="juegos-destacados">
             <h2>Juegos Destacados</h2>
-            
-            <article>
+
+            <article class="tarjeta-juego">
                 <a title="Ghost of Tsushima" href="detalle-ghost.html">
                     <figure>
                         <img src="imagenes/ghost.jpg" alt="Ghost of Tsushima">
                         <figcaption>PS5</figcaption>
                     </figure>
                     <h3>Ghost of Tsushima</h3>
-                    <p>⭐⭐⭐⭐⭐ (487 reseñas)</p>
-                    <p>$69.99</p>
+                    <p class="resenas">⭐⭐⭐⭐⭐ (487 reseñas)</p>
+                    <p class="precio">$69.99</p>
                 </a>
             </article>
 
-            <article>
+            <article class="tarjeta-juego">
                 <a title="God of War Ragnarok" href="detalle-spiderman.html">
                     <figure>
                         <img src="imagenes/god-of-war.webp" alt="God of War Ragnarok">
                         <figcaption>PS5</figcaption>
                     </figure>
                     <h3>God of War Ragnarök</h3>
-                    <p>⭐⭐⭐⭐⭐ (623 reseñas)</p>
-                    <p>$59.99</p>
+                    <p class="resenas">⭐⭐⭐⭐⭐ (623 reseñas)</p>
+                    <p class="precio">$59.99</p>
                 </a>
             </article>
-            
-            <article>
+
+            <article class="tarjeta-juego">
                 <a title="Helldivers 2" href="detalle-helldivers.html">
                     <figure>
                         <img src="imagenes/helldivers.jpg" alt="Helldivers 2">
                         <figcaption>PS5</figcaption>
                     </figure>
                     <h3>Helldivers 2</h3>
-                    <p>⭐⭐⭐⭐ (392 reseñas)</p>
-                    <p>$39.99</p>
+                    <p class="resenas">⭐⭐⭐⭐ (392 reseñas)</p>
+                    <p class="precio">$39.99</p>
                 </a>
             </article>
 
-             <article>
+            <article class="tarjeta-juego">
                 <a title="The Last of Us Part I" href="detalle-helldivers.html">
                     <figure>
                         <img src="imagenes/last-of-us.webp" alt="The Last of Us Part I">
                         <figcaption>PS5</figcaption>
                     </figure>
                     <h3>The Last of Us Part I</h3>
-                    <p>⭐⭐⭐⭐⭐ (756 reseñas)</p>
-                    <p>$69.99</p>
+                    <p class="resenas">⭐⭐⭐⭐⭐ (756 reseñas)</p>
+                    <p class="precio">$69.99</p>
                 </a>
             </article>
 
-            <article>
+            <article class="tarjeta-juego">
                 <a title="Horizon Forbidden West" href="detalle-horizon.html">
                     <figure>
                         <img src="imagenes/horizon.webp" alt="Horizon Forbidden West">
                         <figcaption>PS4 / PS5</figcaption>
                     </figure>
                     <h3>Horizon Forbidden West</h3>
-                    <p>$49.99</p>
+                    <p class="precio">$49.99</p>
                 </a>
             </article>
 
-            <article>
+            <article class="tarjeta-juego">
                 <a title="Gran Turismo 7" href="#">
                     <figure>
                         <img src="imagenes/gran-turismo.jpg" alt="Gran Turismo 7">
                         <figcaption>PS5</figcaption>
                     </figure>
                     <h3>Gran Turismo 7</h3>
-                    <p>⭐⭐⭐⭐⭐ (834 reseñas)</p>
-                    <p>$69.99</p>
+                    <p class="resenas">⭐⭐⭐⭐⭐ (834 reseñas)</p>
+                    <p class="precio">$69.99</p>
                 </a>
             </article>
 
         </section>
 
-        <section>
+        <!-- SECCIÓN PLANES PS PLUS -->
+        <section id="planes-psplus">
             <h2>Planes PlayStation Plus</h2>
             <p>Elige el plan que mejor se adapte a ti y disfruta de lo mejor de PlayStation.</p>
-            
-            <article>
+
+            <article class="tarjeta-plan">
                 <h3>PlayStation Plus Essential</h3>
-                <p>$9.99 / mes</p>
+                <p class="precio-plan">$9.99 / mes</p>
                 <ul>
                     <li>Juegos gratis cada mes</li>
                     <li>Descuentos en tienda</li>
                     <li>Multijugador online</li>
                     <li>Almacenamiento en la nube</li>
                 </ul>
-                <a href="carrito.html">Suscribirse</a>
+                <a class="btn-plan" href="carrito.html">Suscribirse</a>
             </article>
 
-            <article>
+            <article class="tarjeta-plan">
                 <h3>PlayStation Plus Extra</h3>
-                <p>$14.99 / mes</p>
+                <p class="precio-plan">$14.99 / mes</p>
                 <ul>
                     <li>Todo de Essential</li>
                     <li>Catálogo de 400+ juegos PS4/PS5</li>
                     <li>Acceso a juegos clásicos</li>
                     <li>Pruebas de nuevos juegos</li>
                 </ul>
-                <a href="carrito.html">Suscribirse</a>
+                <a class="btn-plan" href="carrito.html">Suscribirse</a>
             </article>
 
-            <article>
+            <article class="tarjeta-plan destacado">
                 <h3>PlayStation Plus Premium</h3>
-                <p>$19.99 / mes</p>
+                <p class="precio-plan">$19.99 / mes</p>
                 <ul>
                     <li>Todo de Extra</li>
                     <li>Acceso a juegos retro clásicos</li>
                     <li>Streaming de juegos en la nube</li>
                     <li>Pruebas extendidas de juegos</li>
                 </ul>
-                <a href="carrito.html">Suscribirse</a>
+                <a class="btn-plan" href="carrito.html">Suscribirse</a>
             </article>
         </section>
 
-        <section>
+        <!-- SECCIÓN TRAILERS -->
+        <section id="trailers">
             <h2>Próximos Estrenos - Trailers</h2>
             <p>Descubre los trailers de los juegos más esperados para PS5.</p>
-            
-            <article>
+
+            <article class="tarjeta-video">
                 <h3>Final Fantasy VII Rebirth</h3>
                 <iframe src="https://www.youtube.com/embed/5ZXqcymx0CI" allowfullscreen></iframe>
             </article>
 
-            <article>
+            <article class="tarjeta-video">
                 <h3>Dragon Age: The Veilguard</h3>
                 <iframe src="https://www.youtube.com/embed/uJnWbKxaEvQ" allowfullscreen></iframe>
             </article>
 
-            <article>
+            <article class="tarjeta-video">
                 <h3>Star Wars Outlaws</h3>
                 <iframe src="https://www.youtube.com/embed/XNf5MdFw5cU" allowfullscreen></iframe>
             </article>
         </section>
 
-        <section>
+        <!-- SECCIÓN VIDEO PS PLUS -->
+        <section id="video-psplus">
             <h2>Descubre PS Plus</h2>
             <p>Sube de nivel tu experiencia PlayStation con nuestro catálogo de juegos.</p>
-            <iframe title="Descubre PS Plus" height="450" src="https://www.youtube.com/embed/bgqGdIoa52s" allowfullscreen></iframe>
+            <iframe title="Descubre PS Plus" src="https://www.youtube.com/embed/bgqGdIoa52s" allowfullscreen></iframe>
+            <p class="nota">Los precios mostrados corresponden a cuentas digitales para PS4/PS5. Válidos para Ecuador.</p>
         </section>
-        
+
     </main>
-    
+
     <aside>
-        <p>Casa | Usuario | Correo | Teléfono | Carrito | Corazón | Facebook | Instagram | Twitter | YouTube</p>
+        <i class="fa-solid fa-house"></i>
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-envelope"></i>
+        <i class="fa-solid fa-phone"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-heart"></i>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
     </aside>
 
     <footer>
@@ -188,5 +205,6 @@
         <a href="https://www.facebook.com/profile.php?id=61564327181298">Facebook</a>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

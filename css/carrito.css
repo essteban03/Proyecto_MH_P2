@@ -1,0 +1,183 @@
+/* ============================================================
+   BLOQUE 1: ENCABEZADO DE LA PÁGINA
+   Título y subtítulo del carrito.
+   ============================================================ */
+ 
+#titulo-carrito {
+    text-align: center;
+    margin-bottom: 30px;
+}
+ 
+#titulo-carrito h2 {
+    font-size: 28px;
+    color: #00439c;
+}
+ 
+#titulo-carrito p {
+    color: #888;
+    font-size: 15px;
+}
+ 
+/* ============================================================
+   BLOQUE 2: TABLA DE ARTÍCULOS EN EL CARRITO
+   Tabla resumen con fila de total destacada.
+   ============================================================ */
+ 
+#tabla-carrito {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+ 
+#tabla-carrito thead {
+    background-color: #00439c;
+    color: white;
+}
+ 
+#tabla-carrito th {
+    padding: 16px 20px;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+ 
+#tabla-carrito td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+    font-size: 15px;
+}
+ 
+#tabla-carrito tbody tr:hover {
+    background-color: #f5f8ff;
+}
+ 
+/* Fila de total */
+.fila-total td {
+    background-color: #f0f4ff;
+    font-weight: bold;
+    color: #00439c !important;
+    font-size: 16px !important;
+    border-top: 2px solid #c8d8ff;
+    border-bottom: none;
+}
+ 
+/* ============================================================
+   BLOQUE 3: FORMULARIO DE PAGO
+   Estilos específicos del formulario de tarjeta.
+   ============================================================ */
+ 
+#seccion-pago {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 35px 30px;
+    margin: 0 auto 40px auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+}
+ 
+#seccion-pago h2 {
+    font-size: 22px;
+    color: #00439c;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #eef0f5;
+}
+ 
+.formulario-pago fieldset {
+    border: 1px solid #d0dcff;
+    border-radius: 14px;
+    padding: 28px;
+    margin-bottom: 24px;
+    background-color: #f7f9ff;
+}
+ 
+.formulario-pago legend {
+    font-weight: bold;
+    color: #00439c;
+    font-size: 15px;
+    padding: 0 12px;
+}
+ 
+.formulario-pago label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 16px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+ 
+.formulario-pago input[type="text"],
+.formulario-pago input[type="number"],
+.formulario-pago input[type="date"],
+.formulario-pago input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 6px;
+    border: 1.5px solid #c8d8ff;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    background-color: #ffffff;
+}
+ 
+.formulario-pago input:focus {
+    outline: none;
+    border-color: #00439c;
+    box-shadow: 0 0 0 3px rgba(0,67,156,0.1);
+}
+ 
+/* ============================================================
+   BLOQUE 4: BOTÓN DE CONFIRMACIÓN DE PAGO
+   Botón de acción principal de la página.
+   ============================================================ */
+ 
+.div-confirmar {
+    text-align: center;
+    margin-top: 10px;
+}
+ 
+.btn-confirmar-pago {
+    background-color: #d53900;
+    color: #ffffff;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    width: auto;
+}
+ 
+.btn-confirmar-pago:hover {
+    background-color: #b83000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(213,57,0,0.3);
+}
+ 
+/* ============================================================
+   BLOQUE 5: NOTA DE SEGURIDAD
+   Mensaje informativo con clase .nota-seguridad.
+   ============================================================ */
+ 
+.nota-seguridad {
+    background-color: #f0fff4;
+    border-left: 4px solid #4caf50;
+    padding: 12px 16px;
+    border-radius: 0 10px 10px 0;
+    font-size: 13px;
+    color: #3a7a3a;
+    margin-top: 16px;
+    text-align: left;
+}
+ 
+.nota-seguridad::before {
+    content: "🔒 ";
+}
