@@ -57,6 +57,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -113,15 +115,19 @@ footer {
 
 /* ============================================================
    BLOQUE 4: MENÚ DE NAVEGACIÓN
-   Estilos para nav, nav a y nav a:hover.
+   Uso de Flexbox para alinear y distribuir los enlaces del menú.
    ============================================================ */
 nav {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
 }
 nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     color: #555;
-    margin-right: 15px;
     font-weight: bold;
     padding-bottom: 5px;
     border-bottom: 2px solid transparent;
@@ -192,15 +198,13 @@ article p {
    ============================================================ */
 img {
     width: 150px;
-    border-radius: 8px;
-    display: block;
+    max-width: 100%;
     height: 180px;
+    border-radius: 8px;
     object-fit: cover;
     object-position: center;
-    margin:0 auto;
+    margin: 0 auto;
     display: block;
-
-
 }
 figure {
     margin: 0 0 15px 0;
@@ -405,10 +409,12 @@ footer a:hover {
     }
 
     header nav {
-        display: flex;
-        flex-direction: column; /* Apila los botones uno debajo de otro */
-        gap: 8px; /* Espacio reducido entre botones */
-        margin-top: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Dos columnas para enlaces */
+        gap: 5px;
+        margin-top: 6px;
+        width: 100%;
+        
     }
 
     header nav a {
@@ -418,6 +424,10 @@ footer a:hover {
         display: block;
         background: #f4f4f4; /* Fondo suave para distinguir los botones */
         border-radius: 5px;
+        text-align: center;
+        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+        overflow: hidden; /* Oculta cualquier desbordamiento de texto */
+        text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
     }
 
     /* 2. Tablas: Scroll horizontal optimizado */
@@ -431,5 +441,10 @@ footer a:hover {
     /* Asegurar que las celdas no se encojan demasiado */
     table th, table td {
         min-width: 120px; 
+    }
+
+    /* 3. Contenedor principal: reducir el padding lateral para aprovechar el espacio */
+    main {
+        padding: 25px 15px;
     }
 }

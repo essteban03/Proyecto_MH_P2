@@ -64,7 +64,7 @@
  
 /* ============================================================
    BLOQUE 2: SECCIÓN DE JUEGOS DESTACADOS
-   Tarjetas de juegos con clase .tarjeta-juego.
+   Tarjetas de juegos organizadas con Flexbox.
    ============================================================ */
  
 #juegos-destacados {
@@ -82,16 +82,24 @@
     font-size: 26px;
     color: #00439c;
 }
+
+/* Contenedor con Flexbox: distribuye las tarjetas de juegos en filas,
+   permite que pasen a la siguiente línea (flex-wrap) y las centra. */
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+}
  
 .tarjeta-juego {
-    display: inline-block;
     background-color: #ffffff;
-    width: 220px;
+    flex: 1 1 220px;
+    max-width: 220px;
+    box-sizing: border-box;
     padding: 18px;
     border-radius: 16px;
-    margin: 12px;
     text-align: left;
-    vertical-align: top;
     border: 1px solid #e8e8e8;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
@@ -137,7 +145,7 @@
  
 /* ============================================================
    BLOQUE 3: SECCIÓN DE PLANES PS PLUS
-   Tarjetas de suscripción con clase .tarjeta-plan.
+   Catálogo de planes organizado con Grid.
    ============================================================ */
  
 #planes-psplus {
@@ -157,16 +165,22 @@
     color: #666;
     margin-bottom: 25px;
 }
+
+/* Contenedor con Grid: 3 columnas iguales (1fr 1fr 1fr) y espacio
+   uniforme entre las tarjetas mediante gap. */
+.catalogo-planes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: left;
+}
  
 .tarjeta-plan {
-    display: inline-block;
     background-color: #ffffff;
-    width: 240px;
     padding: 28px 22px;
     border-radius: 18px;
-    margin: 12px;
-    text-align: left;
-    vertical-align: top;
+    box-sizing: border-box;
+    height: 100%;
     border: 2px solid #e0e8ff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -214,30 +228,19 @@
 }
  
 /* Plan destacado (Premium) */
-.tarjeta-plan.destacado {
+/* esta clase se agrega a la tarjeta de plan destacado. */
+
+.tarjeta-plan.destacado { 
     border-color: #00439c;
     background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 100%);
-    position: relative;
+    position: relative; 
 }
  
-.tarjeta-plan.destacado::before {
-    content: "⭐ Más popular";
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #d53900;
-    color: white;
-    font-size: 11px;
-    font-weight: bold;
-    padding: 4px 14px;
-    border-radius: 12px;
-    white-space: nowrap;
-}
+
  
 /* ============================================================
    BLOQUE 4: SECCIÓN DE TRAILERS / MULTIMEDIA
-   Estilos para las tarjetas de video con clase .tarjeta-video.
+   Tarjetas de video organizadas con Flexbox.
    ============================================================ */
  
 #trailers {
@@ -257,16 +260,23 @@
     color: #aab4cc;
     margin-bottom: 25px;
 }
+
+/* Contenedor con Flexbox para las tarjetas de trailers */
+.contenedor-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
  
 .tarjeta-video {
-    display: inline-block;
     background-color: #252542;
-    width: 260px;
+    flex: 1 1 260px;
+    max-width: 260px;
+    box-sizing: border-box;
     padding: 18px;
     border-radius: 14px;
-    margin: 12px;
     text-align: left;
-    vertical-align: top;
     border: 1px solid #363660;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -333,4 +343,33 @@
     font-size: 13px;
     color: #555;
     margin-top: 10px;
+}
+
+/* ============================================================
+   BLOQUE 7: RESPONSIVIDAD - PÁGINA DE INICIO
+   Ajustes del catálogo Grid y del hero en pantallas medianas/pequeñas.
+   ============================================================ */
+
+@media (max-width: 900px) {
+    .catalogo-planes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .catalogo-planes {
+        grid-template-columns: 1fr;
+    }
+
+    #hero {
+        height: 420px;
+    }
+
+    #hero h2 {
+        font-size: 34px;
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
 }
