@@ -48,20 +48,10 @@ a:hover {
 
 /* ============================================================
    BLOQUE 3: ELEMENTOS SEMÁNTICOS PRINCIPALES
-   Estilos para header, nav, main, section, article, aside y footer.
+   Estilos para header, main, section, article, aside y footer.
    ============================================================ */
 header {
     background-color: #ffffff;
-    padding: 15px 40px;
-    border-bottom: 1px solid #e0e0e0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 main {
     padding: 40px;
@@ -108,82 +98,50 @@ footer {
     color: white;
     text-align: center;
     padding: 40px 20px;
-    padding-top: 10px;  /* Agrega un poco de espacio entre el contenido del pie de página y el borde superior */
-    padding-bottom: 10px;  /* Reduce el espacio inferior para que el pie de página no sea tan alto */
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 /* ============================================================
-   BLOQUE 4: MENÚ DE NAVEGACIÓN
-   Uso de Flexbox para alinear y distribuir los enlaces del menú.
+   BLOQUE 4: NAVBAR DE BOOTSTRAP (PERSONALIZACIÓN)
+   El menú de navegación usa el componente Navbar de Bootstrap.
+   Aquí solo se ajustan colores y tipografía a la identidad
+   visual de Matador House (azul #00439c / rojo #d53900).
    ============================================================ */
-nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 18px;
+.navbar {
+    padding: 14px 30px;
 }
-nav a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+.navbar-brand {
+    font-weight: bold;
+    font-size: 22px;
+    color: #00439c !important;
+    letter-spacing: -1px;
+}
+.navbar .nav-link {
     color: #555;
     font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
-nav a:hover {
+.navbar .nav-link:hover {
     color: #00439c;
-    border-bottom: 2px solid #00439c;
+    background-color: #f0f4ff;
+}
+.navbar .nav-link.active {
+    color: #ffffff !important;
+    background-color: #00439c;
+}
+.navbar-toggler {
+    border: none;
+    box-shadow: none !important;
 }
 
 /* ============================================================
    BLOQUE 5: CONTENIDO Y SECCIONES
-   Estilos para main, section, article y aside.
+   Estilos generales para títulos dentro de secciones y tarjetas.
    ============================================================ */
-body > section {
-    background-color: #1f1f1f;
-    background-image: url('../imagenes/spiderman-hero.png');
-    background-size: cover;
-    background-position: center top;
-    height: 500px;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-    border-radius: 0;
-    max-width: 100%;
-}
-body > section div {
-    background-color: rgba(0, 0, 0, 0.6);
-    height: 100%;
-    padding-top: 180px;
-}
-body > section h2 {
-    font-size: 50px;
-    color: white;
-    text-shadow: 2px 2px 5px black;
-    margin-bottom: 10px;
-}
-body > section p {
-    font-size: 22px;
-    color: white;
-    text-shadow: 1px 1px 3px black;
-}
-body > section a {
-    background-color: #d53900;
-    color: white;
-    padding: 15px 40px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 18px;
-    display: inline-block;
-    margin-top: 20px;
-}
-body > section a:hover {
-    background-color: #ff9800;
-    color: white;
-    border: none;
-}
 main section h2 {
     margin-bottom: 25px;
 }
@@ -243,13 +201,11 @@ audio {
    BLOQUE 7: LISTAS
    Estilos para ul, ol y li.
    ============================================================ */
-ul, ol { /* Estilos para listas no numeradas y numeradas */
+ul, ol {
     margin: 0 0 20px 0;
     padding-left: 20px;
     color: #666;
     line-height: 1.5;
-    /*centrar los puntos de las listas*/
-    
 }
 li {
     margin-bottom: 8px;
@@ -362,11 +318,8 @@ progress, meter {
     accent-color: #ff0000;
     background-color: #e0e0e0;
     border-radius: 10px;
-    margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
-
-
-
 
 /* ============================================================
    BLOQUE 10: PIE DE PÁGINA
@@ -396,54 +349,27 @@ footer a:hover {
     border-bottom: 1px solid white;
 }
 
-
 /* ============================================================
-   RESPONSIVIDAD AVANZADA (Actualización para general.css)
+   RESPONSIVIDAD AVANZADA (general.css)
+   El menú ahora lo resuelve el Navbar de Bootstrap (botón
+   hamburguesa automático), así que solo quedan ajustes de
+   tablas y del contenedor principal para pantallas pequeñas.
    ============================================================ */
 
 @media (max-width: 768px) {
-    /* 1. Menú de navegación: Convertir en una lista vertical compacta */
-    header {
-        text-align: center;
-        padding: 15px;
-    }
-
-    header nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Dos columnas para enlaces */
-        gap: 5px;
-        margin-top: 6px;
-        width: 100%;
-        
-    }
-
-    header nav a {
-        font-size: 14px; /* Texto un poco más pequeño en móviles */
-        padding: 8px;
-        width: 100%;
-        display: block;
-        background: #f4f4f4; /* Fondo suave para distinguir los botones */
-        border-radius: 5px;
-        text-align: center;
-        white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-        overflow: hidden; /* Oculta cualquier desbordamiento de texto */
-        text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
-    }
-
-    /* 2. Tablas: Scroll horizontal optimizado */
+    /* Tablas: scroll horizontal optimizado */
     table {
         width: 100%;
-        display: block; /* Obliga a la tabla a comportarse como bloque */
-        overflow-x: auto; /* Permite deslizar solo la tabla, no toda la web */
-        -webkit-overflow-scrolling: touch; /* Scroll suave en iPhone/Android */
-    }
-    
-    /* Asegurar que las celdas no se encojan demasiado */
-    table th, table td {
-        min-width: 120px; 
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* 3. Contenedor principal: reducir el padding lateral para aprovechar el espacio */
+    table th, table td {
+        min-width: 120px;
+    }
+
+    /* Contenedor principal: reducir el padding lateral */
     main {
         padding: 25px 15px;
     }

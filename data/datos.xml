@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<juegos>
+
+    <juego>
+        <id>1</id>
+        <nombre>Ghost of Tsushima</nombre>
+        <descripcion>Encarna a Jin Sakai, samurái convertido en el legendario Fantasma, en su lucha para liberar la isla de Tsushima de la invasión mongola.</descripcion>
+        <precio>69.99</precio>
+        <plataforma>PS5</plataforma>
+        <calificacion>5</calificacion>
+        <resenas>487</resenas>
+        <etiqueta></etiqueta>
+        <imagen>imagenes/ghost.jpg</imagen>
+    </juego>
+
+    <juego>
+        <id>2</id>
+        <nombre>God of War Ragnarök</nombre>
+        <descripcion>Kratos y Atreus se embarcan en un viaje a través de los nueve reinos para enfrentar el Ragnarök y a las fuerzas de Asgard.</descripcion>
+        <precio>59.99</precio>
+        <plataforma>PS5</plataforma>
+        <calificacion>5</calificacion>
+        <resenas>623</resenas>
+        <etiqueta></etiqueta>
+        <imagen>imagenes/god-of-war.webp</imagen>
+    </juego>
+
+    <juego>
+        <id>3</id>
+        <nombre>Helldivers 2</nombre>
+        <descripcion>Únete a la Súper Tierra en una guerra cooperativa contra hordas alienígenas. Acción táctica para hasta 4 jugadores en línea.</descripcion>
+        <precio>39.99</precio>
+        <plataforma>PS5</plataforma>
+        <calificacion>4</calificacion>
+        <resenas>392</resenas>
+        <etiqueta>Nuevo</etiqueta>
+        <imagen>imagenes/helldivers.jpg</imagen>
+    </juego>
+
+    <juego>
+        <id>4</id>
+        <nombre>The Last of Us Part I</nombre>
+        <descripcion>La aclamada historia de Joel y Ellie, remasterizada con gráficos de nueva generación y mejoras de jugabilidad para PS5.</descripcion>
+        <precio>69.99</precio>
+        <plataforma>PS5</plataforma>
+        <calificacion>5</calificacion>
+        <resenas>756</resenas>
+        <etiqueta></etiqueta>
+        <imagen>imagenes/last-of-us.webp</imagen>
+    </juego>
+
+    <juego>
+        <id>5</id>
+        <nombre>Horizon Forbidden West</nombre>
+        <descripcion>Aloy explora una América post-apocalíptica llena de máquinas, enfrentando nuevas amenazas y misterios ancestrales.</descripcion>
+        <precio>49.99</precio>
+        <plataforma>PS4 / PS5</plataforma>
+        <calificacion></calificacion>
+        <resenas></resenas>
+        <etiqueta></etiqueta>
+        <imagen>imagenes/horizon.webp</imagen>
+    </juego>
+
+    <juego>
+        <id>6</id>
+        <nombre>Gran Turismo 7</nombre>
+        <descripcion>El simulador de carreras definitivo, con cientos de autos, circuitos icónicos y la mejor experiencia de conducción en PS5.</descripcion>
+        <precio>69.99</precio>
+        <plataforma>PS5</plataforma>
+        <calificacion>5</calificacion>
+        <resenas>834</resenas>
+        <etiqueta>Más Vendido</etiqueta>
+        <imagen>imagenes/gran-turismo.jpg</imagen>
+    </juego>
+
+</juegos>

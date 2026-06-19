@@ -1,72 +1,114 @@
 /* ============================================================
-   BLOQUE 1: SECCIÓN HERO (PRESENTACIÓN PRINCIPAL)
-   Estilos para la sección heroína con imagen de fondo.
+   BLOQUE 1: CARRUSEL DE PROMOCIONES
+   Componente Carousel de Bootstrap, personalizado con la
+   identidad visual de Matador House. Reemplaza al antiguo
+   bloque #hero estático.
    ============================================================ */
- 
-#hero {
-    background-color: #1f1f1f;
-    background-image: url('../imagenes/spiderman-hero.png');
-    background-size: cover;
-    background-position: center top;
-    height: 520px;
-    text-align: center;
-    padding: 0;
+
+#carruselPromos {
     margin: 0;
-    border-radius: 0;
-    max-width: 100%;
-    position: relative;
 }
- 
-#hero .hero-overlay {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.75) 100%);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+
+#carruselPromos .carousel-item img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center top;
+    filter: brightness(0.55);
 }
- 
-#hero h2 {
-    font-size: 52px;
+
+#carruselPromos .carousel-caption {
+    bottom: 50%;
+    transform: translateY(50%);
+}
+
+#carruselPromos .carousel-caption h2 {
+    font-size: 44px;
     color: #ffffff;
     text-shadow: 2px 3px 8px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     letter-spacing: -1px;
 }
- 
-#hero p {
-    font-size: 20px;
+
+#carruselPromos .carousel-caption p {
+    font-size: 18px;
     color: #e0e0e0;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    margin-bottom: 0;
+    margin-bottom: 18px;
 }
- 
-#hero .btn-hero {
+
+.btn-promo {
     background-color: #d53900;
     color: #ffffff;
-    padding: 14px 42px;
+    padding: 12px 36px;
     border-radius: 30px;
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
+    border: none;
     display: inline-block;
-    margin-top: 22px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    border-bottom: none;
 }
- 
-#hero .btn-hero:hover {
+
+.btn-promo:hover {
     background-color: #ff6b1a;
     color: #ffffff;
     transform: translateY(-2px);
-    border-bottom: none;
 }
- 
+
+.carousel-indicators [data-bs-target] {
+    background-color: #ffffff;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,67,156,0.55);
+    border-radius: 50%;
+    padding: 18px;
+}
+
+@media (max-width: 600px) {
+    #carruselPromos .carousel-item img {
+        height: 280px;
+    }
+    #carruselPromos .carousel-caption h2 {
+        font-size: 24px;
+    }
+    #carruselPromos .carousel-caption p {
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .btn-promo {
+        padding: 8px 22px;
+        font-size: 14px;
+    }
+}
+
 /* ============================================================
-   BLOQUE 2: SECCIÓN DE JUEGOS DESTACADOS
+   BLOQUE 2: ALERTA PROMOCIONAL
+   Componente Alert de Bootstrap con estilo propio.
+   ============================================================ */
+
+.alert-promo {
+    background-color: #fff4e8;
+    border: 1px solid #ffd9a8;
+    color: #8a4b00;
+    border-radius: 14px;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.alert-promo strong {
+    color: #d53900;
+}
+
+/* ============================================================
+   BLOQUE 3: SECCIÓN DE JUEGOS DESTACADOS
    Tarjetas de juegos organizadas con Flexbox.
    ============================================================ */
- 
+
 #juegos-destacados {
     background-color: #ffffff;
     border-radius: 20px;
@@ -75,7 +117,7 @@
     box-shadow: 0 4px 16px rgba(0,0,0,0.06);
     text-align: left;
 }
- 
+
 #juegos-destacados h2 {
     text-align: center;
     margin-bottom: 30px;
@@ -91,7 +133,7 @@
     gap: 24px;
     justify-content: center;
 }
- 
+
 .tarjeta-juego {
     background-color: #ffffff;
     flex: 1 1 220px;
@@ -104,50 +146,144 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
 }
- 
+
 .tarjeta-juego:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 28px rgba(0,67,156,0.12);
     border-color: #c8d8ff;
 }
- 
+
 .tarjeta-juego a {
     text-decoration: none;
     color: inherit;
     display: block;
 }
- 
+
 .tarjeta-juego h3 {
     font-size: 15px;
     color: #1f1f1f;
     margin: 10px 0 6px 0;
 }
- 
+
 .tarjeta-juego .precio {
     font-size: 16px;
     font-weight: bold;
     color: #00439c;
     margin: 0;
 }
- 
+
 .tarjeta-juego .resenas {
     font-size: 12px;
     color: #888;
     margin: 0 0 4px 0;
 }
- 
+
 .tarjeta-juego img {
     width: 100%;
     height: 160px;
     border-radius: 10px;
     object-fit: cover;
 }
- 
+
 /* ============================================================
-   BLOQUE 3: SECCIÓN DE PLANES PS PLUS
+   BLOQUE 4: BADGES "NUEVO" Y "MÁS VENDIDO"
+   Componente Badge de Bootstrap aplicado sobre las tarjetas.
+   ============================================================ */
+
+.tarjeta-juego .badge {
+    font-size: 11px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+
+.badge-nuevo {
+    background-color: #d53900;
+}
+
+.badge-top {
+    background-color: #00439c;
+}
+
+/* ============================================================
+   BLOQUE 5: BOTÓN "VER DETALLES" Y MODAL DE CADA JUEGO
+   El botón abre el componente Modal de Bootstrap con
+   información ampliada del juego.
+   ============================================================ */
+
+.tarjeta-juego .btn-detalle {
+    width: 100%;
+    margin-top: 8px;
+    color: #00439c;
+    border: 1.5px solid #00439c;
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 7px 0;
+    font-size: 13px;
+    font-weight: bold;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.tarjeta-juego .btn-detalle:hover {
+    background-color: #00439c;
+    color: #ffffff;
+}
+
+.modal-content {
+    border-radius: 20px;
+    border: none;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eef0f5;
+}
+
+.modal-title {
+    color: #00439c;
+    font-weight: bold;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 16px;
+}
+
+.modal-footer {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-footer .precio-modal {
+    font-size: 18px;
+    font-weight: bold;
+    color: #00439c;
+}
+
+.btn-comprar-modal {
+    background-color: #00439c;
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 26px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-comprar-modal:hover {
+    background-color: #d53900;
+    color: #ffffff;
+}
+
+/* ============================================================
+   BLOQUE 6: SECCIÓN DE PLANES PS PLUS
    Catálogo de planes organizado con Grid.
    ============================================================ */
- 
+
 #planes-psplus {
     background-color: #f0f4ff;
     border-radius: 20px;
@@ -155,12 +291,12 @@
     margin: 40px auto;
     text-align: center;
 }
- 
+
 #planes-psplus h2 {
     margin-bottom: 8px;
     color: #00439c;
 }
- 
+
 #planes-psplus > p {
     color: #666;
     margin-bottom: 25px;
@@ -174,7 +310,7 @@
     gap: 24px;
     text-align: left;
 }
- 
+
 .tarjeta-plan {
     background-color: #ffffff;
     padding: 28px 22px;
@@ -184,32 +320,32 @@
     border: 2px solid #e0e8ff;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
- 
+
 .tarjeta-plan:hover {
     border-color: #00439c;
     box-shadow: 0 8px 24px rgba(0,67,156,0.1);
 }
- 
+
 .tarjeta-plan h3 {
     font-size: 16px;
     color: #00439c;
     margin-bottom: 6px;
 }
- 
+
 .tarjeta-plan .precio-plan {
     font-size: 22px;
     font-weight: bold;
     color: #d53900;
     margin-bottom: 14px;
 }
- 
+
 .tarjeta-plan ul {
     font-size: 13px;
     color: #555;
     padding-left: 18px;
     margin-bottom: 18px;
 }
- 
+
 .tarjeta-plan .btn-plan {
     display: inline-block;
     background-color: #00439c;
@@ -220,29 +356,25 @@
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
- 
+
 .tarjeta-plan .btn-plan:hover {
     background-color: #d53900;
     color: #ffffff;
     border-bottom: none;
 }
- 
-/* Plan destacado (Premium) */
-/* esta clase se agrega a la tarjeta de plan destacado. */
 
-.tarjeta-plan.destacado { 
+/* Plan destacado (Premium) */
+.tarjeta-plan.destacado {
     border-color: #00439c;
     background: linear-gradient(135deg, #f7f9ff 0%, #eef3ff 100%);
-    position: relative; 
+    position: relative;
 }
- 
 
- 
 /* ============================================================
-   BLOQUE 4: SECCIÓN DE TRAILERS / MULTIMEDIA
+   BLOQUE 7: SECCIÓN DE TRAILERS / MULTIMEDIA
    Tarjetas de video organizadas con Flexbox.
    ============================================================ */
- 
+
 #trailers {
     background-color: #1a1a2e;
     border-radius: 20px;
@@ -250,12 +382,12 @@
     margin: 40px auto;
     text-align: center;
 }
- 
+
 #trailers h2 {
     color: #ffffff;
     margin-bottom: 8px;
 }
- 
+
 #trailers > p {
     color: #aab4cc;
     margin-bottom: 25px;
@@ -268,7 +400,7 @@
     gap: 20px;
     justify-content: center;
 }
- 
+
 .tarjeta-video {
     background-color: #252542;
     flex: 1 1 260px;
@@ -280,18 +412,18 @@
     border: 1px solid #363660;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
- 
+
 .tarjeta-video:hover {
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0,0,0,0.4);
 }
- 
+
 .tarjeta-video h3 {
     color: #e0e6ff;
     font-size: 15px;
     margin-bottom: 12px;
 }
- 
+
 .tarjeta-video iframe {
     border-radius: 10px;
     aspect-ratio: 16/9;
@@ -299,12 +431,12 @@
     max-width: none;
     margin-bottom: 0;
 }
- 
+
 /* ============================================================
-   BLOQUE 5: SECCIÓN VIDEO DESTACADO (PS PLUS)
+   BLOQUE 8: SECCIÓN VIDEO DESTACADO (PS PLUS)
    Iframe centrado y amplio.
    ============================================================ */
- 
+
 #video-psplus {
     background-color: #ffffff;
     border-radius: 20px;
@@ -312,29 +444,29 @@
     margin: 40px auto;
     text-align: center;
 }
- 
+
 #video-psplus h2 {
     margin-bottom: 10px;
     color: #00439c;
 }
- 
+
 #video-psplus p {
     color: #666;
     margin-bottom: 20px;
 }
- 
+
 #video-psplus iframe {
     aspect-ratio: 16/9;
     max-width: 800px;
     border-radius: 14px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
- 
+
 /* ============================================================
-   BLOQUE 6: NOTA INFORMATIVA
+   BLOQUE 9: NOTA INFORMATIVA
    Párrafo con clase .nota para aclaraciones especiales.
    ============================================================ */
- 
+
 .nota {
     background-color: #fff8e1;
     border-left: 4px solid #ff9800;
@@ -346,8 +478,8 @@
 }
 
 /* ============================================================
-   BLOQUE 7: RESPONSIVIDAD - PÁGINA DE INICIO
-   Ajustes del catálogo Grid y del hero en pantallas medianas/pequeñas.
+   BLOQUE 10: RESPONSIVIDAD - PÁGINA DE INICIO
+   Ajustes del catálogo Grid en pantallas medianas/pequeñas.
    ============================================================ */
 
 @media (max-width: 900px) {
@@ -359,17 +491,5 @@
 @media (max-width: 600px) {
     .catalogo-planes {
         grid-template-columns: 1fr;
-    }
-
-    #hero {
-        height: 420px;
-    }
-
-    #hero h2 {
-        font-size: 34px;
-    }
-
-    #hero p {
-        font-size: 16px;
     }
 }

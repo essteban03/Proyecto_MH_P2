@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "nombre": "Ghost of Tsushima",
+    "descripcion": "Encarna a Jin Sakai, samurái convertido en el legendario Fantasma, en su lucha para liberar la isla de Tsushima de la invasión mongola.",
+    "precio": 69.99,
+    "plataforma": "PS5",
+    "calificacion": 5,
+    "resenas": 487,
+    "etiqueta": "",
+    "imagen": "imagenes/ghost.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "God of War Ragnarök",
+    "descripcion": "Kratos y Atreus se embarcan en un viaje a través de los nueve reinos para enfrentar el Ragnarök y a las fuerzas de Asgard.",
+    "precio": 59.99,
+    "plataforma": "PS5",
+    "calificacion": 5,
+    "resenas": 623,
+    "etiqueta": "",
+    "imagen": "imagenes/god-of-war.webp"
+  },
+  {
+    "id": 3,
+    "nombre": "Helldivers 2",
+    "descripcion": "Únete a la Súper Tierra en una guerra cooperativa contra hordas alienígenas. Acción táctica para hasta 4 jugadores en línea.",
+    "precio": 39.99,
+    "plataforma": "PS5",
+    "calificacion": 4,
+    "resenas": 392,
+    "etiqueta": "Nuevo",
+    "imagen": "imagenes/helldivers.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "The Last of Us Part I",
+    "descripcion": "La aclamada historia de Joel y Ellie, remasterizada con gráficos de nueva generación y mejoras de jugabilidad para PS5.",
+    "precio": 69.99,
+    "plataforma": "PS5",
+    "calificacion": 5,
+    "resenas": 756,
+    "etiqueta": "",
+    "imagen": "imagenes/last-of-us.webp"
+  },
+  {
+    "id": 5,
+    "nombre": "Horizon Forbidden West",
+    "descripcion": "Aloy explora una América post-apocalíptica llena de máquinas, enfrentando nuevas amenazas y misterios ancestrales.",
+    "precio": 49.99,
+    "plataforma": "PS4 / PS5",
+    "calificacion": null,
+    "resenas": null,
+    "etiqueta": "",
+    "imagen": "imagenes/horizon.webp"
+  },
+  {
+    "id": 6,
+    "nombre": "Gran Turismo 7",
+    "descripcion": "El simulador de carreras definitivo, con cientos de autos, circuitos icónicos y la mejor experiencia de conducción en PS5.",
+    "precio": 69.99,
+    "plataforma": "PS5",
+    "calificacion": 5,
+    "resenas": 834,
+    "etiqueta": "Más Vendido",
+    "imagen": "imagenes/gran-turismo.jpg"
+  }
+]
