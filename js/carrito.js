@@ -1,18 +1,10 @@
-/* ============================================================
-   carrito.js — Lógica del carrito de compras
-   
-   Guarda, lee y actualiza el carrito en localStorage.
-   Renderiza la tabla dinámicamente y calcula el total.
-   ============================================================ */
-
-// ─── OBTENER EL CARRITO ACTUAL ────────────────────────────────────────────────
 function obtenerCarrito() {
-    return leer('carrito') || []; // Si no hay carrito guardado, devolvemos array vacío
+    return leer('carrito') || []; 
 }
 
-// ─── AGREGAR UN JUEGO AL CARRITO ──────────────────────────────────────────────
+
 function agregarAlCarrito(juegoId) {
-    // Leer los juegos desde localStorage (funciona en cualquier página)
+    
     const juegos = leer('juegos') || [];
     const juego = juegos.find(j => j.id === juegoId);
     if (!juego) return;
@@ -22,10 +14,10 @@ function agregarAlCarrito(juegoId) {
         return;
     }
 
-    // Obtener el carrito actual
+    
     const carrito = obtenerCarrito();
 
-    // Verificar si el juego ya está en el carrito
+    
     const yaExiste = carrito.some(item => item.id === juegoId);
     if (yaExiste) {
         Toastify({
@@ -38,7 +30,7 @@ function agregarAlCarrito(juegoId) {
         return;
     }
 
-    // Agregar el juego al carrito
+    
     carrito.push({
         id: juego.id,
         nombre: juego.nombre,
@@ -47,10 +39,10 @@ function agregarAlCarrito(juegoId) {
         imagen: juego.imagen
     });
 
-    // Guardar en localStorage
+    
     guardar('carrito', carrito);
 
-    // Actualizar el contador del carrito en el navbar
+    
     actualizarContadorCarrito();
 
     Toastify({
@@ -62,7 +54,7 @@ function agregarAlCarrito(juegoId) {
     }).showToast();
 }
 
-// ─── ACTUALIZAR EL CONTADOR DEL CARRITO EN EL NAVBAR ─────────────────────────
+
 function actualizarContadorCarrito() {
     const carrito = obtenerCarrito();
     const contadores = document.querySelectorAll('.contador-carrito');
@@ -72,7 +64,7 @@ function actualizarContadorCarrito() {
     });
 }
 
-// ─── RENDERIZAR LA TABLA DEL CARRITO ─────────────────────────────────────────
+
 function renderizarCarrito() {
     const tbody = document.getElementById('tbody-carrito');
     const seccionVacio = document.getElementById('carrito-vacio');
@@ -83,17 +75,17 @@ function renderizarCarrito() {
     const carrito = obtenerCarrito();
 
     if (carrito.length === 0) {
-        // Mostrar mensaje de carrito vacío
+        
         if (seccionVacio) seccionVacio.style.display = 'block';
         if (seccionTabla) seccionTabla.style.display = 'none';
         return;
     }
 
-    // Mostrar la tabla
+    
     if (seccionVacio) seccionVacio.style.display = 'none';
     if (seccionTabla) seccionTabla.style.display = 'block';
 
-    // Generar filas de la tabla
+    
     tbody.innerHTML = carrito.map(item => `
         <tr>
             <td>
@@ -112,17 +104,17 @@ function renderizarCarrito() {
             </td>
         </tr>`).join('');
 
-    // Calcular y mostrar el total
+    
     const total = carrito.reduce((suma, item) => suma + item.precio, 0);
     const spanTotal = document.getElementById('total-carrito');
     if (spanTotal) spanTotal.textContent = `$${total.toFixed(2)}`;
 
-    // Actualizar el botón de pago
+    
     const btnPago = document.getElementById('btn-confirmar-pago');
     if (btnPago) btnPago.textContent = `Confirmar Pago de $${total.toFixed(2)}`;
 }
 
-// ─── ELIMINAR UN ITEM DEL CARRITO ────────────────────────────────────────────
+
 function eliminarDelCarrito(id) {
     Swal.fire({
         title: '¿Quitar del carrito?',
@@ -134,11 +126,11 @@ function eliminarDelCarrito(id) {
         cancelButtonText: 'Cancelar'
     }).then(resultado => {
         if (resultado.isConfirmed) {
-            // Filtrar el array para quitar el item
+            
             const carrito = obtenerCarrito().filter(item => item.id !== id);
             guardar('carrito', carrito);
 
-            // Volver a renderizar
+            
             renderizarCarrito();
             actualizarContadorCarrito();
 
@@ -153,7 +145,7 @@ function eliminarDelCarrito(id) {
     });
 }
 
-// ─── VACIAR TODO EL CARRITO ───────────────────────────────────────────────────
+
 function vaciarCarrito() {
     Swal.fire({
         title: '¿Vaciar el carrito?',
@@ -173,7 +165,7 @@ function vaciarCarrito() {
     });
 }
 
-// ─── CONFIRMAR COMPRA ─────────────────────────────────────────────────────────
+
 function confirmarCompra(evento) {
     evento.preventDefault();
 
@@ -192,7 +184,7 @@ function confirmarCompra(evento) {
         confirmButtonColor: '#00439c',
         confirmButtonText: 'Volver a la tienda'
     }).then(() => {
-        // Vaciar el carrito después de comprar
+        
         guardar('carrito', []);
         actualizarContadorCarrito();
         window.location.href = 'index.html';

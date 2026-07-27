@@ -1,11 +1,3 @@
-/* ============================================================
-   clima.js — Widget del clima con Open-Meteo API
-   
-   Consulta el clima actual para ciudades de Ecuador.
-   Muestra temperatura, humedad, viento y condición.
-   ============================================================ */
-
-// Coordenadas de ciudades ecuatorianas
 const CIUDADES = [
     { nombre: 'Santo Domingo', latitud: -0.25, longitud: -79.15 },
     { nombre: 'Quito', latitud: -0.18, longitud: -78.47 },
@@ -13,7 +5,7 @@ const CIUDADES = [
     { nombre: 'Quevedo', latitud: -1.03, longitud: -79.46 }
 ];
 
-// Códigos WMO: traducción de código de clima a texto e ícono
+
 function interpretarClima(codigo) {
     if (codigo === 0) return { texto: 'Despejado', icono: '☀️' };
     if (codigo <= 3) return { texto: 'Parcialmente nublado', icono: '⛅' };
@@ -25,21 +17,21 @@ function interpretarClima(codigo) {
     return { texto: 'Desconocido', icono: '🌡️' };
 }
 
-// ─── CONSULTAR EL CLIMA DE UNA CIUDAD ────────────────────────────────────────
+
 async function consultarClima(indiceCiudad) {
     const ciudad = CIUDADES[indiceCiudad];
     const contenedor = document.getElementById('widget-clima');
 
     if (!contenedor || !ciudad) return;
 
-    // Mostrar indicador de carga mientras se consulta la API
+    
     contenedor.innerHTML = `
         <div class="clima-cargando">
             <i class="fa-solid fa-spinner fa-spin"></i>
             Consultando clima en ${ciudad.nombre}...
         </div>`;
 
-    // Marcar el botón activo
+    
     document.querySelectorAll('.btn-ciudad').forEach((btn, i) => {
         btn.classList.toggle('activo', i === indiceCiudad);
     });
@@ -56,10 +48,10 @@ async function consultarClima(indiceCiudad) {
         const datos = await respuesta.json();
         const actual = datos.current;
 
-        // Interpretar el código de clima
+        
         const condicion = interpretarClima(actual.weather_code);
 
-        // Mostrar los datos del clima en el HTML
+        
         contenedor.innerHTML = `
             <div class="clima-ciudad">
                 <h4>${condicion.icono} ${ciudad.nombre}, Ecuador</h4>
@@ -90,7 +82,7 @@ async function consultarClima(indiceCiudad) {
     } catch (error) {
         console.error('Error consultando clima:', error);
 
-        // Mostrar mensaje de error amigable
+        
         contenedor.innerHTML = `
             <div class="clima-error">
                 <i class="fa-solid fa-triangle-exclamation"></i>
@@ -99,12 +91,12 @@ async function consultarClima(indiceCiudad) {
     }
 }
 
-// ─── INICIALIZAR EL WIDGET DE CLIMA ──────────────────────────────────────────
+
 function inicializarClima() {
     const seccion = document.getElementById('seccion-clima');
     if (!seccion) return;
 
-    // Crear los botones de ciudades dinámicamente
+    
     const contenedorBotones = document.getElementById('botones-ciudades');
     if (contenedorBotones) {
         contenedorBotones.innerHTML = CIUDADES.map((ciudad, indice) => `
@@ -114,6 +106,6 @@ function inicializarClima() {
             </button>`).join('');
     }
 
-    // Cargar el clima de Santo Domingo por defecto
+    
     consultarClima(0);
 }

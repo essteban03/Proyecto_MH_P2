@@ -19,9 +19,7 @@
 
 <body>
 
-    <!-- ============================================================
-         NAVBAR
-         ============================================================ -->
+    
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
             <div class="container-fluid px-4">
@@ -56,9 +54,7 @@
         </nav>
     </header>
 
-    <!-- ============================================================
-         CARRUSEL DE PROMOCIONES
-         ============================================================ -->
+    
     <div id="carruselPromos" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="0" class="active"
@@ -104,20 +100,17 @@
 
     <main>
 
-        <!-- Alerta de promoción -->
+        
         <div class="alert alert-promo alert-dismissible fade show" role="alert">
             <i class="fa-solid fa-bolt"></i> <strong>¡Oferta de la semana!</strong>
             Hasta 20% de descuento en juegos seleccionados de PS5.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>
 
-        <!-- ============================================================
-             SECCIÓN JUEGOS DESTACADOS
-             Las tarjetas se generan dinámicamente con main.js
-             ============================================================ -->
+        
         <section id="juegos-destacados">
             <h2>Juegos Destacados</h2>
-            <!-- Este div lo llena main.js con cargarJuegosDestacados() -->
+            
             <div class="contenedor-tarjetas" id="contenedor-destacados">
                 <p class="cargando-juegos">
                     <i class="fa-solid fa-spinner fa-spin"></i> Cargando juegos...
@@ -130,24 +123,19 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             WIDGET DE CLIMA
-             Muestra el clima de ciudades ecuatorianas (Open-Meteo API)
-             ============================================================ -->
+        
         <section id="seccion-clima">
             <h2><i class="fa-solid fa-cloud-sun"></i> Clima en Ecuador</h2>
             <p style="color:rgba(255,255,255,0.8);">
                 ¿Hace frío o calor? Perfectos para quedarse en casa jugando.
             </p>
-            <!-- Botones de ciudades (los genera clima.js) -->
+            
             <div id="botones-ciudades"></div>
-            <!-- Aquí aparecen los datos del clima -->
+            
             <div id="widget-clima"></div>
         </section>
 
-        <!-- ============================================================
-             SECCIÓN PLANES PS PLUS
-             ============================================================ -->
+        
         <section id="planes-psplus">
             <h2>Planes PlayStation Plus</h2>
             <p>Elige el plan que mejor se adapte a ti y disfruta de lo mejor de PlayStation.</p>
@@ -188,9 +176,7 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             SECCIÓN TRAILERS
-             ============================================================ -->
+        
         <section id="trailers">
             <h2>Próximos Estrenos - Trailers</h2>
             <p>Descubre los trailers de los juegos más esperados para PS5.</p>
@@ -210,7 +196,7 @@
             </div>
         </section>
 
-        <!-- SECCIÓN VIDEO PS PLUS -->
+        
         <section id="video-psplus">
             <h2>Descubre PS Plus</h2>
             <p>Sube de nivel tu experiencia PlayStation con nuestro catálogo de juegos.</p>
@@ -221,7 +207,7 @@
 
     </main>
 
-    <!-- ASIDE con íconos de acceso rápido -->
+    
     <aside>
         <a href="index.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
         <a href="registro.html" title="Crear cuenta"><i class="fa-solid fa-user"></i></a>
@@ -242,7 +228,7 @@
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

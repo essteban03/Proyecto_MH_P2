@@ -1,44 +1,36 @@
-/* ============================================================
-   main.js — Inicialización de la página de inicio (index.html)
-   
-   Carga los juegos destacados dinámicamente y actualiza
-   el contador del carrito en el navbar.
-   ============================================================ */
-
-// ─── AL CARGAR LA PÁGINA ──────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
 
-    // Actualizar contador del carrito en el navbar
+    
     actualizarContadorCarrito();
 
-    // Cargar los 8 juegos destacados en la página principal
+    
     await cargarJuegosDestacados();
 
-    // Inicializar el widget del clima
+    
     inicializarClima();
 });
 
-// ─── CARGAR LOS JUEGOS DESTACADOS EN EL INDEX ────────────────────────────────
+
 async function cargarJuegosDestacados() {
     const contenedor = document.getElementById('contenedor-destacados');
     if (!contenedor) return;
 
-    // Mostrar mensaje de carga
+    
     contenedor.innerHTML = '<p class="cargando-juegos"><i class="fa-solid fa-spinner fa-spin"></i> Cargando juegos...</p>';
 
     const juegos = await cargarJuegos();
-    await cargarCategorias(); // También cargar categorías para tenerlas disponibles
+    await cargarCategorias(); 
 
-    // Tomamos solo los primeros 8 juegos para la sección destacada
+    
     const destacados = juegos.slice(0, 8);
 
-    // Si no hay juegos, mostrar mensaje
+    
     if (destacados.length === 0) {
         contenedor.innerHTML = '<p>No hay juegos disponibles en este momento.</p>';
         return;
     }
 
-    // Generar las tarjetas
+    
     contenedor.innerHTML = destacados.map(juego => `
         <article class="tarjeta-juego" 
                  onmouseenter="this.style.transform='translateY(-6px)'"
@@ -68,7 +60,7 @@ async function cargarJuegosDestacados() {
         </article>`).join('');
 }
 
-// ─── VER DETALLE DESDE EL INDEX (versión simplificada) ───────────────────────
+
 async function verDetalleIndex(id) {
     const juegos = leer('juegos') || [];
     const categorias = leer('categorias') || [];
@@ -101,7 +93,7 @@ async function verDetalleIndex(id) {
     });
 }
 
-// ─── AGREGAR AL CARRITO DESDE EL INDEX ────────────────────────────────────────
+
 function agregarAlCarritoIndex(juegoId) {
     const juegos = leer('juegos') || [];
     const juego = juegos.find(j => j.id === juegoId);

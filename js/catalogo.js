@@ -1,39 +1,34 @@
-/* ============================================================
-   catalogo.js — Lógica del catálogo de juegos
-   
-   Renderiza tarjetas, búsqueda en tiempo real, filtros,
-   ordenamiento y panel de indicadores.
-   ============================================================ */
 
-// Variables globales de esta página
-let todosLosJuegos = [];      // Todos los juegos cargados
-let todasLasCategorias = [];  // Todas las categorías cargadas
-let juegosFiltrados = [];     // Los juegos que se muestran actualmente
 
-// ─── FUNCIÓN PRINCIPAL: INICIALIZAR CATÁLOGO ─────────────────────────────────
+
+let todosLosJuegos = [];      
+let todasLasCategorias = [];  
+let juegosFiltrados = [];     
+
+
 async function inicializarCatalogo() {
     mostrarIndicadorCarga(true);
 
-    // Cargar datos desde localStorage o JSON
+    
     todosLosJuegos = await cargarJuegos();
     todasLasCategorias = await cargarCategorias();
 
-    // La lista inicial muestra todos los juegos
+    
     juegosFiltrados = [...todosLosJuegos];
 
-    // Llenar el filtro de categorías con los datos reales
+    
     llenarFiltrosCategoria();
 
-    // Mostrar los juegos en pantalla
+    
     renderizarTarjetas(juegosFiltrados);
 
-    // Actualizar el panel de indicadores
+    
     actualizarIndicadores(juegosFiltrados);
 
     mostrarIndicadorCarga(false);
 }
 
-// ─── MOSTRAR / OCULTAR INDICADOR DE CARGA ────────────────────────────────────
+
 function mostrarIndicadorCarga(mostrar) {
     const indicador = document.getElementById('indicador-carga');
     if (indicador) {
@@ -41,15 +36,15 @@ function mostrarIndicadorCarga(mostrar) {
     }
 }
 
-// ─── LLENAR EL FILTRO DE CATEGORÍAS CON OPCIONES DINÁMICAS ──────────────────
+
 function llenarFiltrosCategoria() {
     const select = document.getElementById('filtro-categoria');
     if (!select) return;
 
-    // Limpiar opciones previas (excepto "Todas")
+    
     select.innerHTML = '<option value="">Todas las categorías</option>';
 
-    // Agregar cada categoría del JSON
+    
     todasLasCategorias.forEach(cat => {
         const opcion = document.createElement('option');
         opcion.value = cat.id;
@@ -58,12 +53,12 @@ function llenarFiltrosCategoria() {
     });
 }
 
-// ─── RENDERIZAR TARJETAS DE JUEGOS ───────────────────────────────────────────
+
 function renderizarTarjetas(listaJuegos) {
     const contenedor = document.getElementById('contenedor-juegos');
     if (!contenedor) return;
 
-    // Si no hay juegos que mostrar, mostramos mensaje
+    
     if (listaJuegos.length === 0) {
         contenedor.innerHTML = `
             <div class="sin-resultados">
@@ -73,27 +68,27 @@ function renderizarTarjetas(listaJuegos) {
         return;
     }
 
-    // Generar el HTML de cada tarjeta
+    
     contenedor.innerHTML = listaJuegos.map(juego => crearTarjetaHTML(juego)).join('');
 }
 
-// ─── CREAR HTML DE UNA TARJETA ───────────────────────────────────────────────
+
 function crearTarjetaHTML(juego) {
-    // Buscar el nombre de la categoría usando el categoriaId del juego
+    
     const categoria = todasLasCategorias.find(cat => cat.id === juego.categoriaId);
     const nombreCategoria = categoria ? categoria.nombre : 'Sin categoría';
 
-    // Crear las estrellas de calificación
+    
     const estrellas = juego.calificacion
         ? '⭐'.repeat(juego.calificacion)
         : 'Sin calificación';
 
-    // Badge (etiqueta): solo se muestra si el juego tiene una
+    
     const badge = juego.etiqueta
         ? `<span class="badge-juego">${juego.etiqueta}</span>`
         : '';
 
-    // Estado del juego para el estilo
+    
     const claseEstado = `estado-${juego.estado}`;
 
     return `
@@ -139,7 +134,7 @@ function crearTarjetaHTML(juego) {
         </article>`;
 }
 
-// ─── VER DETALLES DE UN JUEGO (SWEETALERT2) ──────────────────────────────────
+
 function verDetalle(id) {
     const juego = todosLosJuegos.find(j => j.id === id);
     if (!juego) return;
@@ -178,18 +173,18 @@ function verDetalle(id) {
     });
 }
 
-// ─── BUSCAR EN TIEMPO REAL (evento input) ────────────────────────────────────
+
 function buscarJuegos(textoBusqueda) {
     const texto = textoBusqueda.toLowerCase().trim();
 
-    // Aplicamos búsqueda sobre los juegos ya filtrados por categoría/plataforma
+    
     const resultado = aplicarFiltros(texto);
 
     renderizarTarjetas(resultado);
     actualizarIndicadores(resultado);
 }
 
-// ─── APLICAR TODOS LOS FILTROS Y BÚSQUEDA JUNTOS ─────────────────────────────
+
 function aplicarFiltros(textoBusqueda = '') {
     const filtroCategoria = document.getElementById('filtro-categoria')?.value || '';
     const filtroPlataforma = document.getElementById('filtro-plataforma')?.value || '';
@@ -197,7 +192,7 @@ function aplicarFiltros(textoBusqueda = '') {
 
     let resultado = [...todosLosJuegos];
 
-    // Filtrar por texto de búsqueda (nombre o descripción)
+    
     if (textoBusqueda) {
         resultado = resultado.filter(juego =>
             juego.nombre.toLowerCase().includes(textoBusqueda) ||
@@ -205,17 +200,17 @@ function aplicarFiltros(textoBusqueda = '') {
         );
     }
 
-    // Filtrar por categoría
+    
     if (filtroCategoria) {
         resultado = resultado.filter(juego => juego.categoriaId === parseInt(filtroCategoria));
     }
 
-    // Filtrar por plataforma
+    
     if (filtroPlataforma) {
         resultado = resultado.filter(juego => juego.plataforma.includes(filtroPlataforma));
     }
 
-    // Filtrar por estado
+    
     if (filtroEstado) {
         resultado = resultado.filter(juego => juego.estado === filtroEstado);
     }
@@ -223,12 +218,12 @@ function aplicarFiltros(textoBusqueda = '') {
     return resultado;
 }
 
-// ─── ORDENAR JUEGOS ───────────────────────────────────────────────────────────
+
 function ordenarJuegos(criterio) {
     const textoBusqueda = document.getElementById('buscador')?.value || '';
     let lista = aplicarFiltros(textoBusqueda.toLowerCase().trim());
 
-    // Ordenar según el criterio elegido
+    
     switch (criterio) {
         case 'precio-asc':
             lista.sort((a, b) => a.precio - b.precio);
@@ -254,17 +249,17 @@ function ordenarJuegos(criterio) {
     actualizarIndicadores(lista);
 }
 
-// ─── ACTUALIZAR PANEL DE INDICADORES ─────────────────────────────────────────
+
 function actualizarIndicadores(lista) {
     const total = lista.length;
 
-    // Calcular promedio de precio (solo juegos con precio > 0)
+    
     const conPrecio = lista.filter(j => j.precio > 0);
     const promedio = conPrecio.length > 0
         ? conPrecio.reduce((sum, j) => sum + j.precio, 0) / conPrecio.length
         : 0;
 
-    // Encontrar el más caro y el más barato
+    
     const masCaro = conPrecio.length > 0
         ? conPrecio.reduce((max, j) => j.precio > max.precio ? j : max)
         : null;
@@ -272,10 +267,10 @@ function actualizarIndicadores(lista) {
         ? conPrecio.reduce((min, j) => j.precio < min.precio ? j : min)
         : null;
 
-    // Contar disponibles
+    
     const disponibles = lista.filter(j => j.estado === 'disponible').length;
 
-    // Mostrar en el HTML
+    
     const setTexto = (id, texto) => {
         const el = document.getElementById(id);
         if (el) el.textContent = texto;

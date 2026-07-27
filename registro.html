@@ -59,13 +59,10 @@
             <p>Únete a Matador House para gestionar tus compras y acceder a ofertas exclusivas.</p>
         </div>
 
-        <!-- =====================================================
-             FORMULARIO DE REGISTRO
-             La validación y el envío los maneja registro.js
-             ===================================================== -->
+        
         <form class="formulario-registro" id="form-registro" onsubmit="procesarRegistro(event)">
 
-            <!-- DATOS PERSONALES -->
+            
             <fieldset id="datos-personales">
                 <legend>Tus Datos Personales</legend>
 
@@ -99,7 +96,7 @@
                 </label>
             </fieldset>
 
-            <!-- PREFERENCIAS DE CONSOLA -->
+            
             <fieldset id="preferencias-consola">
                 <legend>Preferencias de Consola</legend>
                 <p>¿Qué consola utilizas principalmente?</p>
@@ -115,29 +112,29 @@
                 </label>
             </fieldset>
 
-            <!-- SELECTOR DE NACIONALIDAD (API de países) -->
+            
             <fieldset id="seccion-nacionalidad">
                 <legend>Nacionalidad</legend>
                 <p>Selecciona tu país de origen.</p>
 
-                <!-- Campo de búsqueda de países -->
+                
                 <label>Buscar tu país:
                     <div class="contenedor-pais">
                         <input type="text" id="buscar-pais" placeholder="Cargando países..."
                             oninput="filtrarPaises(this.value)"
                             onfocus="document.getElementById('lista-paises').style.display='block'" autocomplete="off">
 
-                        <!-- Lista desplegable con los países (la llena registro.js) -->
+                        
                         <ul id="lista-paises"></ul>
                     </div>
                 </label>
 
-                <!-- Campos ocultos que guardan el valor seleccionado -->
+                
                 <input type="hidden" id="pais-seleccionado" name="nacionalidad">
                 <input type="hidden" id="bandera-seleccionada" name="bandera">
             </fieldset>
 
-            <!-- TÉRMINOS Y CONDICIONES -->
+            
             <fieldset id="terminos-condiciones">
                 <legend>Términos y Condiciones</legend>
 
@@ -152,7 +149,7 @@
                 </label>
             </fieldset>
 
-            <!-- BOTONES -->
+            
             <div class="div-botones-registro">
                 <button class="btn-registrar" type="submit">
                     <i class="fa-solid fa-user-plus"></i> Completar Registro
@@ -171,7 +168,7 @@
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

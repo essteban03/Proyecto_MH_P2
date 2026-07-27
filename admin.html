@@ -60,9 +60,7 @@
             <p>Gestiona el inventario de juegos y visualiza estadísticas.</p>
         </div>
 
-        <!-- =====================================================
-             SECCIÓN 1: PANEL DE INDICADORES RÁPIDOS
-             ===================================================== -->
+        
         <section id="seccion-indicadores">
             <h2>Resumen del Catálogo</h2>
             <div class="panel-indicadores">
@@ -89,11 +87,7 @@
             </div>
         </section>
 
-        <!-- =====================================================
-             SECCIÓN 2: GRÁFICOS (Chart.js)
-             Los canvas son los contenedores de los gráficos.
-             JavaScript los llena al inicializar.
-             ===================================================== -->
+        
         <section id="seccion-graficos">
             <h2>Estadísticas Visuales</h2>
             <div class="contenedor-graficos">
@@ -109,9 +103,7 @@
             </div>
         </section>
 
-        <!-- =====================================================
-             SECCIÓN 3: TABLA DE JUEGOS (con editar / eliminar)
-             ===================================================== -->
+        
         <section id="seccion-tabla">
             <h2>Todos los Juegos</h2>
             <div class="acciones-principales" style="margin-bottom:15px;">
@@ -123,7 +115,7 @@
                 </button>
             </div>
 
-            <!-- La tabla se genera con JavaScript -->
+            
             <div style="overflow-x:auto;">
                 <table class="tabla-admin" id="tabla-admin">
                     <thead>
@@ -138,15 +130,13 @@
                         </tr>
                     </thead>
                     <tbody id="tbody-admin">
-                        <!-- JS llena este tbody -->
+                        
                     </tbody>
                 </table>
             </div>
         </section>
 
-        <!-- =====================================================
-             SECCIÓN 4: LISTA DE USUARIOS
-             ===================================================== -->
+        
         <section id="seccion-usuarios">
             <h2>Usuarios Registrados</h2>
             <div style="overflow-x:auto;">
@@ -162,7 +152,7 @@
                         </tr>
                     </thead>
                     <tbody id="tbody-usuarios">
-                        <!-- JS llena este tbody -->
+                        
                     </tbody>
                 </table>
             </div>
@@ -170,7 +160,7 @@
 
     </main>
 
-    <!-- MODAL EDITAR JUEGO (reutiliza el mismo de catalogo.js) -->
+    
     <div class="modal-fondo" id="modal-formulario">
         <div class="modal-caja">
             <h3 id="titulo-modal-form">Editar Juego</h3>
@@ -223,11 +213,11 @@
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Scripts -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <!-- Chart.js -->
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script src="js/storage.js"></script>

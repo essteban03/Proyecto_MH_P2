@@ -1,14 +1,6 @@
-/* ============================================================
-   registro.js — Formulario de registro con API de países
-   
-   Carga los países desde countries.dev, permite buscar
-   con filtro en tiempo real, y valida el formulario completo.
-   ============================================================ */
-
-// Guardamos los países una vez cargados para poder filtrarlos
 let todosPaises = [];
 
-// ─── CARGAR PAÍSES DESDE LA API ──────────────────────────────────────────────
+
 async function cargarPaises() {
     const lista = document.getElementById('lista-paises');
     const inputBusqueda = document.getElementById('buscar-pais');
@@ -16,7 +8,7 @@ async function cargarPaises() {
     if (!lista) return;
 
     try {
-        // Mostrar indicador de carga en el input
+        
         if (inputBusqueda) inputBusqueda.placeholder = 'Cargando países...';
 
         const respuesta = await fetch('https://countries.dev/api/countries');
@@ -27,7 +19,7 @@ async function cargarPaises() {
 
         todosPaises = await respuesta.json();
 
-        // Mostrar todos los países inicialmente
+        
         mostrarPaises(todosPaises);
 
         if (inputBusqueda) inputBusqueda.placeholder = 'Buscar país...';
@@ -41,7 +33,7 @@ async function cargarPaises() {
     }
 }
 
-// ─── MOSTRAR LISTA DE PAÍSES ─────────────────────────────────────────────────
+
 function mostrarPaises(paises) {
     const lista = document.getElementById('lista-paises');
     if (!lista) return;
@@ -51,7 +43,7 @@ function mostrarPaises(paises) {
         return;
     }
 
-    // Mostrar solo los primeros 50 para no saturar el DOM
+    
     const aMostrar = paises.slice(0, 50);
 
     lista.innerHTML = aMostrar.map(pais => `
@@ -61,12 +53,12 @@ function mostrarPaises(paises) {
         </li>`).join('');
 }
 
-// ─── FILTRAR PAÍSES MIENTRAS EL USUARIO ESCRIBE ──────────────────────────────
+
 function filtrarPaises(texto) {
     const lista = document.getElementById('lista-paises');
     if (!lista) return;
 
-    // Mostrar/ocultar la lista desplegable
+    
     lista.style.display = 'block';
 
     if (!texto) {
@@ -76,7 +68,7 @@ function filtrarPaises(texto) {
 
     const textoMinusculas = texto.toLowerCase();
 
-    // Filtrar los países cuyo nombre contiene el texto buscado
+    
     const resultado = todosPaises.filter(pais =>
         pais.name.common.toLowerCase().includes(textoMinusculas)
     );
@@ -84,29 +76,29 @@ function filtrarPaises(texto) {
     mostrarPaises(resultado);
 }
 
-// ─── SELECCIONAR UN PAÍS DE LA LISTA ─────────────────────────────────────────
+
 function seleccionarPais(nombre, bandera) {
     const inputBusqueda = document.getElementById('buscar-pais');
     const inputOculto = document.getElementById('pais-seleccionado');
     const inputBandera = document.getElementById('bandera-seleccionada');
     const lista = document.getElementById('lista-paises');
 
-    // Mostrar el país elegido en el campo de texto
+    
     if (inputBusqueda) inputBusqueda.value = `${bandera} ${nombre}`;
 
-    // Guardar el valor en campos ocultos para el formulario
+    
     if (inputOculto) inputOculto.value = nombre;
     if (inputBandera) inputBandera.value = bandera;
 
-    // Ocultar la lista después de seleccionar
+    
     if (lista) lista.style.display = 'none';
 }
 
-// ─── VALIDAR Y ENVIAR EL FORMULARIO DE REGISTRO ──────────────────────────────
+
 function procesarRegistro(evento) {
     evento.preventDefault();
 
-    // Leer todos los campos del formulario
+    
     const nombres = document.getElementById('reg-nombres').value.trim();
     const apellidos = document.getElementById('reg-apellidos').value.trim();
     const email = document.getElementById('reg-email').value.trim();
@@ -119,7 +111,7 @@ function procesarRegistro(evento) {
     const bandera = document.getElementById('bandera-seleccionada').value;
     const terminos = document.getElementById('reg-terminos').checked;
 
-    // ── VALIDACIONES ─────────────────────────────────────────────
+    
 
     if (!nombres || nombres.length < 2) {
         Swal.fire('Nombres inválidos', 'Ingresa tu nombre completo (mínimo 2 caracteres).', 'warning');
@@ -131,14 +123,14 @@ function procesarRegistro(evento) {
         return;
     }
 
-    // Validar formato de email con expresión regular
+    
     const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formatoEmail.test(email)) {
         Swal.fire('Correo inválido', 'Ingresa un correo electrónico válido (ej: usuario@gmail.com).', 'warning');
         return;
     }
 
-    // Verificar que el email no esté ya registrado
+    
     const usuarios = leer('usuarios') || [];
     const emailExiste = usuarios.some(u => u.email === email);
     if (emailExiste) {
@@ -176,7 +168,7 @@ function procesarRegistro(evento) {
         return;
     }
 
-    // ── CREAR EL OBJETO DEL NUEVO USUARIO ────────────────────────
+    
     const maxId = usuarios.reduce((max, u) => u.id > max ? u.id : max, 0);
 
     const nuevoUsuario = {
@@ -184,7 +176,7 @@ function procesarRegistro(evento) {
         nombres,
         apellidos,
         email,
-        password, // En un sistema real NUNCA se guardaría en texto plano
+        password, 
         consola: consola || 'PS5',
         telefono,
         fechaNacimiento: fechaNac,
@@ -197,11 +189,11 @@ function procesarRegistro(evento) {
         }
     };
 
-    // Agregar al array y guardar en localStorage
+    
     usuarios.push(nuevoUsuario);
     guardar('usuarios', usuarios);
 
-    // Mostrar confirmación
+    
     Swal.fire({
         title: '¡Registro exitoso!',
         html: `Bienvenido a Matador House, <strong>${nombres}</strong>.<br>
