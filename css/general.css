@@ -1,376 +1,307 @@
 /* ============================================================
-   BLOQUE 1: CONFIGURACIÓN GENERAL
-   Selector universal, body, fuente, fondo, color e interlineado.
+   general.css — Diseño Limpio, Moderno y Elegante (Light Theme)
    ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ─── VARIABLES Y RESET ──────────────────────────────────────── */
+:root {
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+}
+
 * {
     box-sizing: border-box;
-}
-body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background-color: #f5f5f7;
-    color: #1f1f1f;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
 }
 
-/* ============================================================
-   BLOQUE 2: TÍTULOS, PÁRRAFOS Y ENLACES
-   Estilos para h1, h2, h3, p, a y a:hover.
-   ============================================================ */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ─── TIPOGRAFÍA ─────────────────────────────────────────────── */
 h1 {
-    margin: 0;
-    color: #00439c;
-    font-size: 26px;
-    letter-spacing: -1px;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.025em;
+    line-height: 1.2;
 }
+
 h2 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #00439c;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    letter-spacing: -0.025em;
 }
+
 h3 {
-    margin: 0 0 8px 0;
-    font-size: 18px;
-    color: #1f1f1f;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-main);
 }
+
 p {
-    margin: 0 0 15px 0;
-    color: #666;
+    color: var(--text-muted);
+    margin-bottom: 16px;
 }
+
 a {
     text-decoration: none;
-    color: #00439c;
-}
-a:hover {
-    color: #d53900;
+    color: var(--primary);
+    transition: color 0.2s ease;
 }
 
-/* ============================================================
-   BLOQUE 3: ELEMENTOS SEMÁNTICOS PRINCIPALES
-   Estilos para header, main, section, article, aside y footer.
-   ============================================================ */
-header {
-    background-color: #ffffff;
-}
-main {
-    padding: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: center;
-}
-section {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 30px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    text-align: left;
-}
-article {
-    display: inline-block;
-    background-color: #ffffff;
-    width: 250px;
-    padding: 20px;
-    border-radius: 16px;
-    margin: 15px;
-    text-align: left;
-    vertical-align: top;
-    border: 1px solid #e0e0e0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
-}
-article:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
-}
-aside {
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 1000px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-    text-align: center;
-}
-footer {
-    background-color: #00439c;
-    color: white;
-    text-align: center;
-    padding: 40px 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+a:hover { color: var(--primary-hover); }
 
-/* ============================================================
-   BLOQUE 4: NAVBAR DE BOOTSTRAP (PERSONALIZACIÓN)
-   El menú de navegación usa el componente Navbar de Bootstrap.
-   Aquí solo se ajustan colores y tipografía a la identidad
-   visual de Matador House (azul #00439c / rojo #d53900).
-   ============================================================ */
+/* ─── NAVBAR ─────────────────────────────────────────────────── */
 .navbar {
-    padding: 14px 30px;
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 30px;
 }
+
 .navbar-brand {
-    font-weight: bold;
-    font-size: 22px;
-    color: #00439c !important;
-    letter-spacing: -1px;
+    font-weight: 800 !important;
+    font-size: 22px !important;
+    color: var(--text-main) !important;
+    letter-spacing: -0.5px;
 }
+
+.navbar-brand span {
+    color: var(--primary);
+}
+
 .navbar .nav-link {
-    color: #555;
-    font-weight: bold;
-    padding: 8px 14px !important;
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 16px !important;
     border-radius: 8px;
-    margin: 2px 0;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    transition: all 0.2s ease;
+    margin: 0 4px;
 }
+
 .navbar .nav-link:hover {
-    color: #00439c;
-    background-color: #f0f4ff;
+    color: var(--primary) !important;
+    background: #eff6ff;
 }
+
 .navbar .nav-link.active {
-    color: #ffffff !important;
-    background-color: #00439c;
+    color: var(--primary) !important;
+    background: #eff6ff;
+    font-weight: 600;
 }
+
 .navbar-toggler {
-    border: none;
+    border: none !important;
     box-shadow: none !important;
 }
 
-/* ============================================================
-   BLOQUE 5: CONTENIDO Y SECCIONES
-   Estilos generales para títulos dentro de secciones y tarjetas.
-   ============================================================ */
-main section h2 {
-    margin-bottom: 25px;
-}
-article p {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-/* ============================================================
-   BLOQUE 6: IMÁGENES Y MULTIMEDIA
-   Estilos para img, figure, figcaption, video, audio e iframe.
-   ============================================================ */
-img {
-    width: 150px;
-    max-width: 100%;
-    height: 180px;
-    border-radius: 8px;
-    object-fit: cover;
-    object-position: center;
+/* ─── MAIN Y SECCIONES ───────────────────────────────────────── */
+main {
+    padding: 40px 30px;
+    max-width: 1100px;
     margin: 0 auto;
-    display: block;
 }
-figure {
-    margin: 0 0 15px 0;
-    padding: 0;
+
+section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    margin: 40px auto;
+    box-shadow: var(--shadow-md);
+}
+
+/* ─── TÍTULOS DE PÁGINA ──────────────────────────────────────── */
+.titulo-pagina {
     text-align: center;
-}
-figcaption {
-    font-size: 12px;
-    color: #666;
-    margin-top: 8px;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-iframe {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 800px;
-    aspect-ratio: 3/4;
-}
-video {
-    width: 100%;
-    border-radius: 12px;
-}
-audio {
-    width: 100%;
-    margin-top: 15px;
+    margin-bottom: 40px;
+    padding: 20px 20px 10px;
 }
 
-/* ============================================================
-   BLOQUE 7: LISTAS
-   Estilos para ul, ol y li.
-   ============================================================ */
-ul, ol {
-    margin: 0 0 20px 0;
-    padding-left: 20px;
-    color: #666;
-    line-height: 1.5;
-}
-li {
-    margin-bottom: 8px;
+.titulo-pagina h1 {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
 }
 
-/* ============================================================
-   BLOQUE 8: FORMULARIOS
-   Estilos para form, label, input, textarea, select y button.
-   ============================================================ */
-form {
-    text-align: left;
+.titulo-pagina p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
+
+/* ─── FOOTER ─────────────────────────────────────────────────── */
+footer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p { margin: 8px 0; }
+footer p:first-of-type { font-size: 18px; font-weight: 700; color: var(--text-main); }
+footer p:last-of-type { font-size: 13px; margin-top: 20px; }
+footer a { color: var(--text-muted); margin: 0 12px; font-size: 14px; font-weight: 500; }
+footer a:hover { color: var(--primary); }
+
+/* ─── FORMULARIOS ────────────────────────────────────────────── */
 fieldset {
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 25px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 30px;
     margin-bottom: 30px;
+    background: #fdfdfd;
 }
+
 legend {
-    font-weight: bold;
-    color: #00439c;
-    padding: 0 10px;
+    font-weight: 700;
+    color: var(--text-main);
+    padding: 0 15px;
+    font-size: 15px;
 }
+
 label {
-    color: #555;
-    margin-right: 15px;
-    font-weight: bold;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    display: block;
 }
+
 input, textarea, select {
     width: 100%;
-    padding: 12px;
-    margin-top: 8px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: inherit;
-    box-sizing: border-box;
-    display: block;
+    padding: 14px 16px;
+    margin-top: 4px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--text-main);
+    transition: all 0.2s ease;
 }
-input[type="radio"], input[type="checkbox"] {
-    width: auto;
-    display: inline-block;
-    margin-right: 10px;
-    margin-top: 0;
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
-input[type="submit"], input[type="reset"] {
-    background-color: #00439c;
+
+input::placeholder, textarea::placeholder {
+    color: #94a3b8;
+}
+
+input[type="submit"] {
+    background: var(--primary);
     color: white;
-    padding: 15px 30px;
+    padding: 14px 32px;
     border: none;
     border-radius: 30px;
-    font-weight: bold;
-    font-size: 16px;
+    font-weight: 600;
+    font-size: 15px;
     cursor: pointer;
     width: auto;
     display: inline-block;
-    margin-top: 10px;
-}
-input[type="submit"]:hover, input[type="reset"]:hover {
-    background-color: #d53900;
-}
-details {
-    margin-bottom: 15px;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-}
-summary {
-    font-weight: bold;
-    font-size: 14px;
-    cursor: pointer;
-    color: #00439c;
+    margin-top: 15px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
 }
 
-/* ============================================================
-   BLOQUE 9: TABLAS
-   Estilos para table, thead, tbody, tr, th y td.
-   ============================================================ */
+input[type="submit"]:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px -1px rgba(37, 99, 235, 0.3);
+}
+
+input[type="reset"] {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    padding: 14px 32px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+    transition: all 0.2s;
+}
+
+input[type="reset"]:hover {
+    background: #f1f5f9;
+    color: var(--text-main);
+}
+
+/* ─── TABLAS ─────────────────────────────────────────────────── */
 table {
     width: 100%;
-    text-align: left;
-    border-collapse: collapse;
-    margin-bottom: 40px;
-    background-color: #ffffff;
-}
-thead {
-    background-color: #00439c;
-    color: white;
-}
-th {
-    padding: 15px;
-}
-td {
-    padding: 15px;
-    border-bottom: 1px solid #e0e0e0;
-}
-tbody tr:hover {
-    background-color: #f0f4ff;
-}
-thead th:first-child {
-    border-top-left-radius: 8px;
-}
-thead th:last-child {
-    border-top-right-radius: 8px;
-}
-progress, meter {
-    width: 100%;
-    height: 15px;
-    accent-color: #ff0000;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-sm);
 }
 
-/* ============================================================
-   BLOQUE 10: PIE DE PÁGINA
-   Estilos para footer, footer p y footer address.
-   ============================================================ */
-footer p {
-    margin: 10px 0 0 0;
-    color: #8bb6ff;
-}
-footer p:first-of-type {
-    font-size: 18px;
-    font-weight: bold;
-    color: white;
-}
-footer p:last-of-type {
+thead { background: #f8fafc; }
+
+thead th {
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
     font-size: 12px;
-    color: #5c91f0;
-    margin-top: 20px;
-}
-footer a {
-    color: #8bb6ff;
-    font-weight: normal;
-    margin: 0 10px;
-}
-footer a:hover {
-    color: white;
-    border-bottom: 1px solid white;
+    letter-spacing: 0.05em;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
 }
 
-/* ============================================================
-   RESPONSIVIDAD AVANZADA (general.css)
-   El menú ahora lo resuelve el Navbar de Bootstrap (botón
-   hamburguesa automático), así que solo quedan ajustes de
-   tablas y del contenedor principal para pantallas pequeñas.
-   ============================================================ */
+th, td { padding: 16px 20px; text-align: left; }
 
+td {
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+}
+
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #f8fafc; }
+
+/* ─── RESPONSIVIDAD ──────────────────────────────────────────── */
 @media (max-width: 768px) {
-    /* Tablas: scroll horizontal optimizado */
+    main { padding: 20px 15px; }
+    section { padding: 25px; margin: 20px auto; }
+    .titulo-pagina h1 { font-size: 2rem; }
+    
     table {
-        width: 100%;
         display: block;
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    table th, table td {
-        min-width: 120px;
-    }
-
-    /* Contenedor principal: reducir el padding lateral */
-    main {
-        padding: 25px 15px;
+        white-space: nowrap;
     }
 }

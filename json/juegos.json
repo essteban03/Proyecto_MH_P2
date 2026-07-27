@@ -108,7 +108,7 @@
     "calificacion": 4,
     "resenas": 318,
     "etiqueta": "",
-    "imagen": "imagenes/ghost.jpg",
+    "imagen": "imagenes/finalfantasy.webp",
     "fechaRegistro": "2024-04-12"
   },
   {
@@ -122,7 +122,7 @@
     "calificacion": 5,
     "resenas": 672,
     "etiqueta": "",
-    "imagen": "imagenes/god-of-war.webp",
+    "imagen": "imagenes/resident.jpeg",
     "fechaRegistro": "2024-02-14"
   },
   {
@@ -136,7 +136,7 @@
     "calificacion": 5,
     "resenas": 1024,
     "etiqueta": "Más Vendido",
-    "imagen": "imagenes/last-of-us.webp",
+    "imagen": "imagenes/baldur.jpeg",
     "fechaRegistro": "2024-01-30"
   },
   {
@@ -150,7 +150,7 @@
     "calificacion": 4,
     "resenas": 245,
     "etiqueta": "Nuevo",
-    "imagen": "imagenes/gran-turismo.jpg",
+    "imagen": "imagenes/fifa.jpeg",
     "fechaRegistro": "2024-09-27"
   },
   {
@@ -164,7 +164,7 @@
     "calificacion": 4,
     "resenas": 187,
     "etiqueta": "",
-    "imagen": "imagenes/helldivers.jpg",
+    "imagen": "imagenes/nba.jpeg",
     "fechaRegistro": "2024-09-06"
   },
   {
@@ -178,7 +178,7 @@
     "calificacion": 5,
     "resenas": 788,
     "etiqueta": "",
-    "imagen": "imagenes/horizon.webp",
+    "imagen": "imagenes/elden.jpeg",
     "fechaRegistro": "2024-06-21"
   },
   {
@@ -192,7 +192,7 @@
     "calificacion": 4,
     "resenas": 563,
     "etiqueta": "Nuevo",
-    "imagen": "imagenes/ghost.jpg",
+    "imagen": "imagenes/black.jpeg",
     "fechaRegistro": "2024-10-25"
   },
   {
@@ -206,7 +206,7 @@
     "calificacion": 4,
     "resenas": 294,
     "etiqueta": "",
-    "imagen": "imagenes/god-of-war.webp",
+    "imagen": "imagenes/mortal.webp",
     "fechaRegistro": "2024-09-19"
   },
   {
@@ -220,7 +220,7 @@
     "calificacion": 5,
     "resenas": 641,
     "etiqueta": "Oferta",
-    "imagen": "imagenes/last-of-us.webp",
+    "imagen": "imagenes/hogwarts.jpeg",
     "fechaRegistro": "2024-02-07"
   },
   {
@@ -234,7 +234,7 @@
     "calificacion": 4,
     "resenas": 389,
     "etiqueta": "",
-    "imagen": "imagenes/gran-turismo.jpg",
+    "imagen": "imagenes/star.jpeg",
     "fechaRegistro": "2024-04-28"
   },
   {
@@ -248,7 +248,7 @@
     "calificacion": 5,
     "resenas": 334,
     "etiqueta": "",
-    "imagen": "imagenes/helldivers.jpg",
+    "imagen": "imagenes/alan.jpeg",
     "fechaRegistro": "2024-10-27"
   },
   {
@@ -262,7 +262,7 @@
     "calificacion": 4,
     "resenas": 278,
     "etiqueta": "Oferta",
-    "imagen": "imagenes/horizon.webp",
+    "imagen": "imagenes/street.jpeg",
     "fechaRegistro": "2024-06-02"
   },
   {
@@ -276,7 +276,7 @@
     "calificacion": 5,
     "resenas": 445,
     "etiqueta": "",
-    "imagen": "imagenes/ghost.jpg",
+    "imagen": "imagenes/dead.jpeg",
     "fechaRegistro": "2024-01-27"
   },
   {
@@ -290,7 +290,7 @@
     "calificacion": 5,
     "resenas": 512,
     "etiqueta": "",
-    "imagen": "imagenes/gran-turismo.jpg",
+    "imagen": "imagenes/forza.jpeg",
     "fechaRegistro": "2024-03-15"
   },
   {
@@ -304,7 +304,7 @@
     "calificacion": 4,
     "resenas": 267,
     "etiqueta": "",
-    "imagen": "imagenes/helldivers.jpg",
+    "imagen": "imagenes/returnal.jpeg",
     "fechaRegistro": "2024-05-09"
   },
   {
@@ -318,7 +318,7 @@
     "calificacion": 5,
     "resenas": 398,
     "etiqueta": "Oferta",
-    "imagen": "imagenes/last-of-us.webp",
+    "imagen": "imagenes/demons.jpeg",
     "fechaRegistro": "2024-07-11"
   },
   {
@@ -332,7 +332,7 @@
     "calificacion": 5,
     "resenas": 423,
     "etiqueta": "",
-    "imagen": "imagenes/horizon.webp",
+    "imagen": "imagenes/ratchet.jpeg",
     "fechaRegistro": "2024-06-11"
   },
   {
@@ -346,7 +346,7 @@
     "calificacion": 5,
     "resenas": 867,
     "etiqueta": "Gratis",
-    "imagen": "imagenes/god-of-war.webp",
+    "imagen": "imagenes/astro.jpeg",
     "fechaRegistro": "2024-01-01"
   },
   {
@@ -360,7 +360,7 @@
     "calificacion": 4,
     "resenas": 531,
     "etiqueta": "",
-    "imagen": "imagenes/ghost.jpg",
+    "imagen": "imagenes/cyber.jpg",
     "fechaRegistro": "2024-09-26"
   },
   {
@@ -374,7 +374,7 @@
     "calificacion": 4,
     "resenas": 312,
     "etiqueta": "",
-    "imagen": "imagenes/gran-turismo.jpg",
+    "imagen": "imagenes/tekken.jpeg",
     "fechaRegistro": "2024-01-26"
   },
   {
@@ -388,7 +388,7 @@
     "calificacion": 5,
     "resenas": 712,
     "etiqueta": "Oferta",
-    "imagen": "imagenes/last-of-us.webp",
+    "imagen": "imagenes/persona.jpeg",
     "fechaRegistro": "2024-05-24"
   },
   {
@@ -402,7 +402,7 @@
     "calificacion": 5,
     "resenas": 589,
     "etiqueta": "",
-    "imagen": "imagenes/ghost.jpg",
+    "imagen": "imagenes/sekiro.jpeg",
     "fechaRegistro": "2024-08-15"
   }
 ]

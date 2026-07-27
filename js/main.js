@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Actualizar contador del carrito en el navbar
     actualizarContadorCarrito();
 
-    // Cargar los 6 juegos destacados en la página principal
+    // Cargar los 8 juegos destacados en la página principal
     await cargarJuegosDestacados();
 
     // Inicializar el widget del clima
@@ -29,8 +29,8 @@ async function cargarJuegosDestacados() {
     const juegos = await cargarJuegos();
     await cargarCategorias(); // También cargar categorías para tenerlas disponibles
 
-    // Tomamos solo los primeros 6 juegos para la sección destacada
-    const destacados = juegos.slice(0, 6);
+    // Tomamos solo los primeros 8 juegos para la sección destacada
+    const destacados = juegos.slice(0, 8);
 
     // Si no hay juegos, mostrar mensaje
     if (destacados.length === 0) {
