@@ -3,33 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matador House - La tienda de juegos PS4 y PS5 número uno en Ecuador. Encuentra los mejores títulos al mejor precio.">
     <title>Matador House - Inicio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/catalogo.css">
     <link rel="icon" type="image/x-icon" href="imagenes/matador-icono.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
 </head>
 <body>
 
     <!-- ============================================================
-         NAVBAR (Componente Bootstrap N°1)
+         NAVBAR
          ============================================================ -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
             <div class="container-fluid px-4">
                 <a class="navbar-brand" href="index.html">Matador House</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMatador" aria-controls="navbarMatador" aria-expanded="false" aria-label="Abrir menú">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarMatador" aria-controls="navbarMatador"
+                        aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMatador">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
                         <li class="nav-item"><a class="nav-link active" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html"><i class="fa-solid fa-gamepad"></i> Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admin.html"><i class="fa-solid fa-chart-bar"></i> Admin</a></li>
                         <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i> Crear Cuenta</a></li>
                         <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in"></i> Iniciar Sesión</a></li>
                         <li class="nav-item"><a class="nav-link" href="nosotros.html">Conócenos</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="carrito.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrito.html">
+                                <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+                                <span class="contador-carrito" id="contador-nav"></span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -37,23 +50,21 @@
     </header>
 
     <!-- ============================================================
-         CARRUSEL DE PROMOCIONES (Componente Bootstrap N°2)
+         CARRUSEL DE PROMOCIONES
          ============================================================ -->
     <div id="carruselPromos" class="carousel slide carousel-fade" data-bs-ride="carousel">
-
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carruselPromos" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="imagenes/spiderman-hero.png" class="d-block w-100" alt="Marvel's Spider-Man 2">
                 <div class="carousel-caption">
                     <h2>Marvel's Spider-Man 2</h2>
                     <p>¡Ya disponible para PS5!</p>
-                    <a class="btn-promo" href="carrito.html">Agregar al carrito</a>
+                    <a class="btn-promo" href="catalogo.html">Ver en el catálogo</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -61,7 +72,7 @@
                 <div class="carousel-caption">
                     <h2>Ghost of Tsushima</h2>
                     <p>Edición Director's Cut con misiones extra</p>
-                    <a class="btn-promo" href="#juegos-destacados">Ver oferta</a>
+                    <a class="btn-promo" href="catalogo.html">Ver oferta</a>
                 </div>
             </div>
             <div class="carousel-item">
@@ -69,11 +80,10 @@
                 <div class="carousel-caption">
                     <h2>God of War Ragnarök</h2>
                     <p>La épica conclusión de la saga nórdica</p>
-                    <a class="btn-promo" href="#juegos-destacados">Ver oferta</a>
+                    <a class="btn-promo" href="catalogo.html">Ver oferta</a>
                 </div>
             </div>
         </div>
-
         <button class="carousel-control-prev" type="button" data-bs-target="#carruselPromos" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Anterior</span>
@@ -86,122 +96,54 @@
 
     <main>
 
-        <!-- ============================================================
-             ALERTA PROMOCIONAL (Componente Bootstrap N°3)
-             ============================================================ -->
+        <!-- Alerta de promoción -->
         <div class="alert alert-promo alert-dismissible fade show" role="alert">
-            <i class="fa-solid fa-bolt"></i> <strong>¡Oferta de la semana!</strong> Hasta 20% de descuento en juegos seleccionados de PS5. Aprovecha antes de que termine.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar" ></button>
+            <i class="fa-solid fa-bolt"></i> <strong>¡Oferta de la semana!</strong>
+            Hasta 20% de descuento en juegos seleccionados de PS5.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>
 
-        <!-- SECCIÓN JUEGOS DESTACADOS -->
+        <!-- ============================================================
+             SECCIÓN JUEGOS DESTACADOS
+             Las tarjetas se generan dinámicamente con main.js
+             ============================================================ -->
         <section id="juegos-destacados">
             <h2>Juegos Destacados</h2>
-
-            <div class="contenedor-tarjetas">
-
-                <article class="tarjeta-juego">
-                    <a title="Ghost of Tsushima" href="detalle-ghost.html">
-                        <figure>
-                            <img src="imagenes/ghost.jpg" alt="Ghost of Tsushima">
-                            <figcaption>PS5</figcaption>
-                        </figure>
-                        <h3>Ghost of Tsushima</h3>
-                        <p class="resenas">⭐⭐⭐⭐⭐ (487 reseñas)</p>
-                        <p class="precio">$69.99</p>
-                    </a>
-                    <button type="button" class="btn btn-detalle" data-bs-toggle="modal" data-bs-target="#modalGhost">
-                        <i class="fa-solid fa-circle-info"></i> Ver detalles
-                    </button>
-                </article>
-
-                <article class="tarjeta-juego">
-                    <a title="God of War Ragnarok" href="detalle-spiderman.html">
-                        <figure>
-                            <img src="imagenes/god-of-war.webp" alt="God of War Ragnarok">
-                            <figcaption>PS5</figcaption>
-                        </figure>
-                        <h3>God of War Ragnarök</h3>
-                        <p class="resenas">⭐⭐⭐⭐⭐ (623 reseñas)</p>
-                        <p class="precio">$59.99</p>
-                    </a>
-                    <button type="button" class="btn btn-detalle" data-bs-toggle="modal" data-bs-target="#modalGow">
-                        <i class="fa-solid fa-circle-info"></i> Ver detalles
-                    </button>
-                </article>
-
-                <article class="tarjeta-juego">
-                    <a title="Helldivers 2" href="detalle-helldivers.html">
-                        <figure>
-                            <img src="imagenes/helldivers.jpg" alt="Helldivers 2">
-                            <figcaption>PS5</figcaption>
-                        </figure>
-                        <span class="badge badge-nuevo">Nuevo</span>
-                        <h3>Helldivers 2</h3>
-                        <p class="resenas">⭐⭐⭐⭐ (392 reseñas)</p>
-                        <p class="precio">$39.99</p>
-                    </a>
-                    <button type="button" class="btn btn-detalle" data-bs-toggle="modal" data-bs-target="#modalHelldivers">
-                        <i class="fa-solid fa-circle-info"></i> Ver detalles
-                    </button>
-                </article>
-
-                <article class="tarjeta-juego">
-                    <a title="The Last of Us Part I" href="detalle-lastofus.html">
-                        <figure>
-                            <img src="imagenes/last-of-us.webp" alt="The Last of Us Part I">
-                            <figcaption>PS5</figcaption>
-                        </figure>
-                        <h3>The Last of Us Part I</h3>
-                        <p class="resenas">⭐⭐⭐⭐⭐ (756 reseñas)</p>
-                        <p class="precio">$69.99</p>
-                    </a>
-                    <button type="button" class="btn btn-detalle" data-bs-toggle="modal" data-bs-target="#modalLastOfUs">
-                        <i class="fa-solid fa-circle-info"></i> Ver detalles
-                    </button>
-                </article>
-
-                <article class="tarjeta-juego">
-                    <a title="Horizon Forbidden West" href="detalle-horizon.html">
-                        <figure>
-                            <img src="imagenes/horizon.webp" alt="Horizon Forbidden West">
-                            <figcaption>PS4 / PS5</figcaption>
-                        </figure>
-                        <h3>Horizon Forbidden West</h3>
-                        <p class="precio">$49.99</p>
-                    </a>
-                    <button type="button" class="btn btn-detalle" data-bs-toggle="modal" data-bs-target="#modalHorizon">
-                        <i class="fa-solid fa-circle-info"></i> Ver detalles
-                    </button>
-                </article>
-
-                <article class="tarjeta-juego">
-                    <a title="Gran Turismo 7" href="detalle-gt7.html">
-                        <figure>
-                            <img src="imagenes/gran-turismo.jpg" alt="Gran Turismo 7">
-                            <figcaption>PS5</figcaption>
-                        </figure>
-                        <span class="badge badge-top">Más Vendido</span>
-                        <h3>Gran Turismo 7</h3>
-                        <p class="resenas">⭐⭐⭐⭐⭐ (834 reseñas)</p>
-                        <p class="precio">$69.99</p>
-                    </a>
-                    <button type="button" class="btn btn-detalle" data-bs-toggle="modal" data-bs-target="#modalGT7">
-                        <i class="fa-solid fa-circle-info"></i> Ver detalles
-                    </button>
-                </article>
-
+            <!-- Este div lo llena main.js con cargarJuegosDestacados() -->
+            <div class="contenedor-tarjetas" id="contenedor-destacados">
+                <p class="cargando-juegos">
+                    <i class="fa-solid fa-spinner fa-spin"></i> Cargando juegos...
+                </p>
             </div>
-
+            <div style="text-align:center; margin-top:20px;">
+                <a href="catalogo.html" class="btn-plan" style="display:inline-block;">
+                    <i class="fa-solid fa-gamepad"></i> Ver catálogo completo
+                </a>
+            </div>
         </section>
 
-        <!-- SECCIÓN PLANES PS PLUS -->
+        <!-- ============================================================
+             WIDGET DE CLIMA
+             Muestra el clima de ciudades ecuatorianas (Open-Meteo API)
+             ============================================================ -->
+        <section id="seccion-clima">
+            <h2><i class="fa-solid fa-cloud-sun"></i> Clima en Ecuador</h2>
+            <p style="color:rgba(255,255,255,0.8);">
+                ¿Hace frío o calor? Perfectos para quedarse en casa jugando.
+            </p>
+            <!-- Botones de ciudades (los genera clima.js) -->
+            <div id="botones-ciudades"></div>
+            <!-- Aquí aparecen los datos del clima -->
+            <div id="widget-clima"></div>
+        </section>
+
+        <!-- ============================================================
+             SECCIÓN PLANES PS PLUS
+             ============================================================ -->
         <section id="planes-psplus">
             <h2>Planes PlayStation Plus</h2>
             <p>Elige el plan que mejor se adapte a ti y disfruta de lo mejor de PlayStation.</p>
-
             <div class="catalogo-planes">
-
                 <article class="tarjeta-plan">
                     <h3>PlayStation Plus Essential</h3>
                     <p class="precio-plan">$9.99 / mes</p>
@@ -213,7 +155,6 @@
                     </ul>
                     <a class="btn-plan" href="carrito.html">Suscribirse</a>
                 </article>
-
                 <article class="tarjeta-plan">
                     <h3>PlayStation Plus Extra</h3>
                     <p class="precio-plan">$14.99 / mes</p>
@@ -225,7 +166,6 @@
                     </ul>
                     <a class="btn-plan" href="carrito.html">Suscribirse</a>
                 </article>
-
                 <article class="tarjeta-plan destacado">
                     <h3>PlayStation Plus Premium</h3>
                     <p class="precio-plan">$19.99 / mes</p>
@@ -237,32 +177,28 @@
                     </ul>
                     <a class="btn-plan" href="carrito.html">Suscribirse</a>
                 </article>
-
             </div>
         </section>
 
-        <!-- SECCIÓN TRAILERS -->
+        <!-- ============================================================
+             SECCIÓN TRAILERS
+             ============================================================ -->
         <section id="trailers">
             <h2>Próximos Estrenos - Trailers</h2>
             <p>Descubre los trailers de los juegos más esperados para PS5.</p>
-
             <div class="contenedor-videos">
-
                 <article class="tarjeta-video">
                     <h3>Final Fantasy VII Rebirth</h3>
                     <iframe src="https://www.youtube.com/embed/5ZXqcymx0CI" allowfullscreen></iframe>
                 </article>
-
                 <article class="tarjeta-video">
                     <h3>Dragon Age: The Veilguard</h3>
                     <iframe src="https://www.youtube.com/embed/uJnWbKxaEvQ" allowfullscreen></iframe>
                 </article>
-
                 <article class="tarjeta-video">
                     <h3>Star Wars Outlaws</h3>
                     <iframe src="https://www.youtube.com/embed/XNf5MdFw5cU" allowfullscreen></iframe>
                 </article>
-
             </div>
         </section>
 
@@ -276,157 +212,37 @@
 
     </main>
 
+    <!-- ASIDE con íconos de acceso rápido -->
     <aside>
-        <i class="fa-solid fa-house"></i>
-        <i class="fa-solid fa-user"></i>
-        <i class="fa-solid fa-envelope"></i>
-        <i class="fa-solid fa-phone"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-instagram"></i>
+        <a href="index.html" title="Inicio"><i class="fa-solid fa-house"></i></a>
+        <a href="registro.html" title="Crear cuenta"><i class="fa-solid fa-user"></i></a>
+        <a href="contacto.html" title="Contacto"><i class="fa-solid fa-envelope"></i></a>
+        <a href="carrito.html" title="Mi carrito"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="catalogo.html" title="Catálogo de juegos"><i class="fa-solid fa-gamepad"></i></a>
+        <a href="https://www.facebook.com/profile.php?id=61564327181298" title="Facebook" target="_blank">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
     </aside>
 
     <footer>
         <p>Matador House</p>
         <p>La tienda definitiva para jugadores de PS4 y PS5 en Ecuador.</p>
         <br>
-        <a href="nosotros.html">Conocenos</a>
+        <a href="nosotros.html">Conócenos</a>
         <a href="https://www.facebook.com/profile.php?id=61564327181298">Facebook</a>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
 
-    <!-- ============================================================
-         MODALES DE DETALLES DE JUEGOS (Componente Bootstrap N°4)
-         Un modal por cada tarjeta de la sección Juegos Destacados.
-         ============================================================ -->
-
-    <!-- MODAL: Ghost of Tsushima -->
-    <div class="modal fade" id="modalGhost" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Ghost of Tsushima</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="imagenes/ghost.jpg" alt="Ghost of Tsushima">
-                    <p>Encarna a Jin Sakai, samurái convertido en el legendario "Fantasma", en su lucha para liberar la isla de Tsushima de la invasión mongola. Mundo abierto, combate samurái y una ambientación visual inolvidable.</p>
-                    <p><strong>Plataforma:</strong> PS5 &nbsp;|&nbsp; <strong>Calificación:</strong> ⭐⭐⭐⭐⭐ (487 reseñas)</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="precio-modal">$69.99</span>
-                    <button type="button" class="btn-comprar-modal" data-bs-dismiss="modal">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: God of War Ragnarök -->
-    <div class="modal fade" id="modalGow" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">God of War Ragnarök</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="imagenes/god-of-war.webp" alt="God of War Ragnarök">
-                    <p>Kratos y Atreus se embarcan en un viaje a través de los nueve reinos para enfrentar el Ragnarök y a las fuerzas de Asgard, en la épica conclusión de la saga nórdica.</p>
-                    <p><strong>Plataforma:</strong> PS5 &nbsp;|&nbsp; <strong>Calificación:</strong> ⭐⭐⭐⭐⭐ (623 reseñas)</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="precio-modal">$59.99</span>
-                    <button type="button" class="btn-comprar-modal" data-bs-dismiss="modal">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Helldivers 2 -->
-    <div class="modal fade" id="modalHelldivers" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Helldivers 2</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="imagenes/helldivers.jpg" alt="Helldivers 2">
-                    <p>Únete a la Súper Tierra en una guerra cooperativa contra hordas alienígenas. Acción táctica para hasta 4 jugadores en línea, con armas y estrategias desbloqueables.</p>
-                    <p><strong>Plataforma:</strong> PS5 &nbsp;|&nbsp; <strong>Calificación:</strong> ⭐⭐⭐⭐ (392 reseñas)</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="precio-modal">$39.99</span>
-                    <button type="button" class="btn-comprar-modal" data-bs-dismiss="modal">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: The Last of Us Part I -->
-    <div class="modal fade" id="modalLastOfUs" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">The Last of Us Part I</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="imagenes/last-of-us.webp" alt="The Last of Us Part I">
-                    <p>La aclamada historia de Joel y Ellie, remasterizada con gráficos de nueva generación y mejoras de jugabilidad pensadas para PS5.</p>
-                    <p><strong>Plataforma:</strong> PS5 &nbsp;|&nbsp; <strong>Calificación:</strong> ⭐⭐⭐⭐⭐ (756 reseñas)</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="precio-modal">$69.99</span>
-                    <button type="button" class="btn-comprar-modal" data-bs-dismiss="modal">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Horizon Forbidden West -->
-    <div class="modal fade" id="modalHorizon" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Horizon Forbidden West</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="imagenes/horizon.webp" alt="Horizon Forbidden West">
-                    <p>Aloy explora una América post-apocalíptica llena de máquinas, enfrentando nuevas amenazas y misterios ancestrales en un mundo abierto impresionante.</p>
-                    <p><strong>Plataforma:</strong> PS4 / PS5</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="precio-modal">$49.99</span>
-                    <button type="button" class="btn-comprar-modal" data-bs-dismiss="modal">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Gran Turismo 7 -->
-    <div class="modal fade" id="modalGT7" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Gran Turismo 7</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <img src="imagenes/gran-turismo.jpg" alt="Gran Turismo 7">
-                    <p>El simulador de carreras definitivo, con cientos de autos, circuitos icónicos y la mejor experiencia de conducción disponible en PS5.</p>
-                    <p><strong>Plataforma:</strong> PS5 &nbsp;|&nbsp; <strong>Calificación:</strong> ⭐⭐⭐⭐⭐ (834 reseñas)</p>
-                </div>
-                <div class="modal-footer">
-                    <span class="precio-modal">$69.99</span>
-                    <button type="button" class="btn-comprar-modal" data-bs-dismiss="modal">Agregar al carrito</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/clima.js"></script>
+    <script src="js/main.js"></script>
+
 </body>
 </html>

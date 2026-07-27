@@ -252,7 +252,7 @@ input[type="radio"], input[type="checkbox"] {
     margin-right: 10px;
     margin-top: 0;
 }
-input[type="submit"], input[type="reset"], button {
+input[type="submit"], input[type="reset"] {
     background-color: #00439c;
     color: white;
     padding: 15px 30px;
@@ -265,7 +265,7 @@ input[type="submit"], input[type="reset"], button {
     display: inline-block;
     margin-top: 10px;
 }
-input[type="submit"]:hover, input[type="reset"]:hover, button:hover {
+input[type="submit"]:hover, input[type="reset"]:hover {
     background-color: #d53900;
 }
 details {

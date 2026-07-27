@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "nombre": "Acción",
+    "icono": "fa-solid fa-sword"
+  },
+  {
+    "id": 2,
+    "nombre": "Aventura",
+    "icono": "fa-solid fa-map"
+  },
+  {
+    "id": 3,
+    "nombre": "Deportes",
+    "icono": "fa-solid fa-futbol"
+  },
+  {
+    "id": 4,
+    "nombre": "RPG",
+    "icono": "fa-solid fa-hat-wizard"
+  },
+  {
+    "id": 5,
+    "nombre": "Shooter",
+    "icono": "fa-solid fa-crosshairs"
+  },
+  {
+    "id": 6,
+    "nombre": "Horror",
+    "icono": "fa-solid fa-ghost"
+  },
+  {
+    "id": 7,
+    "nombre": "Carreras",
+    "icono": "fa-solid fa-flag-checkered"
+  },
+  {
+    "id": 8,
+    "nombre": "Estrategia",
+    "icono": "fa-solid fa-chess"
+  }
+]

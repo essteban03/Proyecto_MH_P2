@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/login.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -36,19 +38,27 @@
 
         <!-- SECCIÓN ÚNICA DE LOGIN -->
         <section id="seccion-login">
-            <h2>Iniciar Sesión</h2>
+            <h1>Iniciar Sesión</h1>
             <p>Ingresa para ver tu biblioteca de juegos y compras.</p>
 
-            <form class="formulario-login" action="index.html" method="POST">
+            <!--
+                El formulario llama a iniciarSesion(event).
+                La función valida el email y la contraseña contra localStorage.
+            -->
+            <form class="formulario-login" id="form-login" onsubmit="iniciarSesion(event)">
                 <label>Correo electrónico:
-                    <input type="email" name="email" required>
+                    <input type="email" id="login-email" name="email"
+                           placeholder="usuario@gmail.com" required>
                 </label>
 
                 <label>Contraseña:
-                    <input type="password" name="password" required>
+                    <input type="password" id="login-password" name="password"
+                           placeholder="Tu contraseña" required>
                 </label>
 
-                <input class="btn-login" type="submit" value="Entrar a mi cuenta">
+                <button class="btn-login" type="submit">
+                    <i class="fa-solid fa-right-to-bracket"></i> Entrar a mi cuenta
+                </button>
             </form>
 
             <!-- ENLACE A REGISTRO -->
@@ -65,5 +75,58 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+
+    <script>
+        // ── FUNCIÓN DE LOGIN ──────────────────────────────────────────
+        // Busca el usuario en localStorage comparando email y contraseña
+        async function iniciarSesion(evento) {
+            evento.preventDefault();
+
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value;
+
+            // Asegurarse de que los usuarios estén cargados en localStorage
+            await cargarUsuarios();
+            const usuarios = leer('usuarios') || [];
+
+            // Buscar el usuario que coincida con email y contraseña
+            const usuarioEncontrado = usuarios.find(u =>
+                u.email === email && u.password === password
+            );
+
+            if (!usuarioEncontrado) {
+                // No encontrado: mostrar error con SweetAlert2
+                Swal.fire({
+                    title: 'Credenciales incorrectas',
+                    text: 'El correo o la contraseña no son válidos. Verifica tus datos.',
+                    icon: 'error',
+                    confirmButtonColor: '#00439c'
+                });
+                return;
+            }
+
+            // Guardar el usuario activo en localStorage
+            guardar('usuarioActivo', usuarioEncontrado);
+
+            // Notificación de éxito con Toastify
+            Toastify({
+                text: `✅ Bienvenido, ${usuarioEncontrado.nombres}!`,
+                duration: 3000,
+                gravity: 'top',
+                position: 'right',
+                backgroundColor: '#00439c'
+            }).showToast();
+
+            // Redirigir al inicio después de 1.2 segundos
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 1200);
+        }
+    </script>
 </body>
 </html>

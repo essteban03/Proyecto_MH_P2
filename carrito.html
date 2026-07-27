@@ -3,87 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tu carrito de compras en Matador House. Revisa tus juegos seleccionados y confirma tu compra.">
     <title>Mi Carrito - Matador House</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/carrito.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/matador-icono.png">
 </head>
 <body>
 
     <header>
-        <div>
-            <h1>Matador House</h1>
-        </div>
-        <nav>
-            <a href="index.html">&larr; Volver a la Tienda</a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand" href="index.html">Matador House</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarMatador" aria-controls="navbarMatador"
+                        aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMatador">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html"><i class="fa-solid fa-gamepad"></i> Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i> Crear Cuenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in"></i> Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Conócenos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="carrito.html">
+                                <i class="fa-solid fa-cart-shopping"></i> Mi Carrito
+                                <span class="contador-carrito" id="contador-nav"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main>
 
-        <!-- ENCABEZADO DEL CARRITO -->
         <div id="titulo-carrito">
-            <h2>Tu Carrito de Compras</h2>
+            <h1><i class="fa-solid fa-cart-shopping"></i> Tu Carrito de Compras</h1>
             <p>Revisa tus artículos antes de confirmar el pago.</p>
         </div>
 
-        <!-- TABLA DE ARTÍCULOS -->
-        <table id="tabla-carrito">
-            <thead>
-                <tr>
-                    <th>Juego</th>
-                    <th>Plataforma</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Marvel's Spider-Man 2</td>
-                    <td>PS5</td>
-                    <td>$59.99</td>
-                </tr>
-                <tr>
-                    <td>Ghost of Tsushima</td>
-                    <td>PS5</td>
-                    <td>$69.99</td>
-                </tr>
-                <tr class="fila-total">
-                    <td colspan="2">TOTAL A PAGAR:</td>
-                    <td>$129.98</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- =====================================================
+             MENSAJE CUANDO EL CARRITO ESTÁ VACÍO
+             ===================================================== -->
+        <div id="carrito-vacio">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h2>Tu carrito está vacío</h2>
+            <p>Agrega juegos desde nuestro catálogo.</p>
+            <a href="catalogo.html" class="btn-plan" style="display:inline-block;margin-top:15px;">
+                <i class="fa-solid fa-gamepad"></i> Ver catálogo
+            </a>
+        </div>
 
-        <!-- FORMULARIO DE PAGO -->
-        <section id="seccion-pago">
-            <h2>Detalles de Pago</h2>
-            <form class="formulario-pago" action="exito.html" method="GET">
-                <fieldset>
-                    <legend>Tarjeta de Crédito / Débito</legend>
+        <!-- =====================================================
+             TABLA DE ARTÍCULOS DEL CARRITO
+             Se llena dinámicamente con carrito.js
+             ===================================================== -->
+        <div id="carrito-con-items" style="display:none;">
 
-                    <label>Nombre en la tarjeta:
-                        <input type="text" name="titular" required>
-                    </label>
+            <table id="tabla-carrito">
+                <thead>
+                    <tr>
+                        <th>Juego</th>
+                        <th>Plataforma</th>
+                        <th>Precio</th>
+                        <th>Quitar</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-carrito">
+                    <!-- JS llena este tbody -->
+                </tbody>
+                <tfoot>
+                    <tr class="fila-total">
+                        <td colspan="2"><strong>TOTAL A PAGAR:</strong></td>
+                        <td class="total-carrito-grande" id="total-carrito">$0.00</td>
+                        <td>
+                            <button class="btn-eliminar-carrito" onclick="vaciarCarrito()">
+                                <i class="fa-solid fa-trash"></i> Vaciar todo
+                            </button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
 
-                    <label>Número de tarjeta:
-                        <input type="number" name="tarjeta" placeholder="1234 5678 9012 3456" required>
-                    </label>
+            <!-- =====================================================
+                 FORMULARIO DE PAGO
+                 ===================================================== -->
+            <section id="seccion-pago">
+                <h2>Detalles de Pago</h2>
+                <form class="formulario-pago" id="form-pago" onsubmit="confirmarCompra(event)">
+                    <fieldset>
+                        <legend>Tarjeta de Crédito / Débito</legend>
 
-                    <label>Mes de Vencimiento:
-                        <input type="date" name="vencimiento" required>
-                    </label>
+                        <label>Nombre en la tarjeta:
+                            <input type="text" name="titular"
+                                   placeholder="Ej: ESTEBAN GORDILLO" required>
+                        </label>
 
-                    <label>Código CVV:
-                        <input type="password" name="cvv" maxlength="3" required placeholder="123">
-                    </label>
-                </fieldset>
+                        <label>Número de tarjeta:
+                            <input type="text" name="tarjeta"
+                                   placeholder="1234 5678 9012 3456"
+                                   maxlength="19" required>
+                        </label>
 
-                <p class="nota-seguridad">Tu información está cifrada y protegida. Nunca almacenamos datos de tarjeta.</p>
+                        <label>Mes de Vencimiento:
+                            <input type="month" name="vencimiento" required>
+                        </label>
 
-                <div class="div-confirmar">
-                    <input class="btn-confirmar-pago" type="submit" value="Confirmar Pago de $129.98">
-                </div>
-            </form>
-        </section>
+                        <label>Código CVV:
+                            <input type="password" name="cvv"
+                                   maxlength="3" placeholder="123" required>
+                        </label>
+                    </fieldset>
+
+                    <p class="nota-seguridad">
+                        <i class="fa-solid fa-lock"></i>
+                        Tu información está cifrada y protegida. Nunca almacenamos datos de tarjeta.
+                    </p>
+
+                    <div class="div-confirmar">
+                        <button class="btn-confirmar-pago" type="submit" id="btn-confirmar-pago">
+                            Confirmar Pago
+                        </button>
+                    </div>
+                </form>
+            </section>
+
+        </div>
 
     </main>
 
@@ -91,6 +147,25 @@
         <p>Matador House</p>
         <p>© 2026 Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/carrito.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Actualizar contador del navbar
+            actualizarContadorCarrito();
+
+            // Renderizar la tabla del carrito
+            renderizarCarrito();
+        });
+    </script>
 
 </body>
 </html>

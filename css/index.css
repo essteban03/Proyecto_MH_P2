@@ -145,6 +145,8 @@
     border: 1px solid #e8e8e8;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
+    flex: 1 1 calc(100% / N- 24px);
+    max-width: calc(100% / N - 24px);
 }
 
 .tarjeta-juego:hover {
@@ -485,11 +487,71 @@
 @media (max-width: 900px) {
     .catalogo-planes {
         grid-template-columns: repeat(2, 1fr);
+        /* grid-template-columns: repeat(2, minmax(220px, 320px)); */
+        justify-content: center;
     }
 }
+
 
 @media (max-width: 600px) {
     .catalogo-planes {
         grid-template-columns: 1fr;
     }
+}
+/* @media (max-width: 992px) {
+    .tarjeta-juego {
+        flex: 1 1 calc(50% - 24px);
+        max-width: calc(50% - 24px);
+    }
+}
+
+@media (max-width: 600px) {
+    .tarjeta-juego {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+ */
+
+  @media (max-width: 991px) {
+    .navbar-nav {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+/* 
+ @media (max-width: 991px) {
+    .navbar-nav {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .navbar-nav .nav-item {
+        flex: 1 1 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+        text-align: center;
+    }
+}  */
+
+
+
+
+
+/* Móvil: que se vean más pequeñas y en 2+1 (o 3 en fila pequeñas) */
+/*
+@media (max-width: 600px) {
+    .catalogo-planes {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .tarjeta-plan {
+        padding: 16px 12px; /* las hace más compactas 
+    }
+    .tarjeta-plan h3 { font-size: 14px; }
+    .tarjeta-plan .precio-plan { font-size: 18px; }
+    .tarjeta-plan ul { font-size: 12px; }
 }

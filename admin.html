@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Panel de administración de Matador House. Gestiona el catálogo, ve estadísticas y gráficos.">
+    <title>Panel de Administración - Matador House</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/catalogo.css">
+    <link rel="icon" type="image/x-icon" href="imagenes/matador-icono.png">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand" href="index.html">Matador House</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarMatador" aria-controls="navbarMatador"
+                        aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMatador">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="catalogo.html"><i class="fa-solid fa-gamepad"></i> Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="admin.html"><i class="fa-solid fa-chart-bar"></i> Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i> Crear Cuenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in"></i> Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nosotros.html">Conócenos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="carrito.html">
+                                <i class="fa-solid fa-cart-shopping"></i> Carrito
+                                <span class="contador-carrito" id="contador-nav"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <div style="text-align:center; margin-bottom:30px;">
+            <h1><i class="fa-solid fa-chart-bar"></i> Panel de Administración</h1>
+            <p>Gestiona el inventario de juegos y visualiza estadísticas.</p>
+        </div>
+
+        <!-- =====================================================
+             SECCIÓN 1: PANEL DE INDICADORES RÁPIDOS
+             ===================================================== -->
+        <section id="seccion-indicadores">
+            <h2>Resumen del Catálogo</h2>
+            <div class="panel-indicadores">
+                <div class="indicador">
+                    <span class="valor" id="admin-total">0</span>
+                    <span class="etiqueta">Total de juegos</span>
+                </div>
+                <div class="indicador">
+                    <span class="valor" id="admin-disponibles">0</span>
+                    <span class="etiqueta">Disponibles</span>
+                </div>
+                <div class="indicador">
+                    <span class="valor" id="admin-oferta">0</span>
+                    <span class="etiqueta">En oferta</span>
+                </div>
+                <div class="indicador">
+                    <span class="valor" id="admin-agotados">0</span>
+                    <span class="etiqueta">Agotados</span>
+                </div>
+                <div class="indicador">
+                    <span class="valor" id="admin-usuarios">0</span>
+                    <span class="etiqueta">Usuarios registrados</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECCIÓN 2: GRÁFICOS (Chart.js)
+             Los canvas son los contenedores de los gráficos.
+             JavaScript los llena al inicializar.
+             ===================================================== -->
+        <section id="seccion-graficos">
+            <h2>Estadísticas Visuales</h2>
+            <div class="contenedor-graficos">
+                <div class="caja-grafico">
+                    <canvas id="grafico-categorias"></canvas>
+                </div>
+                <div class="caja-grafico">
+                    <canvas id="grafico-plataformas"></canvas>
+                </div>
+                <div class="caja-grafico">
+                    <canvas id="grafico-estados"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECCIÓN 3: TABLA DE JUEGOS (con editar / eliminar)
+             ===================================================== -->
+        <section id="seccion-tabla">
+            <h2>Todos los Juegos</h2>
+            <div class="acciones-principales" style="margin-bottom:15px;">
+                <button class="btn-principal" onclick="window.location.href='catalogo.html'">
+                    <i class="fa-solid fa-plus"></i> Ir al catálogo para agregar
+                </button>
+                <button class="btn-secundario" onclick="confirmarRestablecimientoAdmin()">
+                    <i class="fa-solid fa-rotate-left"></i> Restablecer datos
+                </button>
+            </div>
+
+            <!-- La tabla se genera con JavaScript -->
+            <div style="overflow-x:auto;">
+                <table class="tabla-admin" id="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Plataforma</th>
+                            <th>Precio</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-admin">
+                        <!-- JS llena este tbody -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             SECCIÓN 4: LISTA DE USUARIOS
+             ===================================================== -->
+        <section id="seccion-usuarios">
+            <h2>Usuarios Registrados</h2>
+            <div style="overflow-x:auto;">
+                <table class="tabla-admin">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Consola</th>
+                            <th>Nacionalidad</th>
+                            <th>Fecha Registro</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-usuarios">
+                        <!-- JS llena este tbody -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL EDITAR JUEGO (reutiliza el mismo de catalogo.js) -->
+    <div class="modal-fondo" id="modal-formulario">
+        <div class="modal-caja">
+            <h3 id="titulo-modal-form">Editar Juego</h3>
+            <form id="form-juego" onsubmit="guardarJuegoAdmin(event)">
+                <label>Nombre del juego *
+                    <input type="text" id="form-nombre" placeholder="Ej: God of War Ragnarök">
+                </label>
+                <label>Categoría *
+                    <select id="form-categoriaId">
+                        <option value="">-- Selecciona una categoría --</option>
+                    </select>
+                </label>
+                <label>Descripción *
+                    <textarea id="form-descripcion" placeholder="Describe el juego..."></textarea>
+                </label>
+                <label>Precio (USD) *
+                    <input type="number" id="form-precio" min="0" step="0.01" placeholder="0.00">
+                </label>
+                <label>Plataforma *
+                    <select id="form-plataforma">
+                        <option value="PS5">PS5</option>
+                        <option value="PS4 / PS5">PS4 / PS5</option>
+                        <option value="PS4">PS4</option>
+                    </select>
+                </label>
+                <label>Estado *
+                    <select id="form-estado">
+                        <option value="disponible">Disponible</option>
+                        <option value="oferta">En oferta</option>
+                        <option value="agotado">Agotado</option>
+                    </select>
+                </label>
+                <label>Etiqueta (opcional)
+                    <input type="text" id="form-etiqueta" placeholder="Ej: Nuevo, Más Vendido">
+                </label>
+                <div class="modal-botones">
+                    <button type="submit" class="btn-guardar">
+                        <i class="fa-solid fa-floppy-disk"></i> Guardar cambios
+                    </button>
+                    <button type="button" class="btn-cancelar" onclick="cerrarFormularioAdmin()">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Matador House</p>
+        <p>© 2026 Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="js/storage.js"></script>
+    <script src="js/datos.js"></script>
+    <script src="js/carrito.js"></script>
+    <script src="js/graficos.js"></script>
+
+    <script>
+        // Variables globales de admin
+        let juegosAdmin = [];
+        let categoriasAdmin = [];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            actualizarContadorCarrito();
+
+            // Cargar datos
+            juegosAdmin = await cargarJuegos();
+            categoriasAdmin = await cargarCategorias();
+            const usuarios = await cargarUsuarios();
+
+            // Mostrar indicadores
+            document.getElementById('admin-total').textContent = juegosAdmin.length;
+            document.getElementById('admin-disponibles').textContent = juegosAdmin.filter(j => j.estado === 'disponible').length;
+            document.getElementById('admin-oferta').textContent = juegosAdmin.filter(j => j.estado === 'oferta').length;
+            document.getElementById('admin-agotados').textContent = juegosAdmin.filter(j => j.estado === 'agotado').length;
+            document.getElementById('admin-usuarios').textContent = usuarios.length;
+
+            // Renderizar gráficos
+            inicializarGraficos();
+
+            // Renderizar tabla de juegos
+            renderizarTablaAdmin();
+
+            // Renderizar tabla de usuarios
+            renderizarTablaUsuarios(usuarios);
+
+            // Llenar select de categorías del formulario de edición
+            llenarSelectAdmin();
+
+            // Cerrar modal al hacer clic fuera
+            document.getElementById('modal-formulario').addEventListener('click', function(e) {
+                if (e.target === this) cerrarFormularioAdmin();
+            });
+        });
+
+        // Llenar el select de categorías en el modal de edición
+        function llenarSelectAdmin() {
+            const select = document.getElementById('form-categoriaId');
+            if (!select) return;
+            select.innerHTML = '<option value="">-- Selecciona --</option>';
+            categoriasAdmin.forEach(cat => {
+                const op = document.createElement('option');
+                op.value = cat.id;
+                op.textContent = cat.nombre;
+                select.appendChild(op);
+            });
+        }
+
+        // Renderizar la tabla de juegos del admin
+        function renderizarTablaAdmin() {
+            const tbody = document.getElementById('tbody-admin');
+            if (!tbody) return;
+
+            tbody.innerHTML = juegosAdmin.map(juego => {
+                const cat = categoriasAdmin.find(c => c.id === juego.categoriaId);
+                return `<tr>
+                    <td>${juego.id}</td>
+                    <td>${juego.nombre}</td>
+                    <td>${cat ? cat.nombre : '-'}</td>
+                    <td>${juego.plataforma}</td>
+                    <td>${juego.precio === 0 ? 'Gratis' : '$' + juego.precio.toFixed(2)}</td>
+                    <td><span class="estado-tarjeta estado-${juego.estado}">${juego.estado}</span></td>
+                    <td>
+                        <button class="btn-editar-tabla" onclick="editarDesdeAdmin(${juego.id})">
+                            <i class="fa-solid fa-pen"></i> Editar
+                        </button>
+                        <button class="btn-eliminar-tabla" onclick="eliminarDesdeAdmin(${juego.id})">
+                            <i class="fa-solid fa-trash"></i> Eliminar
+                        </button>
+                    </td>
+                </tr>`;
+            }).join('');
+        }
+
+        // Renderizar tabla de usuarios
+        function renderizarTablaUsuarios(usuarios) {
+            const tbody = document.getElementById('tbody-usuarios');
+            if (!tbody) return;
+            tbody.innerHTML = usuarios.map(u => `
+                <tr>
+                    <td>${u.id}</td>
+                    <td>${u.nombres} ${u.apellidos}</td>
+                    <td>${u.email}</td>
+                    <td>${u.consola}</td>
+                    <td>${u.bandera || ''} ${u.nacionalidad}</td>
+                    <td>${u.fechaRegistro}</td>
+                </tr>`).join('');
+        }
+
+        // Abrir formulario de edición desde la tabla
+        function editarDesdeAdmin(id) {
+            const juego = juegosAdmin.find(j => j.id === id);
+            if (!juego) return;
+
+            document.getElementById('titulo-modal-form').textContent = 'Editar Juego';
+            document.getElementById('form-nombre').value = juego.nombre;
+            document.getElementById('form-categoriaId').value = juego.categoriaId;
+            document.getElementById('form-descripcion').value = juego.descripcion;
+            document.getElementById('form-precio').value = juego.precio;
+            document.getElementById('form-plataforma').value = juego.plataforma;
+            document.getElementById('form-estado').value = juego.estado;
+            document.getElementById('form-etiqueta').value = juego.etiqueta || '';
+            document.getElementById('form-juego').setAttribute('data-id-editar', id);
+            document.getElementById('modal-formulario').style.display = 'flex';
+        }
+
+        // Guardar edición desde admin
+        function guardarJuegoAdmin(evento) {
+            evento.preventDefault();
+            const form = document.getElementById('form-juego');
+            const id = parseInt(form.getAttribute('data-id-editar'));
+
+            const datos = {
+                nombre: document.getElementById('form-nombre').value.trim(),
+                categoriaId: parseInt(document.getElementById('form-categoriaId').value),
+                descripcion: document.getElementById('form-descripcion').value.trim(),
+                precio: parseFloat(document.getElementById('form-precio').value),
+                plataforma: document.getElementById('form-plataforma').value,
+                estado: document.getElementById('form-estado').value,
+                etiqueta: document.getElementById('form-etiqueta').value.trim()
+            };
+
+            if (!datos.nombre || !datos.descripcion || isNaN(datos.precio)) {
+                Swal.fire('Campos requeridos', 'Completa todos los campos obligatorios.', 'warning');
+                return;
+            }
+
+            juegosAdmin = juegosAdmin.map(j => j.id === id ? { ...j, ...datos } : j);
+            guardar('juegos', juegosAdmin);
+            renderizarTablaAdmin();
+            cerrarFormularioAdmin();
+
+            Toastify({
+                text: `✏️ "${datos.nombre}" actualizado`,
+                duration: 3000,
+                gravity: 'top',
+                position: 'right',
+                backgroundColor: '#28a745'
+            }).showToast();
+        }
+
+        // Cerrar modal del admin
+        function cerrarFormularioAdmin() {
+            document.getElementById('modal-formulario').style.display = 'none';
+        }
+
+        // Eliminar desde la tabla del admin
+        function eliminarDesdeAdmin(id) {
+            const juego = juegosAdmin.find(j => j.id === id);
+            if (!juego) return;
+
+            Swal.fire({
+                title: '¿Eliminar este juego?',
+                html: `<strong>"${juego.nombre}"</strong> será eliminado permanentemente.`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d53900',
+                cancelButtonColor: '#999',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then(res => {
+                if (res.isConfirmed) {
+                    juegosAdmin = juegosAdmin.filter(j => j.id !== id);
+                    guardar('juegos', juegosAdmin);
+                    renderizarTablaAdmin();
+
+                    // Actualizar indicadores
+                    document.getElementById('admin-total').textContent = juegosAdmin.length;
+                    document.getElementById('admin-disponibles').textContent = juegosAdmin.filter(j => j.estado === 'disponible').length;
+
+                    Toastify({
+                        text: `🗑️ "${juego.nombre}" eliminado`,
+                        duration: 3000,
+                        gravity: 'top',
+                        position: 'right',
+                        backgroundColor: '#d53900'
+                    }).showToast();
+                }
+            });
+        }
+
+        // Restablecer datos desde admin
+        async function confirmarRestablecimientoAdmin() {
+            const resultado = await Swal.fire({
+                title: '¿Restablecer datos originales?',
+                text: 'Se borrarán todos los cambios y se cargarán los datos originales.',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#00439c',
+                cancelButtonColor: '#999',
+                confirmButtonText: 'Sí, restablecer',
+                cancelButtonText: 'Cancelar'
+            });
+
+            if (resultado.isConfirmed) {
+                const datos = await restablecerDatosOriginales();
+                juegosAdmin = datos.juegos;
+                renderizarTablaAdmin();
+                document.getElementById('admin-total').textContent = juegosAdmin.length;
+                document.getElementById('admin-disponibles').textContent = juegosAdmin.filter(j => j.estado === 'disponible').length;
+
+                Swal.fire('¡Restablecido!', 'Los datos originales han sido cargados.', 'success');
+            }
+        }
+    </script>
+
+</body>
+</html>
