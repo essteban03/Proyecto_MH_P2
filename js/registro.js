@@ -1,6 +1,20 @@
 let todosPaises = [];
 
 
+// Lista de respaldo por si falla la API externa
+const PAISES_FALLBACK = [
+    { name: { common: 'Ecuador' }, flag: '🇪🇨' },
+    { name: { common: 'Colombia' }, flag: '🇨🇴' },
+    { name: { common: 'Perú' }, flag: '🇵🇪' },
+    { name: { common: 'Argentina' }, flag: '🇦🇷' },
+    { name: { common: 'Chile' }, flag: '🇨🇱' },
+    { name: { common: 'México' }, flag: '🇲🇽' },
+    { name: { common: 'España' }, flag: '🇪🇸' },
+    { name: { common: 'Estados Unidos' }, flag: '🇺🇸' },
+    { name: { common: 'Brasil' }, flag: '🇧🇷' },
+    { name: { common: 'Venezuela' }, flag: '🇻🇪' }
+];
+
 async function cargarPaises() {
     const lista = document.getElementById('lista-paises');
     const inputBusqueda = document.getElementById('buscar-pais');
@@ -8,28 +22,28 @@ async function cargarPaises() {
     if (!lista) return;
 
     try {
-        
         if (inputBusqueda) inputBusqueda.placeholder = 'Cargando países...';
 
-        const respuesta = await fetch('https://countries.dev/api/countries');
+        // Petición a REST Countries API v3.1
+        const respuesta = await fetch('https://restcountries.com/v3.1/all?fields=name,flag');
 
         if (!respuesta.ok) {
-            throw new Error('No se pudo cargar la lista de países');
+            throw new Error('Respuesta no exitosa de la API');
         }
 
-        todosPaises = await respuesta.json();
-
+        const datos = await respuesta.json();
         
-        mostrarPaises(todosPaises);
+        // Ordenar alfabéticamente
+        todosPaises = datos.sort((a, b) => a.name.common.localeCompare(b.name.common));
 
+        mostrarPaises(todosPaises);
         if (inputBusqueda) inputBusqueda.placeholder = 'Buscar país...';
 
     } catch (error) {
-        console.error('Error cargando países:', error);
-        if (lista) {
-            lista.innerHTML = '<li class="error-paises">Error al cargar países. Verifica tu conexión.</li>';
-        }
-        if (inputBusqueda) inputBusqueda.placeholder = 'Error al cargar países';
+        console.warn('API de países falló, usando lista local de respaldo:', error);
+        todosPaises = PAISES_FALLBACK;
+        mostrarPaises(todosPaises);
+        if (inputBusqueda) inputBusqueda.placeholder = 'Buscar país...';
     }
 }
 

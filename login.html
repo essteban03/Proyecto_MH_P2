@@ -96,9 +96,10 @@
             await cargarUsuarios();
             const usuarios = leer('usuarios') || [];
 
-            // Buscar el usuario que coincida con email y contraseña
+            // Buscar el usuario que coincida con el email y contraseña
+            // (Si viene del JSON inicial sin campo password, acepta la contraseña ingresada)
             const usuarioEncontrado = usuarios.find(u =>
-                u.email === email && u.password === password
+                u.email === email && (!u.password || u.password === password)
             );
 
             if (!usuarioEncontrado) {

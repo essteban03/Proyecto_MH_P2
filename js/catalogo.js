@@ -1,6 +1,3 @@
-
-
-
 let todosLosJuegos = [];
 let todasLasCategorias = [];
 let juegosFiltrados = [];
