@@ -1,28 +1,28 @@
 
 
 
-let todosLosJuegos = [];      
-let todasLasCategorias = [];  
-let juegosFiltrados = [];     
+let todosLosJuegos = [];
+let todasLasCategorias = [];
+let juegosFiltrados = [];
 
 
 async function inicializarCatalogo() {
     mostrarIndicadorCarga(true);
 
-    
+
     todosLosJuegos = await cargarJuegos();
     todasLasCategorias = await cargarCategorias();
 
-    
+
     juegosFiltrados = [...todosLosJuegos];
 
-    
+
     llenarFiltrosCategoria();
 
-    
+
     renderizarTarjetas(juegosFiltrados);
 
-    
+
     actualizarIndicadores(juegosFiltrados);
 
     mostrarIndicadorCarga(false);
@@ -41,10 +41,10 @@ function llenarFiltrosCategoria() {
     const select = document.getElementById('filtro-categoria');
     if (!select) return;
 
-    
+
     select.innerHTML = '<option value="">Todas las categorías</option>';
 
-    
+
     todasLasCategorias.forEach(cat => {
         const opcion = document.createElement('option');
         opcion.value = cat.id;
@@ -58,7 +58,7 @@ function renderizarTarjetas(listaJuegos) {
     const contenedor = document.getElementById('contenedor-juegos');
     if (!contenedor) return;
 
-    
+
     if (listaJuegos.length === 0) {
         contenedor.innerHTML = `
             <div class="sin-resultados">
@@ -68,27 +68,27 @@ function renderizarTarjetas(listaJuegos) {
         return;
     }
 
-    
+
     contenedor.innerHTML = listaJuegos.map(juego => crearTarjetaHTML(juego)).join('');
 }
 
 
 function crearTarjetaHTML(juego) {
-    
+
     const categoria = todasLasCategorias.find(cat => cat.id === juego.categoriaId);
     const nombreCategoria = categoria ? categoria.nombre : 'Sin categoría';
 
-    
+
     const estrellas = juego.calificacion
         ? '⭐'.repeat(juego.calificacion)
         : 'Sin calificación';
 
-    
+
     const badge = juego.etiqueta
         ? `<span class="badge-juego">${juego.etiqueta}</span>`
         : '';
 
-    
+
     const claseEstado = `estado-${juego.estado}`;
 
     return `
@@ -177,7 +177,7 @@ function verDetalle(id) {
 function buscarJuegos(textoBusqueda) {
     const texto = textoBusqueda.toLowerCase().trim();
 
-    
+
     const resultado = aplicarFiltros(texto);
 
     renderizarTarjetas(resultado);
@@ -192,7 +192,7 @@ function aplicarFiltros(textoBusqueda = '') {
 
     let resultado = [...todosLosJuegos];
 
-    
+
     if (textoBusqueda) {
         resultado = resultado.filter(juego =>
             juego.nombre.toLowerCase().includes(textoBusqueda) ||
@@ -200,17 +200,17 @@ function aplicarFiltros(textoBusqueda = '') {
         );
     }
 
-    
+
     if (filtroCategoria) {
         resultado = resultado.filter(juego => juego.categoriaId === parseInt(filtroCategoria));
     }
 
-    
+
     if (filtroPlataforma) {
         resultado = resultado.filter(juego => juego.plataforma.includes(filtroPlataforma));
     }
 
-    
+
     if (filtroEstado) {
         resultado = resultado.filter(juego => juego.estado === filtroEstado);
     }
@@ -223,7 +223,7 @@ function ordenarJuegos(criterio) {
     const textoBusqueda = document.getElementById('buscador')?.value || '';
     let lista = aplicarFiltros(textoBusqueda.toLowerCase().trim());
 
-    
+
     switch (criterio) {
         case 'precio-asc':
             lista.sort((a, b) => a.precio - b.precio);
@@ -253,13 +253,13 @@ function ordenarJuegos(criterio) {
 function actualizarIndicadores(lista) {
     const total = lista.length;
 
-    
+
     const conPrecio = lista.filter(j => j.precio > 0);
     const promedio = conPrecio.length > 0
         ? conPrecio.reduce((sum, j) => sum + j.precio, 0) / conPrecio.length
         : 0;
 
-    
+
     const masCaro = conPrecio.length > 0
         ? conPrecio.reduce((max, j) => j.precio > max.precio ? j : max)
         : null;
@@ -267,10 +267,10 @@ function actualizarIndicadores(lista) {
         ? conPrecio.reduce((min, j) => j.precio < min.precio ? j : min)
         : null;
 
-    
+
     const disponibles = lista.filter(j => j.estado === 'disponible').length;
 
-    
+
     const setTexto = (id, texto) => {
         const el = document.getElementById(id);
         if (el) el.textContent = texto;
