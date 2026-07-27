@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,29 @@
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" rel="stylesheet">
 </head>
+
 <body>
 
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
             <div class="container-fluid px-4">
                 <a class="navbar-brand" href="index.html">Matador House</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMatador" aria-controls="navbarMatador" aria-expanded="false" aria-label="Abrir menú">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMatador"
+                    aria-controls="navbarMatador" aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMatador">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
-                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i> Crear Cuenta</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="login.html"><i class="fa-solid fa-sign-in"></i> Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>
+                                Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i>
+                                Crear Cuenta</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="login.html"><i
+                                    class="fa-solid fa-sign-in"></i> Iniciar Sesión</a></li>
                         <li class="nav-item"><a class="nav-link" href="nosotros.html">Conócenos</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="carrito.html"><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carrito.html"><i
+                                    class="fa-solid fa-cart-shopping"></i> Mi Carrito</a></li>
                     </ul>
                 </div>
             </div>
@@ -47,13 +54,11 @@
             -->
             <form class="formulario-login" id="form-login" onsubmit="iniciarSesion(event)">
                 <label>Correo electrónico:
-                    <input type="email" id="login-email" name="email"
-                           placeholder="usuario@gmail.com" required>
+                    <input type="email" id="login-email" name="email" placeholder="usuario@gmail.com" required>
                 </label>
 
                 <label>Contraseña:
-                    <input type="password" id="login-password" name="password"
-                           placeholder="Tu contraseña" required>
+                    <input type="password" id="login-password" name="password" placeholder="Tu contraseña" required>
                 </label>
 
                 <button class="btn-login" type="submit">
@@ -129,4 +134,5 @@
         }
     </script>
 </body>
+
 </html>

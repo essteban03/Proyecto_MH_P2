@@ -314,7 +314,10 @@
     "fechaNacimiento": "1994-06-12",
     "telefono": "0998765431",
     "fechaRegistro": "2025-07-15",
-    "contacto": { "ciudad": "Machala", "provincia": "El Oro" }
+    "contacto": {
+      "ciudad": "Machala",
+      "provincia": "El Oro"
+    }
   },
   {
     "id": 22,
@@ -327,7 +330,10 @@
     "fechaNacimiento": "2002-09-23",
     "telefono": "0987654319",
     "fechaRegistro": "2025-07-18",
-    "contacto": { "ciudad": "Latacunga", "provincia": "Cotopaxi" }
+    "contacto": {
+      "ciudad": "Latacunga",
+      "provincia": "Cotopaxi"
+    }
   },
   {
     "id": 23,
@@ -340,7 +346,10 @@
     "fechaNacimiento": "1996-04-07",
     "telefono": "0976543208",
     "fechaRegistro": "2025-07-20",
-    "contacto": { "ciudad": "Tulcán", "provincia": "Carchi" }
+    "contacto": {
+      "ciudad": "Tulcán",
+      "provincia": "Carchi"
+    }
   },
   {
     "id": 24,
@@ -353,7 +362,10 @@
     "fechaNacimiento": "1999-10-19",
     "telefono": "0965432107",
     "fechaRegistro": "2025-07-22",
-    "contacto": { "ciudad": "Lago Agrio", "provincia": "Sucumbíos" }
+    "contacto": {
+      "ciudad": "Lago Agrio",
+      "provincia": "Sucumbíos"
+    }
   },
   {
     "id": 25,
@@ -366,7 +378,10 @@
     "fechaNacimiento": "1991-02-14",
     "telefono": "0954321096",
     "fechaRegistro": "2025-07-23",
-    "contacto": { "ciudad": "Tena", "provincia": "Napo" }
+    "contacto": {
+      "ciudad": "Tena",
+      "provincia": "Napo"
+    }
   },
   {
     "id": 26,
@@ -379,7 +394,10 @@
     "fechaNacimiento": "2001-07-08",
     "telefono": "0943210985",
     "fechaRegistro": "2025-07-24",
-    "contacto": { "ciudad": "Cali", "provincia": "Valle del Cauca" }
+    "contacto": {
+      "ciudad": "Cali",
+      "provincia": "Valle del Cauca"
+    }
   },
   {
     "id": 27,
@@ -392,7 +410,10 @@
     "fechaNacimiento": "1997-12-31",
     "telefono": "0932109874",
     "fechaRegistro": "2025-07-24",
-    "contacto": { "ciudad": "Guaranda", "provincia": "Bolívar" }
+    "contacto": {
+      "ciudad": "Guaranda",
+      "provincia": "Bolívar"
+    }
   },
   {
     "id": 28,
@@ -405,7 +426,10 @@
     "fechaNacimiento": "1995-05-20",
     "telefono": "0921098763",
     "fechaRegistro": "2025-07-25",
-    "contacto": { "ciudad": "Arequipa", "provincia": "Arequipa" }
+    "contacto": {
+      "ciudad": "Arequipa",
+      "provincia": "Arequipa"
+    }
   },
   {
     "id": 29,
@@ -418,7 +442,10 @@
     "fechaNacimiento": "2003-01-25",
     "telefono": "0910987652",
     "fechaRegistro": "2025-07-25",
-    "contacto": { "ciudad": "Zamora", "provincia": "Zamora Chinchipe" }
+    "contacto": {
+      "ciudad": "Zamora",
+      "provincia": "Zamora Chinchipe"
+    }
   },
   {
     "id": 30,
@@ -431,7 +458,10 @@
     "fechaNacimiento": "1998-08-11",
     "telefono": "0909876541",
     "fechaRegistro": "2025-07-26",
-    "contacto": { "ciudad": "Puyo", "provincia": "Pastaza" }
+    "contacto": {
+      "ciudad": "Puyo",
+      "provincia": "Pastaza"
+    }
   },
   {
     "id": 31,
@@ -444,7 +474,10 @@
     "fechaNacimiento": "1993-03-16",
     "telefono": "0998765430",
     "fechaRegistro": "2025-07-26",
-    "contacto": { "ciudad": "Quito", "provincia": "Pichincha" }
+    "contacto": {
+      "ciudad": "Quito",
+      "provincia": "Pichincha"
+    }
   },
   {
     "id": 32,
@@ -457,7 +490,10 @@
     "fechaNacimiento": "2000-11-27",
     "telefono": "0987654318",
     "fechaRegistro": "2025-07-26",
-    "contacto": { "ciudad": "Guayaquil", "provincia": "Guayas" }
+    "contacto": {
+      "ciudad": "Guayaquil",
+      "provincia": "Guayas"
+    }
   },
   {
     "id": 33,
@@ -470,7 +506,10 @@
     "fechaNacimiento": "1989-07-03",
     "telefono": "0976543207",
     "fechaRegistro": "2025-07-26",
-    "contacto": { "ciudad": "Monterrey", "provincia": "Nuevo León" }
+    "contacto": {
+      "ciudad": "Monterrey",
+      "provincia": "Nuevo León"
+    }
   },
   {
     "id": 34,
@@ -483,7 +522,10 @@
     "fechaNacimiento": "2001-02-08",
     "telefono": "0965432106",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Santo Domingo", "provincia": "Santo Domingo de los Tsáchilas" }
+    "contacto": {
+      "ciudad": "Santo Domingo",
+      "provincia": "Santo Domingo de los Tsáchilas"
+    }
   },
   {
     "id": 35,
@@ -496,7 +538,10 @@
     "fechaNacimiento": "1997-09-14",
     "telefono": "0954321095",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Maracaibo", "provincia": "Zulia" }
+    "contacto": {
+      "ciudad": "Maracaibo",
+      "provincia": "Zulia"
+    }
   },
   {
     "id": 36,
@@ -509,7 +554,10 @@
     "fechaNacimiento": "1996-06-30",
     "telefono": "0943210984",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Ambato", "provincia": "Tungurahua" }
+    "contacto": {
+      "ciudad": "Ambato",
+      "provincia": "Tungurahua"
+    }
   },
   {
     "id": 37,
@@ -522,7 +570,10 @@
     "fechaNacimiento": "2002-12-05",
     "telefono": "0932109873",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Cuenca", "provincia": "Azuay" }
+    "contacto": {
+      "ciudad": "Cuenca",
+      "provincia": "Azuay"
+    }
   },
   {
     "id": 38,
@@ -535,7 +586,10 @@
     "fechaNacimiento": "1999-04-18",
     "telefono": "0921098762",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Valparaíso", "provincia": "Valparaíso" }
+    "contacto": {
+      "ciudad": "Valparaíso",
+      "provincia": "Valparaíso"
+    }
   },
   {
     "id": 39,
@@ -548,7 +602,10 @@
     "fechaNacimiento": "1994-01-22",
     "telefono": "0910987651",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Ibarra", "provincia": "Imbabura" }
+    "contacto": {
+      "ciudad": "Ibarra",
+      "provincia": "Imbabura"
+    }
   },
   {
     "id": 40,
@@ -561,7 +618,10 @@
     "fechaNacimiento": "2003-06-14",
     "telefono": "0909876540",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Loja", "provincia": "Loja" }
+    "contacto": {
+      "ciudad": "Loja",
+      "provincia": "Loja"
+    }
   },
   {
     "id": 41,
@@ -574,7 +634,10 @@
     "fechaNacimiento": "1992-11-09",
     "telefono": "0998765429",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Riobamba", "provincia": "Chimborazo" }
+    "contacto": {
+      "ciudad": "Riobamba",
+      "provincia": "Chimborazo"
+    }
   },
   {
     "id": 42,
@@ -587,7 +650,10 @@
     "fechaNacimiento": "1998-07-26",
     "telefono": "0987654317",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Manta", "provincia": "Manabí" }
+    "contacto": {
+      "ciudad": "Manta",
+      "provincia": "Manabí"
+    }
   },
   {
     "id": 43,
@@ -600,7 +666,10 @@
     "fechaNacimiento": "1990-03-17",
     "telefono": "0976543206",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Córdoba", "provincia": "Córdoba" }
+    "contacto": {
+      "ciudad": "Córdoba",
+      "provincia": "Córdoba"
+    }
   },
   {
     "id": 44,
@@ -613,7 +682,10 @@
     "fechaNacimiento": "2001-08-30",
     "telefono": "0965432105",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Portoviejo", "provincia": "Manabí" }
+    "contacto": {
+      "ciudad": "Portoviejo",
+      "provincia": "Manabí"
+    }
   },
   {
     "id": 45,
@@ -626,7 +698,10 @@
     "fechaNacimiento": "1995-10-04",
     "telefono": "0954321094",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Babahoyo", "provincia": "Los Ríos" }
+    "contacto": {
+      "ciudad": "Babahoyo",
+      "provincia": "Los Ríos"
+    }
   },
   {
     "id": 46,
@@ -639,7 +714,10 @@
     "fechaNacimiento": "1999-12-15",
     "telefono": "0943210983",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Quevedo", "provincia": "Los Ríos" }
+    "contacto": {
+      "ciudad": "Quevedo",
+      "provincia": "Los Ríos"
+    }
   },
   {
     "id": 47,
@@ -652,7 +730,10 @@
     "fechaNacimiento": "1993-05-28",
     "telefono": "0932109872",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Bogotá", "provincia": "Cundinamarca" }
+    "contacto": {
+      "ciudad": "Bogotá",
+      "provincia": "Cundinamarca"
+    }
   },
   {
     "id": 48,
@@ -665,7 +746,10 @@
     "fechaNacimiento": "2000-09-02",
     "telefono": "0921098761",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Esmeraldas", "provincia": "Esmeraldas" }
+    "contacto": {
+      "ciudad": "Esmeraldas",
+      "provincia": "Esmeraldas"
+    }
   },
   {
     "id": 49,
@@ -678,7 +762,10 @@
     "fechaNacimiento": "1996-01-19",
     "telefono": "0910987650",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Santo Domingo", "provincia": "Santo Domingo de los Tsáchilas" }
+    "contacto": {
+      "ciudad": "Santo Domingo",
+      "provincia": "Santo Domingo de los Tsáchilas"
+    }
   },
   {
     "id": 50,
@@ -691,7 +778,10 @@
     "fechaNacimiento": "2002-04-22",
     "telefono": "0909876539",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Quito", "provincia": "Pichincha" }
+    "contacto": {
+      "ciudad": "Quito",
+      "provincia": "Pichincha"
+    }
   },
   {
     "id": 51,
@@ -704,7 +794,10 @@
     "fechaNacimiento": "1991-08-07",
     "telefono": "0998765428",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Guayaquil", "provincia": "Guayas" }
+    "contacto": {
+      "ciudad": "Guayaquil",
+      "provincia": "Guayas"
+    }
   },
   {
     "id": 52,
@@ -717,7 +810,10 @@
     "fechaNacimiento": "1997-06-13",
     "telefono": "0987654316",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Ambato", "provincia": "Tungurahua" }
+    "contacto": {
+      "ciudad": "Ambato",
+      "provincia": "Tungurahua"
+    }
   },
   {
     "id": 53,
@@ -730,7 +826,10 @@
     "fechaNacimiento": "1988-11-24",
     "telefono": "0976543205",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Cuenca", "provincia": "Azuay" }
+    "contacto": {
+      "ciudad": "Cuenca",
+      "provincia": "Azuay"
+    }
   },
   {
     "id": 54,
@@ -743,7 +842,10 @@
     "fechaNacimiento": "2003-03-10",
     "telefono": "0965432104",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Latacunga", "provincia": "Cotopaxi" }
+    "contacto": {
+      "ciudad": "Latacunga",
+      "provincia": "Cotopaxi"
+    }
   },
   {
     "id": 55,
@@ -756,7 +858,10 @@
     "fechaNacimiento": "1994-09-16",
     "telefono": "0954321093",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Machala", "provincia": "El Oro" }
+    "contacto": {
+      "ciudad": "Machala",
+      "provincia": "El Oro"
+    }
   },
   {
     "id": 56,
@@ -769,7 +874,10 @@
     "fechaNacimiento": "2000-05-31",
     "telefono": "0943210982",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Ibarra", "provincia": "Imbabura" }
+    "contacto": {
+      "ciudad": "Ibarra",
+      "provincia": "Imbabura"
+    }
   },
   {
     "id": 57,
@@ -782,7 +890,10 @@
     "fechaNacimiento": "1992-02-28",
     "telefono": "0932109871",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Riobamba", "provincia": "Chimborazo" }
+    "contacto": {
+      "ciudad": "Riobamba",
+      "provincia": "Chimborazo"
+    }
   },
   {
     "id": 58,
@@ -795,7 +906,10 @@
     "fechaNacimiento": "1999-08-20",
     "telefono": "0921098760",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Loja", "provincia": "Loja" }
+    "contacto": {
+      "ciudad": "Loja",
+      "provincia": "Loja"
+    }
   },
   {
     "id": 59,
@@ -808,7 +922,10 @@
     "fechaNacimiento": "1995-04-03",
     "telefono": "0910987649",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Santo Domingo", "provincia": "Santo Domingo de los Tsáchilas" }
+    "contacto": {
+      "ciudad": "Santo Domingo",
+      "provincia": "Santo Domingo de los Tsáchilas"
+    }
   },
   {
     "id": 60,
@@ -821,7 +938,10 @@
     "fechaNacimiento": "2001-01-17",
     "telefono": "0909876538",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Quito", "provincia": "Pichincha" }
+    "contacto": {
+      "ciudad": "Quito",
+      "provincia": "Pichincha"
+    }
   },
   {
     "id": 61,
@@ -834,7 +954,10 @@
     "fechaNacimiento": "2004-05-10",
     "telefono": "0998765427",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Guayaquil", "provincia": "Guayas" }
+    "contacto": {
+      "ciudad": "Guayaquil",
+      "provincia": "Guayas"
+    }
   },
   {
     "id": 62,
@@ -847,7 +970,10 @@
     "fechaNacimiento": "1998-11-12",
     "telefono": "0987654315",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Ambato", "provincia": "Tungurahua" }
+    "contacto": {
+      "ciudad": "Ambato",
+      "provincia": "Tungurahua"
+    }
   },
   {
     "id": 63,
@@ -860,7 +986,10 @@
     "fechaNacimiento": "1993-07-25",
     "telefono": "0976543204",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Riobamba", "provincia": "Chimborazo" }
+    "contacto": {
+      "ciudad": "Riobamba",
+      "provincia": "Chimborazo"
+    }
   },
   {
     "id": 64,
@@ -873,7 +1002,9 @@
     "fechaNacimiento": "2000-03-08",
     "telefono": "0965432103",
     "fechaRegistro": "2025-07-27",
-    "contacto": { "ciudad": "Cuenca", "provincia": "Azuay" }
+    "contacto": {
+      "ciudad": "Cuenca",
+      "provincia": "Azuay"
+    }
   }
 ]
-

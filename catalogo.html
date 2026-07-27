@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catálogo completo de juegos PS4 y PS5 en Matador House Ecuador. Busca, filtra y ordena todos nuestros juegos disponibles.">
+    <meta name="description"
+        content="Catálogo completo de juegos PS4 y PS5 en Matador House Ecuador. Busca, filtra y ordena todos nuestros juegos disponibles.">
     <title>Catálogo de Juegos - Matador House</title>
 
     <!-- Bootstrap CSS -->
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="css/catalogo.css">
     <link rel="icon" type="image/x-icon" href="imagenes/matador-icono.png">
 </head>
+
 <body>
 
     <!-- =====================================================
@@ -28,18 +31,22 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
             <div class="container-fluid px-4">
                 <a class="navbar-brand" href="index.html">Matador House</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarMatador" aria-controls="navbarMatador"
-                        aria-expanded="false" aria-label="Abrir menú">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMatador"
+                    aria-controls="navbarMatador" aria-expanded="false" aria-label="Abrir menú">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarMatador">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
-                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="catalogo.html"><i class="fa-solid fa-gamepad"></i> Catálogo</a></li>
-                        <li class="nav-item"><a class="nav-link" href="admin.html"><i class="fa-solid fa-chart-bar"></i> Admin</a></li>
-                        <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i> Crear Cuenta</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in"></i> Iniciar Sesión</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i>
+                                Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="catalogo.html"><i
+                                    class="fa-solid fa-gamepad"></i> Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admin.html"><i class="fa-solid fa-chart-bar"></i>
+                                Admin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="registro.html"><i class="fa-solid fa-user"></i>
+                                Crear Cuenta</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html"><i class="fa-solid fa-sign-in"></i>
+                                Iniciar Sesión</a></li>
                         <li class="nav-item"><a class="nav-link" href="nosotros.html">Conócenos</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                         <li class="nav-item">
@@ -95,9 +102,8 @@
              ===================================================== -->
         <div class="barra-controles">
             <!-- Búsqueda en tiempo real (evento: input) -->
-            <input type="text" id="buscador"
-                   placeholder="🔍 Buscar juego por nombre o descripción..."
-                   oninput="buscarJuegos(this.value)">
+            <input type="text" id="buscador" placeholder="🔍 Buscar juego por nombre o descripción..."
+                oninput="buscarJuegos(this.value)">
 
             <!-- Filtro por categoría (se llena dinámicamente con JS) -->
             <select id="filtro-categoria" onchange="buscarJuegos(document.getElementById('buscador').value)">
@@ -253,11 +259,12 @@
             llenarSelectCategorias();
 
             // Cerrar el modal si el usuario hace clic fuera de él
-            document.getElementById('modal-formulario').addEventListener('click', function(e) {
+            document.getElementById('modal-formulario').addEventListener('click', function (e) {
                 if (e.target === this) cerrarFormulario();
             });
         });
     </script>
 
 </body>
+
 </html>

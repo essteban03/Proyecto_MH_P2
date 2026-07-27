@@ -8,9 +8,9 @@
 // Coordenadas de ciudades ecuatorianas
 const CIUDADES = [
     { nombre: 'Santo Domingo', latitud: -0.25, longitud: -79.15 },
-    { nombre: 'Quito',         latitud: -0.18, longitud: -78.47 },
-    { nombre: 'Guayaquil',     latitud: -2.17, longitud: -79.90 },
-    { nombre: 'Quevedo',       latitud: -1.03, longitud: -79.46 }
+    { nombre: 'Quito', latitud: -0.18, longitud: -78.47 },
+    { nombre: 'Guayaquil', latitud: -2.17, longitud: -79.90 },
+    { nombre: 'Quevedo', latitud: -1.03, longitud: -79.46 }
 ];
 
 // Códigos WMO: traducción de código de clima a texto e ícono

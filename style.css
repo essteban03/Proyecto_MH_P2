@@ -1,13 +1,15 @@
-
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Agrega una transicion suave para el movimiento y la sombra al hacer hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Agrega una transicion suave para el movimiento y la sombra al hacer hover */
     /* Un borde basico para que la tarjeta se distinga sin sombras iniciales */
-    border: 1px solid #ccc; 
+    border: 1px solid #ccc;
     /* Evita que la imagen se desborde del borde */
-    overflow: hidden; 
+    overflow: hidden;
 }
 
-.card:hover { 
-    transform: translateY(-5px); /*mueve la tarjeta hacia arriba al hacer hover*/
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1); /*agrega una sombra más pronunciada al hacer hover*/
+.card:hover {
+    transform: translateY(-5px);
+    /*mueve la tarjeta hacia arriba al hacer hover*/
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    /*agrega una sombra más pronunciada al hacer hover*/
 }
