@@ -171,7 +171,7 @@ function confirmarCompra(evento) {
 
     const carrito = obtenerCarrito();
     if (carrito.length === 0) {
-        Swal.fire('Carrito vacío', 'Agrega juegos al carrito antes de comprar.', 'info');
+        Swal.fire('Carrito vacío', 'Agrega juegos al carrito ante   s de comprar.', 'info');
         return;
     }
 
